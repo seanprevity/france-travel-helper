@@ -1,0 +1,110 @@
+import { useEffect, useState } from "react"
+import { useLanguage } from "../context/LanguageContext"
+import { Trash2, MapPin } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import "../styles/Bookmarks.css"
+
+export default function Bookmarks() {
+  const [bookmarks, setBookmarks] = useState([])
+  const [loading, setLoading] = useState(true)
+  const { t } = useLanguage()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (!user) {
+      setLoading(false)
+      return
+    }
+
+    const fetchBookmarks = async () => {
+      try {
+        const res = await fetch(`/api/bookmarks`, {
+          method: "GET",
+          credentials: "include",
+        })
+        if (!res.ok) throw new Error(await res.text())
+        const data = await res.json()
+        setBookmarks(data.bookmarks || [])
+      } catch (err) {
+        console.error("Failed to load bookmarks", err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchBookmarks()
+  }, [])
+
+  const deleteBookmark = async (townName) => {
+    try {
+      const res = await fetch(`/api/bookmarks`, {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ town_name: townName }),
+      })
+
+      if (!res.ok) throw new Error(await res.text())
+      const data = await res.json()
+      // remove from list (could refetch but might not be necessary)
+      setBookmarks((bs) => bs.filter((t) => t !== townName))
+    } catch (err) {
+      console.error("Failed to delete bookmark.", err)
+    }
+  }
+
+  if (loading)
+    return (
+      <div className="page-container">
+        <div className="bookmarks-container">
+          <p className="loading-message">{t("loading-towns")}</p>
+        </div>
+      </div>
+    )
+
+  const user = JSON.parse(localStorage.getItem("user"))
+  if (!user) {
+    return (
+      <div className="page-container">
+        <div className="bookmarks-container">
+          <p className="no-user-message">{t("mustBeLoggedIn")}</p>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="page-container">
+      <div className="bookmarks-container">
+        <h2 className="bookmarks-title">{t("bookmarksTitle")}</h2>
+        {bookmarks.length === 0 && <p className="no-bookmarks-message">{t("noBookmarks")}</p>}
+        <div className="bookmarks-list">
+          {bookmarks.map((townName, idx) => (
+            <div key={idx} className="bookmark-item">
+              <h3 className="bookmark-town-name">{townName}</h3>
+              <div className="bookmark-buttons">
+                <button
+                  className="view-bookmark-button"
+                  onClick={() => navigate("/discover", { state: { townName } })}
+                  aria-label={`${t("view")} ${townName}`}
+                >
+                  <MapPin size={15} />
+                  <span>{t("view")}</span>
+                </button>
+                <button
+                  className="delete-bookmark-button"
+                  onClick={() => deleteBookmark(townName)}
+                  aria-label={`${t("delete")} ${townName}`}
+                >
+                  <Trash2 size={15} />
+                  <span>{t("delete")}</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}

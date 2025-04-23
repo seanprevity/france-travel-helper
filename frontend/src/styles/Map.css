@@ -1,0 +1,48 @@
+.map-wrapper {
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+
+.map-container {
+   width: 100%;
+   height: 100%;
+}
+
+.map-loading,
+.map-error {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   background-color: #f9fafb;
+   color: #6b7280;
+   font-size: 1.1rem;
+}
+
+.map-error {
+   color: #ef4444;
+}
+
+.map-loading::after {
+   content: "...";
+   animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+
+   0%,
+   20% {
+      content: ".";
+   }
+
+   40% {
+      content: "..";
+   }
+
+   60%,
+   100% {
+      content: "...";
+   }
+}
