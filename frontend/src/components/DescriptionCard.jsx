@@ -17,32 +17,42 @@ export default function DescriptionCard({ town, townCode, department, department
   const [showImageModal, setShowImageModal] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+
   const interpolate = (str, vars) =>
     Object.entries(vars).reduce(
       (s, [key, val]) => s.replace(new RegExp(`{{${key}}}`, "g"), val),
       str
     )
 
-  // parse description into main + attractions
+  // parse description into main + history + attractions
   const parseDescription = (text) => {
-    if (!text) return { mainDescription: "", attractions: [] }
-    const structuredMatch = text.match(/DESCRIPTION:\s*(.*?)\s*ATTRACTIONS:\s*([\s\S]+)/i)
-    if (structuredMatch) {
-      return {
-        mainDescription: structuredMatch[1].trim(),
-        attractions: structuredMatch[2]
-          .split("\n")
-          .filter((line) => /^\d+\./.test(line.trim()))
-          .map((line) => line.replace(/^\d+\.\s*/, "").trim()),
-      }
-    }
-    const fallbackAttractions = (text.match(/\d+\.\s(.+?)\s-\s(.+?)(?=\s*\d+\.|$)/g) || []).map((item) =>
-      item.replace(/^\d+\.\s*/, ""),
+    if (!text) return { mainDescription: "", history: "", attractions: [] }
+
+    // Try to match DESCRIPTION, HISTORY and ATTRACTIONS all at once
+    const structuredMatch = text.match(
+      /DESCRIPTION:\s*([\s\S]*?)\s*HISTORY:\s*([\s\S]*?)\s*ATTRACTIONS:\s*([\s\S]+)/i
     )
-    return {
-      mainDescription: text.split(/\d+\.\s/)[0].trim(),
-      attractions: fallbackAttractions,
+
+    if (structuredMatch) {
+      const mainDescription = structuredMatch[1].trim()
+      const history = structuredMatch[2].trim()
+      const attractionsRaw = structuredMatch[3].trim()
+
+      const attractions = attractionsRaw
+        .split("\n")
+        .filter((line) => /^\d+\./.test(line.trim()))
+        .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+
+      return { mainDescription, history, attractions }
     }
+
+    // Fallback: maybe no HISTORY section, just DESCRIPTION + ATTRACTIONS
+    const fallbackAttractions = (text.match(/\d+\.\s(.+?)(?=\s*\d+\.|$)/g) || []).map((item) =>
+      item.replace(/^\d+\.\s*/, "")
+    )
+
+    const mainDescription = text.split(/\d+\.\s/)[0].trim()
+    return { mainDescription, history: "", attractions: fallbackAttractions }
   }
 
   // fetch ratings helper
@@ -126,11 +136,11 @@ export default function DescriptionCard({ town, townCode, department, department
   }
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex+1))
+    setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex-1))
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
   }
 
   const openImageModal = (index) => {
@@ -144,25 +154,25 @@ export default function DescriptionCard({ town, townCode, department, department
     setShowImageModal(false)
   }
 
-  const { mainDescription, attractions } = parseDescription(description)
+  const { mainDescription, history, attractions } = parseDescription(description)
 
   const noAttractions = attractions.length === 0
   const displayDescription = noAttractions ? interpolate(t("noInfoMessage"), { town }) : mainDescription
 
   useEffect(() => {
     if (!loading && noAttractions && townCode && department) {
-      ;(async () => {
+      ; (async () => {
         try {
           const res = await fetch(
-            `/api/descriptions?town_code=${encodeURIComponent(townCode)}&department=${encodeURIComponent(department)}}`,
+            `/api/descriptions?town_code=${encodeURIComponent(townCode)}&department=${encodeURIComponent(department)}`,
             { method: "DELETE" }
           )
           if (!res.ok) throw new Error(await res.text())
-            console.info(`Cleared cache for ${townCode}/${department}`)
+          console.info(`Cleared cache for ${townCode}/${department}`)
         } catch (err) {
           console.error("Failed to clear description cache:", err)
         }
-      }) ()
+      })()
     }
   }, [loading, noAttractions, townCode, department])
 
@@ -177,11 +187,11 @@ export default function DescriptionCard({ town, townCode, department, department
       }
     }
     document.addEventListener("mousedown", handleOutsideClick)
-    return () => { document.removeEventListener("mousedown", handleOutsideClick)}
+    return () => { document.removeEventListener("mousedown", handleOutsideClick) }
   }, [showRatingInput])
 
   useEffect(() => {
-    const handleKeyDown= (e) => {
+    const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setEscKeyPressed(true)
       }
@@ -252,6 +262,14 @@ export default function DescriptionCard({ town, townCode, department, department
         <p className="description-text">{displayDescription}</p>
       </div>
 
+      {/* History */}
+      {history && (
+        <div className="card-section">
+          <h4 className="section-header">{t("history")}</h4>
+          <p className="description-text">{history}</p>
+        </div>
+      )}
+
       {/* Attractions */}
       {!noAttractions && attractions.length > 0 && (
         <div className="card-section">
@@ -283,17 +301,17 @@ export default function DescriptionCard({ town, townCode, department, department
           )}
 
           {showRatingInput && (
-            <div 
-              className="rating-popup" 
+            <div
+              className="rating-popup"
               ref={popupRef}
               onClick={(e) => e.stopPropagation()}
-              >
-              <button 
-                className="rating-popup-close" 
+            >
+              <button
+                className="rating-popup-close"
                 onClick={(e) => {
                   e.stopPropagation()
                   setShowRatingInput(false)
-                }} 
+                }}
                 aria-label={t("close")}
               >
                 x

@@ -3,7 +3,7 @@ from flask import current_app
 import re
 import random
 
-def fetch_wiki_images(town_name, department_name, lang="fr", thumb_width=1200, extra=10, max_fetch=500):
+def fetch_wiki_images(town_name, department_name, lang="fr", thumb_width=1500, extra=7, max_fetch=100):
     def _gather_for(title_to_use):
         S   = requests.Session()
         API = f"https://{lang}.wikipedia.org/w/api.php"

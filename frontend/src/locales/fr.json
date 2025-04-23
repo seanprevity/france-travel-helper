@@ -86,6 +86,7 @@
    "next": "Suivant",
    "close": "Fermer",
    "imageUnavailable": "Image indisponible",
-   "noInfoMessage": "On ne dispose pas de beaucoup d’informations sur {{town}}, mais cela doit être un petit havre de paix."
+   "noInfoMessage": "On ne sait pas grand-chose sur {{town}}, c’est peut-être un joyau caché paisible. Essayez de recharger la ville.",
+   "history": "Histoire"
     
 }

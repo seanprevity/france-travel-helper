@@ -85,5 +85,6 @@
    "next": "Next",
    "close": "Close",
    "imageUnavailable": "Image unavailable",
-   "noInfoMessage": "Not much information is known about {{town}}, but it must be a quiet little getaway spot."
+   "noInfoMessage": "Not much information is known about {{town}}, it may just be a peaceful hidden gem. Try reloading the town.",
+   "history": "History"
 }

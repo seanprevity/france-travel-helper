@@ -73,7 +73,6 @@ def get_town_by_name(town_name):
     finally:
         Session.remove()
         
-# Maybe here add "get department by town" and "get region by department" etc.
 def get_department_by_code(dept_code):
     query = text("""
                  SELECT code AS department_code, name AS department_name, region AS region_code
@@ -149,7 +148,7 @@ def cache_description(town_code, department, lang, description):
 
 @location_bp.route("/descriptions", methods=["DELETE"])
 def delete_cached_description():
-    town_code  = request.args.get("town_code")
+    town_code = request.args.get("town_code")
     department = request.args.get("department")
 
     if not (town_code and department):
@@ -157,19 +156,17 @@ def delete_cached_description():
 
     delete_q = text("""
         DELETE FROM descriptions
-         WHERE town_code  = :code
-           AND department = :dept
+        WHERE town_code  = :code
+        AND department = :dept
     """)
     session = Session()
     try:
-        session.execute(delete_q, {
+        result = session.execute(delete_q, {
             "code": town_code,
             "dept": department
         })
         session.commit()
-        current_app.logger.info(
-            f"Invalidated cache for {town_code}-{department}"
-        )
+        current_app.logger.info(f"Deleted {result.rowcount} rows from descriptions for {town_code}-{department}")
         return jsonify({"success": True}), 200
     except Exception as e:
         session.rollback()

@@ -7,25 +7,35 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_description(town_name, department_name, region_name, lang="en"):
-    current_app.logger.info(f"Town Information: Town: {town_name}, Dept: {department_name}, Region:{region_name}, lang={lang}")
-    prompt = f"""Provide information about {town_name}, located in the {department_name} department of the {region_name} region of France in this EXACT format:
+    prompt = f"""
+Provide detailed and engaging information about {town_name}, located in the {department_name} department of the {region_name} region of France. Use the following format exactly:
 
-DESCRIPTION: [2-3 sentence travel-friendly description]
+DESCRIPTION:
+[2-3 sentence overview tailored for travelers — include what makes the town charming, unique, or appealing to visitors.]
+
+HISTORY:
+[2-3 sentences briefly outlining the town’s historical background or notable past events. Mention any known heritage, ancient settlements, or historical figures if applicable.]
 
 ATTRACTIONS:
-1. [Name] - [Brief reason]
-2. [Name] - [Brief reason]
-3. [Name] - [Brief reason]"""
+1. [Name] – [Short reason to visit or its significance]
+2. [Name] – [Short reason to visit or its significance]
+3. [Name] – [Short reason to visit or its significance]
+"""
 
     if lang == "fr":
-        prompt = f"""Fournir des informations sur {town_name}, situé dans le département {department_name} de la région {region_name} en France dans ce format EXACT:
+        prompt = f"""Fournissez des informations détaillées et attrayantes sur {town_name}, située dans le département {department_name} de la région {region_name} de France. Utilisez exactement le format suivant :
 
-DESCRIPTION: [Description touristique en 2-3 phrases]
+DESCRIPTION:  
+[aperçu de 2 à 3 phrases adapté aux voyageurs — incluez ce qui rend la ville charmante, unique ou attrayante pour les visiteurs.]
 
-ATTRACTIONS:
-1. [Nom] - [Raison courte]
-2. [Nom] - [Raison courte]
-3. [Nom] - [Raison courte]"""
+HISTORY:  
+[2 à 3 phrases décrivant brièvement le passé historique de la ville ou des événements notables. Mentionnez tout patrimoine, établissements anciens ou personnages historiques le cas échéant.]
+
+ATTRACTIONS:  
+1. [Nom] – [Brève raison de la visite ou de son importance]  
+2. [Nom] – [Brève raison de la visite ou de son importance]  
+3. [Nom] – [Brève raison de la visite ou de son importance]
+"""
 
     response = openai.chat.completions.create(
         model="gpt-4.1-nano",
