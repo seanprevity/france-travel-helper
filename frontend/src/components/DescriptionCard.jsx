@@ -1,37 +1,34 @@
 import { useState, useEffect, useRef } from "react"
 import { useLanguage } from "../context/LanguageContext"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { ChevronLeft, ChevronRight, X, Star } from "lucide-react"
 import "../styles/DescriptionCard.css"
 
-export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [] }) {
+export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [], }) {
   const { t } = useLanguage()
   const [isSaved, setIsSaved] = useState(false)
   const [ratingData, setRatingData] = useState({ average: 0, count: 0 })
   const [ratingLoading, setRatingLoading] = useState(false)
   const [showRatingInput, setShowRatingInput] = useState(false)
+  const [hoverRating, setHoverRating] = useState(0)
   const user = JSON.parse(localStorage.getItem("user"))
   const popupRef = useRef(null)
   const modalRef = useRef(null)
   const [escKeyPressed, setEscKeyPressed] = useState(false)
   const [arrowKeyPressed, setArrowKeyPressed] = useState(null)
-  const [showImageModal, setShowImageModal] = useState(false)
+  const [showImageModal, setShowImageModal] = useState(false) // Initialize to false
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
+  const [noAttractions, setNoAttractions] = useState(false) // Initialize state here
+  const [shouldClearCache, setShouldClearCache] = useState(false)
 
   const interpolate = (str, vars) =>
-    Object.entries(vars).reduce(
-      (s, [key, val]) => s.replace(new RegExp(`{{${key}}}`, "g"), val),
-      str
-    )
+    Object.entries(vars).reduce((s, [key, val]) => s.replace(new RegExp(`{{${key}}}`, "g"), val), str)
 
   // parse description into main + history + attractions
   const parseDescription = (text) => {
     if (!text) return { mainDescription: "", history: "", attractions: [] }
 
     // Try to match DESCRIPTION, HISTORY and ATTRACTIONS all at once
-    const structuredMatch = text.match(
-      /DESCRIPTION:\s*([\s\S]*?)\s*HISTORY:\s*([\s\S]*?)\s*ATTRACTIONS:\s*([\s\S]+)/i
-    )
+    const structuredMatch = text.match(/DESCRIPTION:\s*([\s\S]*?)\s*HISTORY:\s*([\s\S]*?)\s*ATTRACTIONS:\s*([\s\S]+)/i)
 
     if (structuredMatch) {
       const mainDescription = structuredMatch[1].trim()
@@ -48,7 +45,7 @@ export default function DescriptionCard({ town, townCode, department, department
 
     // Fallback: maybe no HISTORY section, just DESCRIPTION + ATTRACTIONS
     const fallbackAttractions = (text.match(/\d+\.\s(.+?)(?=\s*\d+\.|$)/g) || []).map((item) =>
-      item.replace(/^\d+\.\s*/, "")
+      item.replace(/^\d+\.\s*/, ""),
     )
 
     const mainDescription = text.split(/\d+\.\s/)[0].trim()
@@ -154,18 +151,54 @@ export default function DescriptionCard({ town, townCode, department, department
     setShowImageModal(false)
   }
 
+  // Render star rating with support for percentage-based filling
+  const renderStars = (rating) => {
+    const stars = []
+    const fullStars = Math.floor(rating)
+    const partialValue = rating % 1
+
+    // Full stars
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<Star key={`full-${i}`} className="star-icon filled" />)
+    }
+
+    // Partial star (if any)
+    if (partialValue > 0 && fullStars < 5) {
+      stars.push(
+        <div key="partial" className="partial-star-container">
+          <Star className="star-icon partial-filled-bg" />
+          <div className="partial-star-overlay" style={{ width: `${partialValue * 100}%` }}>
+            <Star className="star-icon partial-filled" />
+          </div>
+        </div>,
+      )
+    }
+
+    // Empty stars
+    const emptyStars = 5 - fullStars - (partialValue > 0 ? 1 : 0)
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<Star key={`empty-${i}`} className="star-icon empty" />)
+    }
+
+    return stars
+  }
+
   const { mainDescription, history, attractions } = parseDescription(description)
 
-  const noAttractions = attractions.length === 0
+  useEffect(() => {
+    setNoAttractions(attractions.length === 0)
+    setShouldClearCache(attractions.length === 0)
+  }, [attractions.length])
+
   const displayDescription = noAttractions ? interpolate(t("noInfoMessage"), { town }) : mainDescription
 
   useEffect(() => {
-    if (!loading && noAttractions && townCode && department) {
-      ; (async () => {
+    if (!loading && shouldClearCache && townCode && department) {
+      ;(async () => {
         try {
           const res = await fetch(
             `/api/descriptions?town_code=${encodeURIComponent(townCode)}&department=${encodeURIComponent(department)}`,
-            { method: "DELETE" }
+            { method: "DELETE" },
           )
           if (!res.ok) throw new Error(await res.text())
           console.info(`Cleared cache for ${townCode}/${department}`)
@@ -174,31 +207,32 @@ export default function DescriptionCard({ town, townCode, department, department
         }
       })()
     }
-  }, [loading, noAttractions, townCode, department])
+  }, [loading, shouldClearCache, townCode, department])
 
   if (loading) return <div className="loading-message">{t("loading")}</div>
   if (!town) return <div className="no-town-message">{t("noTownSelected")}</div>
 
   useEffect(() => {
-    if (!showRatingInput) return
     const handleOutsideClick = (e) => {
-      if (popupRef.current && !popupRef.current.contains(e.target)) {
+      if (showRatingInput && popupRef.current && !popupRef.current.contains(e.target)) {
         setShowRatingInput(false)
       }
     }
+
     document.addEventListener("mousedown", handleOutsideClick)
-    return () => { document.removeEventListener("mousedown", handleOutsideClick) }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick)
+    }
   }, [showRatingInput])
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setEscKeyPressed(true)
-      }
-      else if (e.key === "ArrowRight") {
+      } else if (e.key === "ArrowRight") {
         setArrowKeyPressed("ArrowRight")
-      }
-      else if (e.key === "ArrowLeft") {
+      } else if (e.key === "ArrowLeft") {
         setArrowKeyPressed("ArrowLeft")
       }
     }
@@ -207,21 +241,19 @@ export default function DescriptionCard({ town, townCode, department, department
   }, [])
 
   useEffect(() => {
-    if (setShowImageModal) {
+    if (showImageModal) {
       if (escKeyPressed) {
         closeImageModal()
         setEscKeyPressed(false)
-      }
-      else if (arrowKeyPressed === "ArrowRight") {
+      } else if (arrowKeyPressed === "ArrowRight") {
         nextImage()
         setArrowKeyPressed(null)
-      }
-      else if (arrowKeyPressed === "ArrowLeft") {
+      } else if (arrowKeyPressed === "ArrowLeft") {
         prevImage()
         setArrowKeyPressed(null)
       }
     }
-  }, [escKeyPressed, arrowKeyPressed, setShowImageModal])
+  }, [escKeyPressed, arrowKeyPressed, showImageModal])
 
   return (
     <div className="description-card">
@@ -232,7 +264,7 @@ export default function DescriptionCard({ town, townCode, department, department
         <p className="location-subheader">
           {interpolate(t("locationSentence"), {
             department: departmentName,
-            region: regionName
+            region: regionName,
           })}
         </p>
       </div>
@@ -287,25 +319,23 @@ export default function DescriptionCard({ town, townCode, department, department
       {/* Bottom Bar with Rating and Bookmark */}
       <div className="bottom-bar">
         {/* Rating Display & Input */}
-        <div onClick={() => setShowRatingInput(true)} className="rating-container">
-          {ratingLoading ? (
-            <div className="rating-skeleton">{t("loading")}</div>
-          ) : (
-            <div className="rating-box">
-              <span className="rating-star">⭐</span>
-              <span className="rating-average">{ratingData.average.toFixed(1)}</span>
-              <span className="rating-count">
-                ({ratingData.count} {t("ratings")})
-              </span>
-            </div>
-          )}
+        <div className="rating-container">
+          <div className="rating-box-container" onClick={() => setShowRatingInput(true)}>
+            {ratingLoading ? (
+              <div className="rating-skeleton">{t("loading")}</div>
+            ) : (
+              <div className="rating-box">
+                <div className="rating-stars-display">{renderStars(ratingData.average)}</div>
+                <span className="rating-average">{ratingData.average.toFixed(1)}</span>
+                <span className="rating-count">
+                  ({ratingData.count} {t("ratings")})
+                </span>
+              </div>
+            )}
+          </div>
 
           {showRatingInput && (
-            <div
-              className="rating-popup"
-              ref={popupRef}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="rating-popup" ref={popupRef} onClick={(e) => e.stopPropagation()}>
               <button
                 className="rating-popup-close"
                 onClick={(e) => {
@@ -314,14 +344,36 @@ export default function DescriptionCard({ town, townCode, department, department
                 }}
                 aria-label={t("close")}
               >
-                x
+                <X size={16} />
               </button>
               <p className="rating-popup-title">{t("addYourRating")}</p>
-              <div className="rating-stars">
+              <div className="rating-preview">
+                {hoverRating > 0 ? hoverRating.toString().replace(".5", "½") : "0"}/5
+              </div>
+              <div className="rating-stars-input">
                 {[1, 2, 3, 4, 5].map((n) => (
-                  <span key={n} className="rating-star-input" onClick={() => handleAddRating(n)}>
-                    ⭐
-                  </span>
+                  <div
+                    key={n}
+                    className={`star-input-container ${hoverRating >= n ? "hovered" : ""}`}
+                    onMouseEnter={() => setHoverRating(n)}
+                    onMouseLeave={() => setHoverRating(0)}
+                    onClick={() => handleAddRating(n)}
+                  >
+                    <Star className={`star-input ${hoverRating >= n ? "filled" : "empty"}`} size={24} />
+
+                    {/* Half-star hover areas */}
+                    <div
+                      className="half-star-area left"
+                      onMouseEnter={(e) => {
+                        e.stopPropagation()
+                        setHoverRating(n - 0.5)
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handleAddRating(n - 0.5)
+                      }}
+                    ></div>
+                  </div>
                 ))}
               </div>
             </div>
