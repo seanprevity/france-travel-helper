@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { useLanguage } from "../context/LanguageContext"
 import { ChevronLeft, ChevronRight, X, Star } from "lucide-react"
 import "../styles/DescriptionCard.css"
+import { useNavigate } from "react-router-dom"
 
 export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [], }) {
   const { t } = useLanguage()
@@ -19,6 +20,7 @@ export default function DescriptionCard({ town, townCode, department, department
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [noAttractions, setNoAttractions] = useState(false)
   const [shouldClearCache, setShouldClearCache] = useState(false)
+  const navigate = useNavigate()
 
   const interpolate = (str, vars) =>
     Object.entries(vars).reduce((s, [key, val]) => s.replace(new RegExp(`{{${key}}}`, "g"), val), str)
@@ -74,6 +76,10 @@ export default function DescriptionCard({ town, townCode, department, department
         method: "GET",
         credentials: "include",
       })
+      if (res.status === 401) {
+        navigate('/login')
+        return
+      }
       if (!res.ok) throw new Error(await res.text())
       const data = await res.json()
       setIsSaved(data.bookmarks.includes(town))
@@ -99,6 +105,10 @@ export default function DescriptionCard({ town, townCode, department, department
         },
         body: JSON.stringify({ town_name: town }),
       })
+      if (res.status === 401) {
+        navigate('/login')
+        return
+      }
       if (!res.ok) throw new Error(await res.text())
       setIsSaved((prev) => !prev)
     } catch (err) {
@@ -117,6 +127,10 @@ export default function DescriptionCard({ town, townCode, department, department
     })
 
     const text = await res.text()
+    if (res.status === 401) {
+      navigate('/login')
+      return
+    }
     if (!res.ok) {
       console.error(`← Error ${res.status}:`, text)
       return
@@ -189,6 +203,10 @@ export default function DescriptionCard({ town, townCode, department, department
             `/api/descriptions?town_code=${encodeURIComponent(townCode)}&department=${encodeURIComponent(department)}`,
             { method: "DELETE" },
           )
+          if (res.status === 401) {
+            navigate('/login')
+            return
+          }
           if (!res.ok) throw new Error(await res.text())
         } catch (err) {
           console.error("Failed to clear description cache:", err)

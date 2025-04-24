@@ -23,6 +23,10 @@ export default function Bookmarks() {
           method: "GET",
           credentials: "include",
         })
+        if (res.status === 401) {
+          navigate("/login")
+          return
+        }
         if (!res.ok) throw new Error(await res.text())
         const data = await res.json()
         setBookmarks(data.bookmarks || [])
@@ -54,7 +58,7 @@ export default function Bookmarks() {
 
   if (loading)
     return (
-      <div className="page-container">
+      <div className="bookmarks-page-container">
         <div className="bookmarks-container">
           <p className="loading-message">{t("loading-towns")}</p>
         </div>
@@ -64,7 +68,7 @@ export default function Bookmarks() {
   const user = JSON.parse(localStorage.getItem("user"))
   if (!user) {
     return (
-      <div className="page-container">
+      <div className="bookmarks-page-container">
         <div className="bookmarks-container">
           <p className="no-user-message">{t("mustBeLoggedIn")}</p>
         </div>
@@ -73,7 +77,7 @@ export default function Bookmarks() {
   }
 
   return (
-    <div className="page-container">
+    <div className="bookmarks-page-container">
       <div className="bookmarks-container">
         <h2 className="bookmarks-title">{t("bookmarksTitle")}</h2>
         {bookmarks.length === 0 && <p className="no-bookmarks-message">{t("noBookmarks")}</p>}

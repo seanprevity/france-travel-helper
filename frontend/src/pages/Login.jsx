@@ -54,7 +54,7 @@ export default function Login() {
   }
 
   return (
-    <div className="page-container">
+    <div className="auth-page-container">
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2 className="auth-title">{t("loginTitle")}</h2>
@@ -68,6 +68,7 @@ export default function Login() {
             <input
               id="username"
               name="username"
+              placeholder={t("enterUsername")}
               value={form.username}
               onChange={handleChange}
               required
@@ -83,6 +84,7 @@ export default function Login() {
               id="password"
               name="password"
               type="password"
+              placeholder={t("enterPassword")}
               value={form.password}
               onChange={handleChange}
               required

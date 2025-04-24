@@ -47,9 +47,12 @@ export default function Register() {
   }
 
   return (
-    <div className="page-container">
+    <div className="auth-page-container">
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
+          <div className="auth-form-decoration decoration-1"></div>
+          <div className="auth-form-decoration decoration-2"></div>
+
           <h2 className="auth-title">{t("registerTitle")}</h2>
 
           <div className="form-group">
@@ -59,6 +62,7 @@ export default function Register() {
             <input
               id="username"
               name="username"
+              placeholder={t("enterUsername")}
               value={form.username}
               onChange={handleChange}
               required
@@ -74,6 +78,7 @@ export default function Register() {
               id="email"
               name="email"
               type="email"
+              placeholder={t("enterEmail")}
               value={form.email}
               onChange={handleChange}
               required
@@ -89,6 +94,7 @@ export default function Register() {
               id="password"
               name="password"
               type="password"
+              placeholder={t("enterPassword")}
               value={form.password}
               onChange={handleChange}
               required

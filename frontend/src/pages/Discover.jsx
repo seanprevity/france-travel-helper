@@ -55,7 +55,7 @@ export default function Discover() {
   }
 
   return (
-    <div className="page-container">
+    <div className="discover-page-container">
       <div className="discover-container">
         <div className="search-container">
           <SearchBar onSelectTown={handleSelectTown} />
