@@ -32,7 +32,6 @@ export default function Bookmarks() {
         setLoading(false)
       }
     }
-
     fetchBookmarks()
   }, [])
 
@@ -47,7 +46,6 @@ export default function Bookmarks() {
 
       if (!res.ok) throw new Error(await res.text())
       const data = await res.json()
-      // remove from list (could refetch but might not be necessary)
       setBookmarks((bs) => bs.filter((t) => t !== townName))
     } catch (err) {
       console.error("Failed to delete bookmark.", err)

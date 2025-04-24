@@ -6,8 +6,6 @@ const langs = { en, fr };
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  // 1. Try to load previously chosen language
-  // 2. Fallback to browser’s setting
   const [lang, setLang] = useState(() => {
     const stored = localStorage.getItem('lang');
     if (stored === 'en' || stored === 'fr') return stored;
@@ -15,7 +13,7 @@ export const LanguageProvider = ({ children }) => {
     return nav.startsWith('fr') ? 'fr' : 'en';
   });
 
-  // Store selection so that if they toggle later, we remember
+  // Store selection
   useEffect(() => {
     localStorage.setItem('lang', lang);
   }, [lang]);

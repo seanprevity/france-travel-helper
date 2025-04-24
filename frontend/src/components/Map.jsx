@@ -7,7 +7,7 @@ const libraries = [];
 const center = { lat: 46.603354, lng: 1.888334 };
 const MAP_ID = "7cfa05313dafca53";
 
-// simple debounce helper
+// simple debounce helper to prevent multiple clicks at same time
 function debounce(fn, delay) {
   let timer;
   return (...args) => {
@@ -68,7 +68,7 @@ export default function Map({ onTownClick, selectedTown }) {
         callbackRef.current?.(town);
       };
 
-      // wrap it in a 200ms debounce
+      // 1sec debounce
       const debouncedHandler = debounce(rawClickHandler, 1000);
       clickListener = map.addListener("click", debouncedHandler);
     })();
@@ -79,7 +79,7 @@ export default function Map({ onTownClick, selectedTown }) {
     };
   }, [isLoaded]);
 
-  // respond to external selections (from SearchBar)
+  // SearchBar
   useEffect(() => {
     (async () => {
       const map = mapInstanceRef.current;
@@ -103,5 +103,5 @@ export default function Map({ onTownClick, selectedTown }) {
   if (loadError) return <div className="map-error">{t("errorFetch")}</div>;
   if (!isLoaded) return <div className="map-loading">{t("loading")}</div>;
 
-  return <div ref={mapRef} className="map-container" />;
+  return <div ref={mapRef} className="map-container"/>;
 }

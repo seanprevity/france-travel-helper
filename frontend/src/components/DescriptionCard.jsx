@@ -15,9 +15,9 @@ export default function DescriptionCard({ town, townCode, department, department
   const modalRef = useRef(null)
   const [escKeyPressed, setEscKeyPressed] = useState(false)
   const [arrowKeyPressed, setArrowKeyPressed] = useState(null)
-  const [showImageModal, setShowImageModal] = useState(false) // Initialize to false
+  const [showImageModal, setShowImageModal] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [noAttractions, setNoAttractions] = useState(false) // Initialize state here
+  const [noAttractions, setNoAttractions] = useState(false)
   const [shouldClearCache, setShouldClearCache] = useState(false)
 
   const interpolate = (str, vars) =>
@@ -27,7 +27,7 @@ export default function DescriptionCard({ town, townCode, department, department
   const parseDescription = (text) => {
     if (!text) return { mainDescription: "", history: "", attractions: [] }
 
-    // Try to match DESCRIPTION, HISTORY and ATTRACTIONS all at once
+    // Match DESCRIPTION, HISTORY and ATTRACTIONS
     const structuredMatch = text.match(/DESCRIPTION:\s*([\s\S]*?)\s*HISTORY:\s*([\s\S]*?)\s*ATTRACTIONS:\s*([\s\S]+)/i)
 
     if (structuredMatch) {
@@ -43,13 +43,8 @@ export default function DescriptionCard({ town, townCode, department, department
       return { mainDescription, history, attractions }
     }
 
-    // Fallback: maybe no HISTORY section, just DESCRIPTION + ATTRACTIONS
-    const fallbackAttractions = (text.match(/\d+\.\s(.+?)(?=\s*\d+\.|$)/g) || []).map((item) =>
-      item.replace(/^\d+\.\s*/, ""),
-    )
-
     const mainDescription = text.split(/\d+\.\s/)[0].trim()
-    return { mainDescription, history: "", attractions: fallbackAttractions }
+    return { mainDescription, history: "", attractions: "" }
   }
 
   // fetch ratings helper
@@ -113,7 +108,6 @@ export default function DescriptionCard({ town, townCode, department, department
 
   const handleAddRating = async (value) => {
     const payload = { town_code: townCode, department, rating: value }
-    console.log("→ Sending rating payload:", payload)
 
     const res = await fetch("/api/ratings", {
       method: "POST",
@@ -127,18 +121,13 @@ export default function DescriptionCard({ town, townCode, department, department
       console.error(`← Error ${res.status}:`, text)
       return
     }
-    console.log("← Rating response:", text)
     setShowRatingInput(false)
     fetchRatings()
   }
 
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
-  }
+  const nextImage = () => { setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1)) }
 
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
-  }
+  const prevImage = () => { setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1)) }
 
   const openImageModal = (index) => {
     setCurrentImageIndex(index)
@@ -201,7 +190,6 @@ export default function DescriptionCard({ town, townCode, department, department
             { method: "DELETE" },
           )
           if (!res.ok) throw new Error(await res.text())
-          console.info(`Cleared cache for ${townCode}/${department}`)
         } catch (err) {
           console.error("Failed to clear description cache:", err)
         }
@@ -338,10 +326,7 @@ export default function DescriptionCard({ town, townCode, department, department
             <div className="rating-popup" ref={popupRef} onClick={(e) => e.stopPropagation()}>
               <button
                 className="rating-popup-close"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setShowRatingInput(false)
-                }}
+                onClick={(e) => { e.stopPropagation(), setShowRatingInput(false) }}
                 aria-label={t("close")}
               >
                 <X size={16} />
@@ -352,8 +337,7 @@ export default function DescriptionCard({ town, townCode, department, department
               </div>
               <div className="rating-stars-input">
                 {[1, 2, 3, 4, 5].map((n) => (
-                  <div
-                    key={n}
+                  <div key={n}
                     className={`star-input-container ${hoverRating >= n ? "hovered" : ""}`}
                     onMouseEnter={() => setHoverRating(n)}
                     onMouseLeave={() => setHoverRating(0)}
@@ -364,14 +348,8 @@ export default function DescriptionCard({ town, townCode, department, department
                     {/* Half-star hover areas */}
                     <div
                       className="half-star-area left"
-                      onMouseEnter={(e) => {
-                        e.stopPropagation()
-                        setHoverRating(n - 0.5)
-                      }}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleAddRating(n - 0.5)
-                      }}
+                      onMouseEnter={(e) => { e.stopPropagation(), setHoverRating(n - 0.5) }}
+                      onClick={(e) => { e.stopPropagation(), handleAddRating(n - 0.5) }}
                     ></div>
                   </div>
                 ))}
@@ -382,8 +360,7 @@ export default function DescriptionCard({ town, townCode, department, department
 
         {/* Bookmark Button */}
         {user && (
-          <button
-            onClick={toggleBookmark}
+          <button onClick={toggleBookmark}
             className={`bookmark-button ${isSaved ? "bookmark-button-saved" : "bookmark-button-unsaved"}`}
           >
             📌 {isSaved ? t("saved") : t("save")}
@@ -396,7 +373,7 @@ export default function DescriptionCard({ town, townCode, department, department
         <div className="image-modal-overlay" onClick={closeImageModal}>
           <div className="image-modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
             <button className="image-modal-close" onClick={closeImageModal} aria-label={t("close")}>
-              <X size={24} />
+              <X size={20} />
             </button>
 
             <div className="image-modal-main">
@@ -408,7 +385,7 @@ export default function DescriptionCard({ town, townCode, department, department
                 }}
                 aria-label={t("previous")}
               >
-                <ChevronLeft size={30} />
+                <ChevronLeft size={28} />
               </button>
 
               <div className="image-modal-container">
@@ -416,22 +393,15 @@ export default function DescriptionCard({ town, townCode, department, department
                   src={images[currentImageIndex].url || "/placeholder.svg"}
                   alt={images[currentImageIndex].description || town}
                   className="image-modal-img"
-                  onError={(e) => {
-                    e.target.src = "/abstract-geometric-shapes.png"
-                    e.target.alt = t("imageUnavailable")
-                  }}
                 />
               </div>
 
               <button
                 className="image-nav-button next-button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  nextImage()
-                }}
+                onClick={(e) => { e.stopPropagation(), nextImage() }}
                 aria-label={t("next")}
               >
-                <ChevronRight size={30} />
+                <ChevronRight size={28} />
               </button>
             </div>
 

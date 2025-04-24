@@ -105,3 +105,8 @@ def get_user_by_email(email):
         return dict(row._mapping) if row else None
     finally:
         Session.remove()
+
+@auth_bp.route('/verify-token', methods=['GET'])
+@jwt_required()
+def verify_token():
+    return {"valid": True}, 200

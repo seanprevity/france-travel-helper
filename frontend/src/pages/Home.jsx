@@ -1,5 +1,3 @@
-"use client"
-
 import { useLanguage } from "../context/LanguageContext"
 import { MapPin, Info, Compass, Globe, ChevronLeft, ChevronRight } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
@@ -28,27 +26,23 @@ export default function Home() {
     setCurrentSlide((current) => (current === 0 ? slides.length - 1 : current - 1))
   }, [slides.length])
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index)
-  }
+  const goToSlide = (index) => { setCurrentSlide(index) }
 
   // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
-    }, 6000) // Change slide every 5 seconds
-
+    }, 6000) 
     return () => clearInterval(interval)
   }, [nextSlide])
 
   return (
     <div className="home-container">
       {/* Hero Section with Slideshow */}
-      <section className="hero-section">
+      <section id="home"className="hero-section">
         <div className="slideshow-container">
           {slides.map((slide, index) => (
-            <div
-              key={index}
+            <div key={index}
               className={`slide ${index === currentSlide ? "active" : ""}`}
               style={{ backgroundImage: `url(${slide.url})` }}
             >
@@ -73,8 +67,7 @@ export default function Home() {
           {/* Dots Navigation */}
           <div className="slide-dots">
             {slides.map((_, index) => (
-              <button
-                key={index}
+              <button key={index}
                 className={`slide-dot ${index === currentSlide ? "active" : ""}`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
@@ -85,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="content-section about-section">
+      <section id="about" className="content-section about-section">
         <h2 className="section-title">{t("aboutTitle")}</h2>
         <div className="about-content">
           <div className="about-text">
@@ -186,7 +179,7 @@ export default function Home() {
             <h3>{t("footerLinksTitle")}</h3>
             <ul className="footer-links">
               <li>
-                <Link to="/">{t("footerLinkHome")}</Link>
+                <Link to="/#home">{t("footerLinkHome")}</Link>
               </li>
               <li>
                 <Link to="/discover">{t("footerLinkMap")}</Link>
@@ -195,7 +188,7 @@ export default function Home() {
                 <Link to="/discover">{t("footerLinkCities")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footerLinkAbout")}</Link>
+                <Link to="/#about">{t("footerLinkAbout")}</Link>
               </li>
               <li>
                 <Link to="/">{t("footerLinkContact")}</Link>

@@ -30,8 +30,7 @@ export default function SearchBar({ onSelectTown }) {
 
   return (
     <div className="search-wrapper">
-      <input
-        type="text"
+      <input type="text"
         value={query}
         placeholder={t("searchPlaceholder")}
         onChange={(e) => setQuery(e.target.value)}
@@ -41,8 +40,7 @@ export default function SearchBar({ onSelectTown }) {
       {suggestions.length > 0 && (
         <ul className="search-suggestions">
           {suggestions.map((town) => (
-            <li
-              key={town.id}
+            <li key={town.id}
               className="suggestion-item"
               onClick={() => {
                 setQuery("")

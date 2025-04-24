@@ -10,22 +10,13 @@ export default function Navbar() {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
   const user = JSON.parse(localStorage.getItem("user"))
 
-  const toggleLang = () => {
-    setLang(lang === "en" ? "fr" : "en")
-  }
+  const toggleLang = () => { setLang(lang === "en" ? "fr" : "en") }
 
-  const handleLogoutClick = () => {
-    setShowLogoutConfirm(true)
-  }
+  const handleLogoutClick = () => { setShowLogoutConfirm(true) }
 
-  const handleLogoutConfirm = () => {
-    localStorage.removeItem("user")
-    window.location.reload()
-  }
+  const handleLogoutConfirm = () => { localStorage.removeItem("user"), window.location.reload() }
 
-  const handleLogoutCancel = () => {
-    setShowLogoutConfirm(false)
-  }
+  const handleLogoutCancel = () => { setShowLogoutConfirm(false) }
 
   return (
     <>
