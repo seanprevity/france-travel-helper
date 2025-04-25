@@ -1,0 +1,194 @@
+.image-modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.85);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+   padding: 1rem;
+   animation: fadeIn 0.3s ease-out;
+   margin-top: 70px;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+.image-modal-content {
+   position: relative;
+   max-width: 90vw;
+   max-height: 90vh;
+   display: flex;
+   flex-direction: column;
+   background-color: #1a1a1a;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.image-modal-close {
+   position: fixed;
+   top: 2rem;
+   right: 2rem;
+   background: rgba(0, 0, 0, 0.3);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   z-index: 1001;
+   transition: all 0.2s;
+   margin-top: 50px;
+}
+
+.image-modal-main {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+
+.image-modal-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 70vh;
+   width: 80vw;
+   max-width: 1200px;
+}
+
+.image-modal-img {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: contain;
+   border-radius: 4px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.image-nav-button {
+   position: fixed;
+   /* Changed from absolute to fixed */
+   background: rgba(0, 0, 0, 0.3);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition: all 0.2s;
+   z-index: 1001;
+   /* Ensure it's above other elements */
+   top: 50%;
+   /* Center vertically */
+   transform: translateY(-50%);
+   /* Adjust for perfect centering */
+}
+
+.prev-button {
+   left: 2rem;
+}
+
+.next-button {
+   right: 2rem;
+}
+
+.image-nav-button:hover {
+   background-color: rgba(0, 0, 0, 0.6);
+   transform: translateY(-50%) scale(1.1);
+}
+
+.image-modal-caption {
+   padding: 1.25rem 2rem;
+   background-color: #1a1a1a;
+   color: white;
+   font-size: 1rem;
+   line-height: 1.5;
+   text-align: center;
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.image-modal-counter {
+   padding: 0.75rem;
+   color: #d1d5db;
+   font-size: 0.9rem;
+   text-align: center;
+   background-color: #1a1a1a;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .image-modal-container {
+      height: 50vh;
+   }
+
+   .image-nav-button {
+      width: 40px;
+      height: 40px;
+   }
+
+   .prev-button {
+      left: 1rem;
+   }
+
+   .next-button {
+      right: 1rem;
+   }
+
+   .image-modal-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+   }
+
+   .image-modal-close {
+      width: 40px;
+      height: 40px;
+      top: 1rem;
+      right: 1rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .image-modal-container {
+      height: 40vh;
+      width: 90vw;
+   }
+
+   .image-nav-button {
+      width: 36px;
+      height: 36px;
+   }
+
+   .prev-button {
+      left: 0.5rem;
+   }
+
+   .next-button {
+      right: 0.5rem;
+   }
+
+   .image-modal-close {
+      width: 36px;
+      height: 36px;
+      top: 0.5rem;
+      right: 0.5rem;
+   }
+}

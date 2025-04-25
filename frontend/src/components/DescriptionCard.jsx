@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import { useLanguage } from "../context/LanguageContext"
-import { ChevronLeft, ChevronRight, X, Star } from "lucide-react"
+import { X, Star } from "lucide-react"
 import "../styles/DescriptionCard.css"
+import ImageModal from "./ImageModal"
 import { useNavigate } from "react-router-dom"
 
 export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [], }) {
@@ -13,9 +14,6 @@ export default function DescriptionCard({ town, townCode, department, department
   const [hoverRating, setHoverRating] = useState(0)
   const user = JSON.parse(localStorage.getItem("user"))
   const popupRef = useRef(null)
-  const modalRef = useRef(null)
-  const [escKeyPressed, setEscKeyPressed] = useState(false)
-  const [arrowKeyPressed, setArrowKeyPressed] = useState(null)
   const [showImageModal, setShowImageModal] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [noAttractions, setNoAttractions] = useState(false)
@@ -139,10 +137,6 @@ export default function DescriptionCard({ town, townCode, department, department
     fetchRatings()
   }
 
-  const nextImage = () => { setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1)) }
-
-  const prevImage = () => { setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1)) }
-
   const openImageModal = (index) => {
     setCurrentImageIndex(index)
     setShowImageModal(true)
@@ -224,42 +218,11 @@ export default function DescriptionCard({ town, townCode, department, department
         setShowRatingInput(false)
       }
     }
-
     document.addEventListener("mousedown", handleOutsideClick)
-
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick)
     }
   }, [showRatingInput])
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setEscKeyPressed(true)
-      } else if (e.key === "ArrowRight") {
-        setArrowKeyPressed("ArrowRight")
-      } else if (e.key === "ArrowLeft") {
-        setArrowKeyPressed("ArrowLeft")
-      }
-    }
-    document.addEventListener("keydown", handleKeyDown)
-    return () => document.removeEventListener("keydown", handleKeyDown)
-  }, [])
-
-  useEffect(() => {
-    if (showImageModal) {
-      if (escKeyPressed) {
-        closeImageModal()
-        setEscKeyPressed(false)
-      } else if (arrowKeyPressed === "ArrowRight") {
-        nextImage()
-        setArrowKeyPressed(null)
-      } else if (arrowKeyPressed === "ArrowLeft") {
-        prevImage()
-        setArrowKeyPressed(null)
-      }
-    }
-  }, [escKeyPressed, arrowKeyPressed, showImageModal])
 
   return (
     <div className="description-card">
@@ -388,52 +351,7 @@ export default function DescriptionCard({ town, townCode, department, department
 
       {/* Image Modal */}
       {showImageModal && images.length > 0 && (
-        <div className="image-modal-overlay" onClick={closeImageModal}>
-          <div className="image-modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
-            <button className="image-modal-close" onClick={closeImageModal} aria-label={t("close")}>
-              <X size={20} />
-            </button>
-
-            <div className="image-modal-main">
-              <button
-                className="image-nav-button prev-button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  prevImage()
-                }}
-                aria-label={t("previous")}
-              >
-                <ChevronLeft size={28} />
-              </button>
-
-              <div className="image-modal-container">
-                <img
-                  src={images[currentImageIndex].url || "/placeholder.svg"}
-                  alt={images[currentImageIndex].description || town}
-                  className="image-modal-img"
-                />
-              </div>
-
-              <button
-                className="image-nav-button next-button"
-                onClick={(e) => { e.stopPropagation(), nextImage() }}
-                aria-label={t("next")}
-              >
-                <ChevronRight size={28} />
-              </button>
-            </div>
-
-            {images[currentImageIndex].description && (
-              <div className="image-modal-caption">
-                <p>{images[currentImageIndex].description}</p>
-              </div>
-            )}
-
-            <div className="image-modal-counter">
-              {currentImageIndex + 1} / {images.length}
-            </div>
-          </div>
-        </div>
+        <ImageModal images={images} initialIndex={currentImageIndex} onClose={closeImageModal} />
       )}
     </div>
   )
