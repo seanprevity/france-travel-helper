@@ -29,7 +29,7 @@ export default function Discover() {
     setLoading(true)
     try {
       const res = await fetch(
-        `/api/location?name=${encodeURIComponent(suggestion.name)}&lang=${lang}`
+        `/api/location?name=${encodeURIComponent(suggestion.name)}&lang=${lang}&code=${encodeURIComponent(suggestion.department)}`
       )
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || "Fetch failed")
@@ -65,7 +65,7 @@ export default function Discover() {
         </div>
         <div className="description-container">
           {loading ? (
-            <p className="loading-location">{t("loading")}</p>
+            <div className="loading-location">{t("loading")}</div>
           ) : (
             <DescriptionCard
               town={selectedTown?.name}

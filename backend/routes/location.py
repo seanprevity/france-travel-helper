@@ -10,9 +10,10 @@ location_bp = Blueprint("location", __name__, url_prefix="/api")
 def location_info():
     name = request.args.get("name")
     lang = request.args.get("lang", "en")
+    dept_code = request.args.get("code")
 
     if not name: return jsonify({"error": "Missing 'name' parameter"}), 400
-    town = get_town_by_name(name)
+    town = get_town_by_name(name, dept_code)
     if not town: return jsonify({"error": f"No town named '{name}' found"}), 404
 
     town_code = town["code"]
@@ -43,16 +44,17 @@ def location_info():
     cache_description(town_code, dept_code, lang, description)
     return jsonify({ "description": description, "metadata": metadata, "images": images_list})
     
-def get_town_by_name(town_name):
+def get_town_by_name(town_name, dept_code):
     query = text("""
         SELECT * FROM towns
         WHERE LOWER(name) = LOWER(:name)
+        AND department = :code
         LIMIT 1
     """)
     
     session = Session()
     try:
-        row = session.execute(query, {"name": town_name}).fetchone()
+        row = session.execute(query, {"name": town_name, "code": dept_code}).fetchone()
         return dict(row._mapping) if row else None
     finally:
         Session.remove()

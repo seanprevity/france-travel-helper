@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from sqlalchemy import text
-from extensions import Session  # Import the scoped session
+from extensions import Session 
 
 search_bp = Blueprint("search", __name__, url_prefix="/api")
 
@@ -11,7 +11,7 @@ def search_towns():
         return jsonify([])  # empty query → no suggestions
 
     sql = text("""
-      SELECT id, name, latitude, longitude
+      SELECT id, name, latitude, longitude, department
       FROM towns
       WHERE name ILIKE :prefix
       ORDER BY name
