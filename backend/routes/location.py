@@ -11,53 +11,37 @@ def location_info():
     name = request.args.get("name")
     lang = request.args.get("lang", "en")
 
-    if not name:
-        return jsonify({"error": "Missing 'name' parameter"}), 400
-
+    if not name: return jsonify({"error": "Missing 'name' parameter"}), 400
     town = get_town_by_name(name)
-    if not town:
-        return jsonify({"error": f"No town named '{name}' found"}), 404
+    if not town: return jsonify({"error": f"No town named '{name}' found"}), 404
 
     town_code = town["code"]
     dept_code = town["department"]
-    
     dept = get_department_by_code(dept_code)
     region_code = dept["region_code"]
     region = get_region_by_code(region_code) if dept else {"name": None}
     
-    # fetch images from the wikipedia
-    images_response = fetch_wiki_images(town_name=town["name"], department_name=dept["department_name"])
-    images_list = images_response.get("images", [])
-    
     metadata = {
         **town,
-        "department_name": dept["department_name"],
-        "department_code": dept_code,
-        "region_code": dept["region_code"],
-        "region_name": region["region_name"],
+        "department_name":  dept["department_name"],
+        "department_code":  dept_code,
+        "region_code":      dept["region_code"],
+        "region_name":      region["region_name"],
     }
+    
+    # fetch images 
+    images_response = fetch_wiki_images(town_name=town["name"], department_name=dept["department_name"])
+    images_list = images_response.get("images", [])
 
     # Try cache first
     cached = get_cached_description(town_code, dept_code, lang)
     if cached:
-        current_app.logger.info(f"Cache HIT for {town['name']} ({town_code}-{dept_code}) lang={lang}")
-        return jsonify({
-            "description": cached,
-            "metadata": metadata,
-            "images": images_list,
-            "cached": True
-        })
+        return jsonify({ "description": cached, "metadata": metadata, "images": images_list })
 
     # Generate & Cache description
     description = get_description(name, dept["department_name"], region["region_name"], lang)
     cache_description(town_code, dept_code, lang, description)
-    current_app.logger.info(f"Cache MISS for {town['name']} ({town_code}-{dept_code}) lang={lang} – generated fresh")
-    return jsonify({
-        "description": description,
-        "metadata": metadata,
-        "images": images_list,
-        "cached": False
-    })
+    return jsonify({ "description": description, "metadata": metadata, "images": images_list})
     
 def get_town_by_name(town_name):
     query = text("""

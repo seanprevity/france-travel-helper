@@ -8,39 +8,49 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_description(town_name, department_name, region_name, lang="en"):
     prompt = f"""
-Provide detailed and engaging information about {town_name}, located in the {department_name} department of the {region_name} region of France. Use the following format exactly:
+Provide detailed information about {town_name}, located in the {department_name} department of the {region_name} region of France. Use the following structure exactly:
 
 DESCRIPTION:
-[2-3 sentence overview tailored for travelers — include what makes the town charming, unique, or appealing to visitors.]
+[2-3 sentence overview detailing the town's uniqueness and what makes it intriguing.]
 
 HISTORY:
-[2-3 sentences briefly outlining the town’s historical background or notable past events. Mention any known heritage, ancient settlements, or historical figures if applicable.]
+[2-3 sentences briefly outlining the town’s background and notable past events that define the town.]
 
 ATTRACTIONS:
-1. [Name] – [Short reason to visit or its significance]
-2. [Name] – [Short reason to visit or its significance]
-3. [Name] – [Short reason to visit or its significance]
+[Choose between 0 and 5 attractions, based on how many truly notable sites the town has. Pick parks, scenic areas, castles, etc. anything that the town offers that is unique or interesting.  
+ • Small villages or lesser-known towns: 0-1 key points of interest.  
+ • Mid-sized towns: 2 main attractions.  
+ • Major cities or historically rich locales: up to 5.]
+1. [Name] – [Short description of its significance and location]
+2. [Name] – [Short description of its significance and location]
+(…continue numbering up to the chosen count) 
 """
 
     if lang == "fr":
-        prompt = f"""Fournissez des informations détaillées et attrayantes sur {town_name}, située dans le département {department_name} de la région {region_name} de France. Utilisez exactement le format suivant :
+        prompt = f"""Fournis des informations détaillées sur {town_name}, située dans le département de {department_name}, en région {region_name}, en France. Suis exactement la structure ci-dessous :
 
-DESCRIPTION:  
-[aperçu de 2 à 3 phrases adapté aux voyageurs — incluez ce qui rend la ville charmante, unique ou attrayante pour les visiteurs.]
+DESCRIPTION:
+[Une présentation de 2 à 3 phrases décrivant ce qui rend cette ville unique, attrayante ou intrigante pour les visiteurs.]
 
-HISTORY:  
-[2 à 3 phrases décrivant brièvement le passé historique de la ville ou des événements notables. Mentionnez tout patrimoine, établissements anciens ou personnages historiques le cas échéant.]
+HISTORY:
+[Un résumé en 2 à 3 phrases des origines de la ville, de son histoire marquante ou d’événements notables qui la définissent.]
 
-ATTRACTIONS:  
-1. [Nom] – [Brève raison de la visite ou de son importance]  
-2. [Nom] – [Brève raison de la visite ou de son importance]  
-3. [Nom] – [Brève raison de la visite ou de son importance]
+ATTRACTIONS:
+[Indique entre 0 et 5 attractions selon l’importance réelle de la ville. Choisis uniquement les lieux vraiment remarquables : parcs, châteaux, monuments, paysages naturels, etc.
+• Pour les petits villages ou villes peu connues : 0 à 1 point d’intérêt majeur.
+• Pour les villes moyennes : 2 attractions principales.
+• Pour les grandes villes ou lieux à forte valeur historique : jusqu’à 5 attractions possibles.]
+1. [Nom] – [Brève description de son intérêt et de sa localisation]
+2. [Nom] – [Brève description de son intérêt et de sa localisation]
+(…poursuivre la numérotation jusqu’au nombre d’attractions retenu)
 """
 
     response = openai.chat.completions.create(
         model="gpt-4.1-nano",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7
+        temperature=0.7,
+        top_p=0.9,
+        frequency_penalty=0.1
     )
 
     return response.choices[0].message.content.strip()

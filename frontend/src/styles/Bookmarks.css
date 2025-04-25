@@ -1,7 +1,7 @@
 .bookmarks-page-container {
    min-height: 100vh;
    width: 100%;
-   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.85)), url("/nighttime-paris-2-blur.jpg");
+   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)), url("/nighttime-paris-2-blur.jpg");
    background-size: cover;
    background-position: center;
    background-attachment: fixed;

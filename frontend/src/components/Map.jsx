@@ -86,8 +86,12 @@ export default function Map({ onTownClick, selectedTown }) {
       if (!map || !selectedTown) return;
 
       const { AdvancedMarkerElement } = await window.google.maps.importLibrary("marker");
-      const { latitude: lat, longitude: lng, name } = selectedTown;
-      const pos = { lat, lng };
+      const { latitude: lat, longitude: lng, name, department: department_code, department_name : department_name } = selectedTown;
+
+      const geocodeTown = await fetch(`/api/geocode?town=${name}&department_code=${department_code}&department_name=${department_name}`)
+      if (!geocodeTown.ok) return;
+      const newTown = await geocodeTown.json()
+      const pos = { lat: newTown.latitude, lng: newTown.longitude };
       map.panTo(pos);
       map.setZoom(12);
 
@@ -95,7 +99,7 @@ export default function Map({ onTownClick, selectedTown }) {
       markerRef.current = new AdvancedMarkerElement({
         map,
         position: pos,
-        title: name,
+        title: newTown.name,
       });
     })();
   }, [selectedTown]);
