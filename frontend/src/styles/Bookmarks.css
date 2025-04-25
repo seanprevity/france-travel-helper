@@ -1,7 +1,7 @@
 .bookmarks-page-container {
    min-height: 100vh;
    width: 100%;
-   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), url("/paris-blur-bg.png");
+   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.85)), url("/nighttime-paris-2-blur.jpg");
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
@@ -9,6 +9,7 @@
    display: flex;
    flex-direction: column;
    padding-bottom: 2rem;
+   margin-top: 70px;
  }
  
  .bookmarks-page-container::before {
@@ -26,7 +27,7 @@
    width: 100%;
    margin: 0 auto;
    padding: 1rem 2rem;
-   margin-top: 70px;
+   margin-top: 0px;
  }
  
  .bookmarks-title {
