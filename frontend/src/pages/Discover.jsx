@@ -56,6 +56,10 @@ export default function Discover() {
 
   return (
     <div className="discover-page-container">
+      {/* Decorative elements */}
+      <div className="discover-page-decoration decoration-compass"></div>
+      <div className="discover-page-decoration decoration-map-pin"></div>
+
       <div className="discover-container">
         <div className="search-container">
           <SearchBar onSelectTown={handleSelectTown} />
