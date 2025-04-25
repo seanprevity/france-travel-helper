@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useLoadScript } from '@react-google-maps/api';
+import React, { useEffect, useRef, useMemo } from 'react';
+import { useLoadScript } from '@react-google-maps/api'
 import { useLanguage } from '../context/LanguageContext';
 import "../styles/Map.css";
 
@@ -29,10 +29,12 @@ export default function Map({ onTownClick, selectedTown }) {
   const callbackRef = useRef(onTownClick);
   useEffect(() => { callbackRef.current = onTownClick; }, [onTownClick]);
 
-  const { isLoaded, loadError } = useLoadScript({
+  const loadOptions = useMemo(() => ({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     libraries,
-  });
+  }), []);
+
+  const { isLoaded, loadError } = useLoadScript(loadOptions);
 
   useEffect(() => {
     if (!isLoaded || !mapRef.current) return;
