@@ -80,7 +80,8 @@ export default function DescriptionCard({ town, townCode, department, department
       }
       if (!res.ok) throw new Error(await res.text())
       const data = await res.json()
-      setIsSaved(data.bookmarks.includes(town))
+      const saved = data.bookmarks.some((b) => b.town_name === town && b.department_code === department);
+      setIsSaved(saved);
     } catch (err) {
       console.error("Bookmark fetch failed:", err)
     }
@@ -101,7 +102,7 @@ export default function DescriptionCard({ town, townCode, department, department
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ town_name: town }),
+        body: JSON.stringify({ town_name: town, code: department }),
       })
       if (res.status === 401) {
         navigate('/login')

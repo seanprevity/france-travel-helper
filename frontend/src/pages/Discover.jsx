@@ -13,13 +13,14 @@ export default function Discover() {
   const [loading, setLoading] = useState(false)
   const location = useLocation()
   const incoming = location.state?.townName
+  const incomingCode = location.state?.code;
   const[images, setImages] = useState([])
 
   useEffect(() => {
     if (incoming) {
-      handleSelectTown({ name: incoming })
+      handleSelectTown({ name: incoming, department: incomingCode })
     }
-  }, [incoming])
+  }, [incoming, incomingCode])
 
   // called by SearchBar or map clicks
   const handleSelectTown = async (suggestion) => {
