@@ -9,6 +9,7 @@ from routes.search import search_bp
 from routes.bookmarks import bookmarks_bp
 from routes.ratings import ratings_bp
 from dotenv import load_dotenv
+from datetime import timedelta
 
 load_dotenv()
 
@@ -21,6 +22,7 @@ app.config["JWT_ACCESS_COOKIE_PATH"] = "/"
 app.config["JWT_COOKIE_SECURE"] = False      # True in production (HTTPS only)
 app.config["JWT_COOKIE_SAMESITE"] = "Lax"    # or "Strict"
 app.config["JWT_COOKIE_CSRF_PROTECT"] = False
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=12) 
 jwt = JWTManager(app)
 
 app.register_blueprint(location_bp)

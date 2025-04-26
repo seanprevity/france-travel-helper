@@ -4,7 +4,7 @@
    max-width: 600px;
    z-index: 100;
 }
- 
+
 .search-input-container {
    display: flex;
    align-items: center;
@@ -16,17 +16,17 @@
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
    transition: all 0.3s ease;
 }
- 
+
 .search-input-container.focused {
    border-color: #3b82f6;
    box-shadow: 0 0 0 1.5px rgba(59, 130, 246, 0.2);
 }
- 
+
 .search-icon {
    color: #64748b;
    margin-right: 10px;
 }
- 
+
 .search-input {
    width: 100%;
    padding: 14px 0;
@@ -38,8 +38,8 @@
 .search-input:focus {
    outline: none;
 }
- 
- .clear-button {
+
+.clear-button {
    background: none;
    border: none;
    cursor: pointer;
@@ -50,14 +50,14 @@
    align-items: center;
    justify-content: center;
    transition: all 0.2s;
- }
- 
- .clear-button:hover {
+}
+
+.clear-button:hover {
    background-color: #f1f5f9;
    color: #64748b;
- }
- 
- .search-suggestions {
+}
+
+.search-suggestions {
    position: absolute;
    top: 100%;
    left: 0;
@@ -70,7 +70,7 @@
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
    z-index: 10;
 }
- 
+
 .suggestion-item {
    padding: 0.75rem 1rem;
    cursor: pointer;
@@ -83,4 +83,25 @@
 
 .suggestion-item:not(:last-child) {
    border-bottom: 1px solid #e5e7eb;
+}
+
+.suggestion-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.town-left {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   font-size: 1.3rem;
+   font-weight: 500;
+}
+
+.town-right {
+   font-size: 0.8rem;
+   color: gray;
+   margin-left: 1rem;
+   white-space: nowrap;
 }

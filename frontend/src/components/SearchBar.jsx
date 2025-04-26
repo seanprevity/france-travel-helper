@@ -25,7 +25,7 @@ export default function SearchBar({ onSelectTown }) {
       } catch {
         setSuggestions([])
       }
-    }, 250)
+    }, 200)
 
     return () => clearTimeout(debounce.current)
   }, [query])
@@ -97,8 +97,14 @@ export default function SearchBar({ onSelectTown }) {
               }}
             >
               <div className="suggestion-content">
-                {town.name}
-                {town.department}
+                <div className="town-left">
+                  <span>{town.name}</span>
+                </div>
+                <div className="town-right">
+                  <span className="town-location">
+                    {town.department_name} — {town.region_name}
+                  </span>
+                </div>
               </div>
             </li>
           ))}
