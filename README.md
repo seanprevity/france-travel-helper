@@ -94,9 +94,7 @@ python3 app.py
 
 You need a local PostgreSQL database called `french_travel_db`.
 
-### Option 1: SQL Dump (Recommended)
-
-If you provide a `.sql` dump file:
+### SQL Dump
 
 1. Create the database in psql:
 
@@ -105,7 +103,7 @@ createdb french_travel_db
 ```
 
 
-2. Import the SQL schema and data:
+2. Import the SQL schema and data from the .sql dump:
 
 ```shellscript
 psql french_travel_db < french_travel_dump.sql
