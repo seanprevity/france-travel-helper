@@ -2,10 +2,6 @@ import requests
 from flask import current_app
 import re
 import random
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 def fetch_wiki_images(town_name, department_name, lang="fr", thumb_width=1500, extra=7, max_fetch=100):
     def _gather_for(title_to_use):
@@ -125,31 +121,31 @@ def fetch_wiki_images(town_name, department_name, lang="fr", thumb_width=1500, e
 
 
 # For future updates if I ever want to try to implement it and get it working
-def fetch_image_via_cse(attraction, town_name, department_name, num=1):
-    params = {
-        "q": f"{attraction} {town_name} {department_name}",
-        "cx": os.getenv("CSE_SEARCH_ENGINE_ID"),
-        "key": os.getenv("CSE_API_KEY"),
-        "searchType": "image",
-        "num": num,
-        "safe": "medium"
-    }
-    resp = requests.get("https://www.googleapis.com/customsearch/v1", params=params, timeout=5)
-    items = resp.json().get("items")
-    if not items:
-        current_app.logger.info(f"No CSE images for {attraction} in {town_name}")
-        return []
-    return [item["link"] for item in items]
+# def fetch_image_via_cse(attraction, town_name, department_name, num=1):
+#     params = {
+#         "q": f"{attraction} {town_name} {department_name}",
+#         "cx": os.getenv("CSE_SEARCH_ENGINE_ID"),
+#         "key": os.getenv("CSE_API_KEY"),
+#         "searchType": "image",
+#         "num": num,
+#         "safe": "medium"
+#     }
+#     resp = requests.get("https://www.googleapis.com/customsearch/v1", params=params, timeout=5)
+#     items = resp.json().get("items")
+#     if not items:
+#         current_app.logger.info(f"No CSE images for {attraction} in {town_name}")
+#         return []
+#     return [item["link"] for item in items]
 
-def fetch_attraction_images(attractions, town_name, department_name):
-    results = {}
+# def fetch_attraction_images(attractions, town_name, department_name):
+#     results = {}
 
-    for attr in attractions:
-        # Google CSE
-        cse_urls = fetch_image_via_cse(attr, town_name, department_name, num=3)
-        if cse_urls:
-            results[attr] = [
-                {"url": url, "description": None, "primary": False}
-                for url in cse_urls
-            ]
-    return results
+#     for attr in attractions:
+#         # Google CSE
+#         cse_urls = fetch_image_via_cse(attr, town_name, department_name, num=3)
+#         if cse_urls:
+#             results[attr] = [
+#                 {"url": url, "description": None, "primary": False}
+#                 for url in cse_urls
+#             ]
+#     return results
