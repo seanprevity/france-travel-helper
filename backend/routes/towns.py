@@ -5,6 +5,7 @@ from sqlalchemy import text
 import os
 from dotenv import load_dotenv
 from .location import get_department_by_code
+import unicodedata
 
 load_dotenv()
 
@@ -54,8 +55,26 @@ def find_nearest_town(lat, lng, max_dist=0.5):
     finally:
         Session.remove()
 
+def clean_town_name(name):
+    if not name:
+        return name
+
+    replacements = {
+        "": "œ",
+        "??": "œ",
+        "\u009C": "œ",  # Add unicode escaped variant too
+    }
+
+    for bad, good in replacements.items():
+        name = name.replace(bad, good)
+
+    name = unicodedata.normalize('NFKC', name)
+    return name
+
 def geocode_town(town_name, department_name, dept_code):
-    address = f"{town_name}, {department_name}, France"
+    current_app.logger.info(f"Geocode information for {town_name}: code: {dept_code}")
+    cleaned_town_name = clean_town_name(town_name)
+    address = f"{cleaned_town_name}, {department_name}, France"
     resp = requests.get(
         "https://maps.googleapis.com/maps/api/geocode/json",
         params={

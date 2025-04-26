@@ -3,8 +3,14 @@ from services.openai_service import get_description
 from extensions import Session
 from .images import fetch_wiki_images
 from sqlalchemy import text
+import unicodedata
 
 location_bp = Blueprint("location", __name__, url_prefix="/api")
+
+def normalize_string(s):
+    if not s:
+        return s
+    return unicodedata.normalize('NFKC', s)
 
 @location_bp.route("/location")
 def location_info():
@@ -13,6 +19,7 @@ def location_info():
     dept_code = request.args.get("code")
 
     if not name: return jsonify({"error": "Missing 'name' parameter"}), 400
+    name = normalize_string(name)
     town = get_town_by_name(name, dept_code)
     if not town: return jsonify({"error": f"No town named '{name}' found"}), 404
 

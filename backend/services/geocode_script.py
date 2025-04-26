@@ -25,7 +25,6 @@ def clean_town_name(name):
     name = unicodedata.normalize('NFKC', name)
     return name
 
-
 def fetch_towns_missing_coords(limit=1000):
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor(cursor_factory=RealDictCursor)
