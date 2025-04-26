@@ -450,6 +450,9 @@ COPY public.departments (id, code, capital, region, name) FROM stdin;
 --
 
 COPY public.descriptions (id, town_code, department, language, description) FROM stdin;
+1	281	70	en	DESCRIPTION:  \nGreucourt is a charming rural commune nestled in the picturesque landscapes of the Haute-Saône department in eastern France. Its tranquil setting and traditional architecture make it an intriguing spot for visitors seeking authentic Provençal countryside charm. The village exudes a peaceful ambiance, enriched by its historical roots and natural beauty.\n\nHISTORY:  \nGreucourt has a long-standing history dating back to medieval times, with its origins linked to local farming communities that have sustained its population through centuries. The village has preserved many of its historical structures, reflecting its rural heritage and regional traditions. Notably, it played a modest role in regional agricultural developments during the 19th century.\n\nATTRACTIONS:  \n1. Church of Saint-Pierre – A quaint, centuries-old church located at the heart of the village, featuring traditional architecture and historical significance.  \n2. Surrounding Countryside – Scenic rural landscapes perfect for walking, cycling, and enjoying nature’s tranquility.
+2	342	70	en	DESCRIPTION:\nMercey-sur-Saône is a charming commune nestled along the banks of the Saône River, offering picturesque views and a tranquil rural atmosphere. Its blend of natural beauty and traditional architecture makes it an intriguing spot for visitors seeking authentic Provençal countryside charm.\n\nHISTORY:\nThe town has roots dating back to medieval times, with historical records highlighting its longstanding connection to regional trade and agriculture. Over the centuries, Mercey-sur-Saône has preserved its heritage, reflecting a peaceful history centered around river life and local craftsmanship.\n\nATTRACTIONS:\n1. The Riverside Promenade – A scenic walkway along the Saône River, ideal for leisurely strolls and enjoying views of the water and surrounding landscapes.\n2. The Church of Saint-Pierre – A historic church showcasing traditional architecture and serving as a central landmark in the town.
+3	375	70	en	DESCRIPTION:\nMotey-sur-Saône is a charming commune nestled along the banks of the Saône River in eastern France, offering picturesque views and a tranquil rural atmosphere. Its quaint streets and scenic landscapes make it a peaceful retreat for visitors seeking authentic regional charm.\n\nHISTORY:\nThe village has roots dating back to medieval times, with its history closely tied to the river and local agriculture. Over the centuries, Motey-sur-Saône has maintained its traditional character, reflecting a rich heritage of rural life in the Haute-Saône region.\n\nATTRACTIONS:\n1. The Church of Saint-Martin – A historic church featuring architectural elements from the 18th century, serving as a focal point of the village’s spiritual and cultural life.\n2. Riverside Promenade – A scenic walkway along the Saône River, perfect for leisurely strolls and enjoying views of the water and surrounding countryside.
 \.
 
 
@@ -501,142 +504,141 @@ COPY public.regions (id, code, capital, name) FROM stdin;
 
 COPY public.towns (id, code, article, name, department, latitude, longitude) FROM stdin;
 29998	181	\N	Le Mans	72	47.988678308557	0.200112802311832
-36	039	\N	Béon	01	\N	\N
-54	059	\N	Brénaz	01	\N	\N
-84	091	\N	Châtillon-en-Michaille	01	\N	\N
-90	097	\N	Chavornay	01	\N	\N
-112	119	\N	Corcelles	01	\N	\N
-114	122	\N	Cormaranche-en-Bugey	01	\N	\N
-132	144	\N	Dommartin	01	\N	\N
-142	154	\N	Étrez	01	\N	\N
-157	172	\N	Germagnat	01	\N	\N
-161	176	\N	Grand-Abergement	01	\N	\N
-166	182	\N	Groslée	01	\N	\N
-170	186	\N	Hostias	01	\N	\N
-188	205	\N	Lancrans	01	\N	\N
-200	218	\N	Lochieu	01	\N	\N
-202	221	\N	Lompnieu	01	\N	\N
+36	039	\N	Culoz-Béon	01	45.8549689	5.7499079
+54	059	\N	Arvière-en-Valromey	01	45.947635	5.721818
+84	091	\N	Valserhône	01	46.14356009999999	5.7982559
+90	097	\N	Arvière-en-Valromey	01	45.88248	5.716818
+112	119	\N	Champdor-Corcelles	01	46.0353939	5.574847999999999
+114	122	\N	Plateau d'Hauteville	01	45.9516909	5.612425
+132	144	\N	Bâgé-Dommartin	01	46.337635	4.989048899999999
+142	154	\N	Bresse Vallons	01	46.334427	5.183755
 30797	056	\N	Paris	75	48.8575475	2.3513765
-245	271	\N	Nattages	01	\N	\N
-264	292	\N	Petit-Abergement	01	\N	\N
-272	300	\N	Poizat	01	\N	\N
-284	312	\N	Pressiat	01	\N	\N
-287	316	\N	Pugieu	01	\N	\N
+157	172	\N	Nivigne et Suran	01	46.309774	5.450731999999999
+161	176	\N	Haut-Valromey	01	46.033444	5.674479
+166	182	\N	Groslée-Saint-Benoit	01	45.714085	5.569954999999999
+170	186	\N	Plateau d'Hauteville	01	45.90137199999999	5.535133
+188	205	\N	Valserhône	01	46.124449	5.833782999999999
+200	218	\N	Arvière-en-Valromey	01	45.929905	5.72835
+202	221	\N	Valromey-sur-Séran	01	45.96142400000001	5.659491
+245	271	\N	Parves	01	45.730914	5.763763
+264	292	\N	Haut-Valromey	01	46.031501	5.664935
+272	300	\N	Le Poizat-Lalleyriat	01	46.1402112	5.677445899999999
+284	312	\N	Val-Revermont	01	46.32367199999999	5.385257999999999
+287	316	\N	Chazey-Bons	01	45.820422	5.649867
 36315	045	\N	Les Lilas	93	48.881935	2.419452
 14645	241	\N	Savigné-sur-Lathan	37	47.444617	0.320189
-308	340	\N	Saint-Bois	01	\N	\N
-309	341	\N	Saint-Champ	01	\N	\N
-374	409	\N	Songieu	01	\N	\N
-378	413	\N	Surjoux	01	\N	\N
-379	414	\N	Sutrieu	01	\N	\N
-382	417	\N	Thézillieu	01	\N	\N
-405	442	\N	Vieu	01	\N	\N
-445	026	\N	Artonges	02	\N	\N
+308	340	\N	Arboys en Bugey	01	45.701377	5.640982
+309	341	\N	Magnieu	01	45.7746489	5.738138
+374	409	\N	Haut-Valromey	01	45.973624	5.702604
+378	413	\N	Surjoux-Lhopital	01	46.025224	5.802503
+379	414	\N	Valromey-sur-Séran	01	45.94908	5.657282899999999
+382	417	\N	Plateau d'Hauteville	01	45.89344	5.596566999999999
+405	442	\N	Valromey-sur-Séran	01	45.897787	5.682823
 36327	062	\N	Le Raincy	93	48.897386	2.5231119
 28532	123	\N	Lyon	69	45.764043	4.835659
 36305	013	\N	Le Bourget	93	48.936752	2.425377
-495	077	\N	Berzy-le-Sec	02	\N	\N
-563	147	\N	Celle-sous-Montmirail	02	\N	\N
-577	161	\N	Chapelle-Monthodon	02	\N	\N
+445	026	\N	Dhuys et Morin-en-Brie	02	48.929147	3.552596
+495	077	\N	Bernoy-le-Château	02	49.331154	3.3051149
+563	147	\N	Dhuys et Morin-en-Brie	02	48.861669	3.465326
+577	161	\N	Vallées en Champagne	02	49.023356	3.635438
 20480	097	\N	Évron	53	48.1549249	-0.3990565
 20496	113	\N	Hambers	53	48.255088	-0.417555
-713	301	\N	Faucoucourt	02	\N	\N
-736	325	\N	Fontenelle-en-Brie	02	\N	\N
+713	301	\N	Anizy-le-Grand	02	49.53476999999999	3.464848
+736	325	\N	Dhuys et Morin-en-Brie	02	48.91931899999999	3.478528
 20499	116	\N	Le Horps	53	48.39734	-0.461128
-755	344	\N	Gernicourt	02	\N	\N
-759	348	\N	Glennes	02	\N	\N
-843	434	\N	Lizy	02	\N	\N
-882	475	\N	Menneville	02	\N	\N
-886	479	\N	Merval	02	\N	\N
+755	344	\N	Cormicy	02	49.399688	3.87332
+759	348	\N	Les Septvallons	02	49.35693699999999	3.710443
+843	434	\N	Anizy-le-Grand	02	49.513779	3.482814
+882	475	\N	Villeneuve-sur-Aisne	02	49.41905	4.007741
+886	479	\N	Les Septvallons	02	49.350088	3.695821
 20441	055	\N	Chantrigné	53	48.4164389	-0.563561
-1004	597	\N	Perles	02	\N	\N
+1004	597	\N	Les Septvallons	02	49.326656	3.655378
 19288	597	\N	Tirepied-sur-Sée	50	48.7223045	-1.2607813
-1050	646	\N	Révillon	02	\N	\N
-1073	669	\N	Saint-Agnan	02	\N	\N
-1098	695	\N	Saint-Thibaut	02	\N	\N
-1135	733	\N	Suzy	02	\N	\N
-1173	771	\N	Vauxcéré	02	\N	\N
+1050	646	\N	Les Septvallons	02	49.366815	3.699993
+1073	669	\N	Vallées en Champagne	02	49.020971	3.589324299999999
+1098	695	\N	Bazoches-et-Saint-Thibaut	02	49.299542	3.616048
+1135	733	\N	Cessières-Suzy	02	49.550557	3.467181
+1173	771	\N	Les Septvallons	02	49.340716	3.636198
 19319	628	\N	Vernix	50	48.716029	-1.225366
-1213	811	\N	Villers-en-Prayères	02	\N	\N
+1213	811	\N	Les Septvallons	02	49.3778379	3.676109
 19173	472	\N	Saint-Georges-de-Livoye	50	48.735918	-1.218444
-1358	123	\N	Givarlais	03	\N	\N
-1388	153	\N	Louroux-Hodement	03	\N	\N
+1358	123	\N	Haut-Bocage	03	46.459151	2.651344
+1388	153	\N	Haut-Bocage	03	46.46182599999999	2.715312
 19086	379	\N	Notre-Dame-de-Livoye	50	48.743398	-1.205259
-1552	318	\N	Vitray	03	\N	\N
+1552	318	\N	Meaulne-Vitray	03	46.610556	2.659233
 21841	098	\N	Lanester	56	47.76349399999999	-3.347354
-1634	100	\N	Larche	04	\N	\N
-1718	198	\N	Saint-Vincent-les-Forts	04	\N	\N
-1757	002	\N	Agnières-en-Dévoluy	05	\N	\N
-1760	005	\N	Antonaves	05	\N	\N
+1634	100	\N	Val-d'Oronaye	04	44.451195	6.846325999999999
+1718	198	\N	Ubaye-Serre-Ponçon	04	44.445049	6.373001899999999
+1757	002	\N	Dévoluy	05	44.693849	5.881387999999999
+1760	005	\N	Val Buëch-Méouge	05	44.265871	5.803699
 31818	284	\N	Meaux	77	48.9562018	2.8884657
-1774	020	\N	Bénévent-et-Charbillac	05	\N	\N
 629	214	\N	Contescourt	02	49.79327900000001	3.2314219
-1787	034	\N	Châteauneuf-de-Chabre	05	\N	\N
-1794	042	\N	Cluse	05	\N	\N
-1795	043	\N	Costes	05	\N	\N
-1819	067	\N	Infournas	05	\N	\N
-1821	069	\N	Lagrand	05	\N	\N
-1839	088	\N	Montmorin	05	\N	\N
-1870	120	\N	Ristolas	05	\N	\N
-1886	138	\N	Saint-Disdier	05	\N	\N
-1889	141	\N	Saint-Eusèbe-en-Champsaur	05	\N	\N
-1891	143	\N	Saint-Genis	05	\N	\N
-1898	150	\N	Sainte-Marie	05	\N	\N
+1774	020	\N	Saint-Bonnet-en-Champsaur	05	44.7027831	6.0838065
+1787	034	\N	Val Buëch-Méouge	05	44.2815036	5.7826597
+1794	042	\N	Dévoluy	05	44.639738	5.848652
+1795	043	\N	Seine-Saint-Denis	05	48.9137455	2.4845729
+1819	067	\N	Saint-Bonnet-en-Champsaur	05	44.714894	6.093684
+1821	069	\N	Garde-Colombe	05	44.341235	5.755859
+1839	088	\N	Valdoule	05	44.450799	5.540858
+1870	120	\N	Abriès-Ristolas	05	44.7739339	6.955228
+1886	138	\N	Dévoluy	05	44.735762	5.894703
+1889	141	\N	Aubessagne	05	44.724272	6.027513
+1891	143	\N	Garde-Colombe	05	44.378344	5.766895
+1898	150	\N	Valdoule	05	44.466316	5.475458000000001
 770	359	\N	Grugies	02	49.813879	3.2639649
-1923	175	\N	Vallouise	05	\N	\N
+1923	175	\N	Vallouise-Pelvoux	05	44.846704	6.488417999999999
 27715	221	\N	Ingolsheim	67	48.973766	7.938212
-2111	016	\N	Asperjoc	07	\N	\N
+2111	016	\N	Vallées-d'Antraigues-Asperjoc	07	44.6949971	4.347847499999999
 22444	463	\N	Metz	57	49.11786009999999	6.1760223
-2225	135	\N	Laval-d'Aurelle	07	\N	\N
-2339	252	\N	Saint-Julien-Boutières	07	\N	\N
-2343	256	\N	Saint-Julien-Labrousse	07	\N	\N
+2225	135	\N	Saint-Laurent-les-Bains-Laval-d'Aurelle	07	44.565319	3.959968
+2339	252	\N	Saint-Julien-d'Intres	07	44.9741659	4.351942
+2343	256	\N	Belsentes	07	44.918645	4.507253
 31142	351	\N	Le Havre	76	49.4953112	0.1011193
 19107	402	\N	Les Pieux	50	49.5129643	-1.8090793
 19295	604	\N	Tréauville	50	49.53131699999999	-1.811418
 16290	200	\N	Sainte-Anne	41	47.756791	1.080619
 16131	037	\N	La Chapelle-Enchérie	41	47.82514500000001	1.202915
-2440	007	\N	Alleux	08	\N	\N
-2442	009	\N	Amblimont	08	\N	\N
-2474	042	\N	Balaives-et-Butz	08	\N	\N
-2500	072	\N	Bosseval-et-Briancourt	08	\N	\N
+2440	007	\N	Charleville-Mézières	08	49.7527521	4.731452099999999
+2442	009	\N	Mouzon	08	49.628983	5.062657
+2474	042	\N	Flize	08	49.673885	4.733995
+2500	072	\N	Vrigne-aux-Bois	08	49.754444	4.874975
 18906	184	\N	Flamanville	50	49.5321285	-1.8656799
-2507	079	\N	Boutancourt	08	\N	\N
 18774	041	\N	La Hague	50	49.6639603	-1.8485699
 19089	382	\N	Nouainville	50	49.6239444	-1.6847673
 16358	269	\N	Vendôme	41	47.7977986	1.0596453
-2538	114	\N	Chéhéry	08	\N	\N
-2573	152	\N	Élan	08	\N	\N
+2507	079	\N	Flize	08	49.685137	4.772094
+2538	114	\N	Chémery-Chéhéry	08	49.6426695	4.8737498
+2573	152	\N	Ardennes	08	49.7624642	4.6285053
 16207	115	\N	Lignières	41	47.863993	1.183865
-2671	261	\N	Louvergny	08	\N	\N
-2675	267	\N	Mairy	08	\N	\N
-2698	294	\N	Moncelle	08	\N	\N
-2771	371	\N	Rubécourt-et-Lamécourt	08	\N	\N
+2671	261	\N	Bairon et ses environs	08	49.55186399999999	4.739434
+2675	267	\N	Charleville-Mézières	08	49.7527521	4.731452099999999
+2698	294	\N	Charleville-Mézières	08	49.7527521	4.731452099999999
+2771	371	\N	Bazeilles	08	49.6901	5.021922
 10916	039	\N	Concarneau	29	47.872834	-3.920734
 7955	321	\N	Saint-Nicolas-du-Pélem	22	48.314561	-3.163941
-2839	441	\N	Termes	08	\N	\N
-2840	443	\N	Terron-sur-Aisne	08	\N	\N
-2870	475	\N	Villers-Cernay	08	\N	\N
-2888	493	\N	Vrizy	08	\N	\N
-2924	028	\N	Aulos	09	\N	\N
+2839	441	\N	Charleville-Mézières	08	49.7527521	4.731452099999999
+2840	443	\N	Vouziers	08	49.452716	4.694932
+2870	475	\N	Bazeilles	08	49.716869	5.031536000000001
+2888	493	\N	Vouziers	08	49.425992	4.676798
+2924	028	\N	Savoie	09	45.4932045	6.472399999999999
 7776	136	\N	Loudéac	22	48.176274	-2.752021
 1420	185	\N	Montluçon	03	46.3415466	2.6019912
-3029	135	\N	Goulier	09	\N	\N
+3029	135	\N	Val-de-Sos	09	42.756804	1.5024869
 1451	217	\N	Saint-Angel	03	46.35727500000001	2.697613
 1456	222	\N	Saint-Caprais	03	46.550704	2.737279
-3146	255	\N	Saint-Amans	09	\N	\N
-3176	286	\N	Sem	09	\N	\N
-3191	302	\N	Suc-et-Sentenac	09	\N	\N
-3206	317	\N	Uchentein	09	\N	\N
+3146	255	\N	Bézac	09	43.1568344	1.5471255
+3176	286	\N	Val-de-Sos	09	42.768346	1.518729
+3191	302	\N	Val-de-Sos	09	42.8058455	1.4531355
+3206	317	\N	Bordes-Uchentein	09	42.887443	0.999683
 1944	012	\N	Beausoleil	06	43.7410119	7.419955400000001
 9939	144	\N	Champigny-la-Futelaye	27	48.865153	1.300822
 10048	256	\N	La Forêt-du-Parc	27	48.9287244	1.2424676
-3500	277	\N	Palis	10	\N	\N
+3500	277	\N	Aix-Villemaur-Pâlis	10	48.28816699999999	3.70814
 24662	275	\N	Le Merlerault	61	48.6999	0.283635
-3632	415	\N	Villemaur-sur-Vanne	10	\N	\N
+3632	415	\N	Aix-Villemaur-Pâlis	10	48.257182	3.727714
 17202	010	\N	Ascoux	45	48.127665	2.252154
-3712	050	\N	Brenac	11	\N	\N
-3759	097	\N	Conilhac-de-la-Montagne	11	\N	\N
-3833	171	\N	Gueytes-et-Labastide	11	\N	\N
+3712	050	\N	Quillan	11	42.89118	2.15415
+3759	097	\N	Roquetaillade-et-Conilhac	11	42.979778	2.194552
 18416	045	\N	La Breille-les-Pins	49	47.3411615	0.0759292
 14463	055	\N	Channay-sur-Lathan	37	47.480053	0.2646136
 35258	270	\N	Liffol-le-Grand	88	48.316803	5.581518
@@ -646,1839 +648,1840 @@ COPY public.towns (id, code, article, name, department, latitude, longitude) FRO
 7388	454	\N	Nicey	21	47.862629	4.314611
 16374	285	\N	Villeny	41	47.623375	1.755004
 36354	037	\N	Gentilly	94	48.8138999	2.344688
-3959	298	\N	Pradelles-en-Val	11	\N	\N
+3833	171	\N	Val-de-Lambronne	11	43.0748442	2.002836
+3959	298	\N	Val-de-Dagne	11	43.145584	2.51406
 18485	114	\N	Courléon	49	47.389929	0.142725
 14520	112	\N	Gizeux	37	47.392582	0.195967
-3990	329	\N	Rouvenac	11	\N	\N
 35701	206	\N	Joigny	89	47.981432	3.398961
 17489	307	\N	La Selle-sur-le-Bied	45	48.063258	2.894261
 7245	309	\N	Griselles	21	47.867073	4.353482
 16386	297	\N	Yvoy-le-Marron	41	47.6322713	1.8536637
-4105	005	\N	Alpuech	12	\N	\N
-4114	014	\N	Aurelle-Verlac	12	\N	\N
-4120	020	\N	Balsac	12	\N	\N
+3990	329	\N	Val-du-Faby	11	42.93762299999999	2.146879
+4105	005	\N	Argences-en-Aubrac	12	44.7628116	2.8479468
+4114	014	\N	Saint Geniez d'Olt et d'Aubrac	12	44.538425	3.0275802
+4120	020	\N	Druelle Balsac	12	44.402442	2.443968
 14675	271	\N	Villaines-les-Rochers	37	47.218976	0.497731
 8564	300	\N	Nabirat	24	44.752984	1.29786
-4140	040	\N	Buzeins	12	\N	\N
 36671	11	\N	Saint-Denis	974	-20.8784675	55.4484856
-4181	081	\N	Coussergues	12	\N	\N
-4187	087	\N	Cruéjouls	12	\N	\N
-4212	112	\N	Graissac	12	\N	\N
-4214	114	\N	Grand-Vabre	12	\N	\N
-4217	117	\N	Lacalm	12	\N	\N
-4223	123	\N	Lapanouse	12	\N	\N
-4226	126	\N	Lavernhe	12	\N	\N
-4272	173	\N	Noailhac	12	\N	\N
+4140	040	\N	Sévérac-d'Aveyron	12	44.3732	2.971327
+4181	081	\N	Palmas d'Aveyron	12	44.413427	2.877042
+4187	087	\N	Palmas d'Aveyron	12	44.44594300000001	2.856778
+4212	112	\N	Argences-en-Aubrac	12	44.7641909	2.779032
+4214	114	\N	Conques-en-Rouergue	12	44.629347	2.3581979
+4217	117	\N	Argences-en-Aubrac	12	44.772803	2.8827029
+4223	123	\N	Sévérac-d'Aveyron	12	44.33542300000001	3.030504
+4226	126	\N	Sévérac-d'Aveyron	12	44.309423	3.003384
+4272	173	\N	Conques-en-Rouergue	12	44.566109	2.374943
 14593	186	\N	Pont-de-Ruan	37	47.261342	0.5751419999999999
 36326	061	\N	Le Pré-Saint-Gervais	93	48.885063	2.40557
 17792	264	\N	Saint-Denis-Catus	46	44.56427	1.392612
-4295	196	\N	Recoules-Prévinquières	12	\N	\N
-4317	218	\N	Saint-Cyprien-sur-Dourdou	12	\N	\N
-4344	245	\N	Saint-Salvadou	12	\N	\N
-4370	271	\N	Sévérac-l'Église	12	\N	\N
-4378	279	\N	Terrisse	12	\N	\N
-4384	285	\N	Vabre-Tizac	12	\N	\N
-4402	304	\N	Vitrac-en-Viadène	12	\N	\N
+4295	196	\N	Sévérac-d'Aveyron	12	44.3415899	2.97146
+4317	218	\N	Conques-en-Rouergue	12	44.546638	2.410066
+4344	245	\N	Le Bas Ségala	12	44.28031600000001	2.101165
+4370	271	\N	Laissac-Sévérac l'Église	12	44.362405	2.846292
+4378	279	\N	Argences-en-Aubrac	12	44.7544929	2.818073
+4384	285	\N	Le Bas Ségala	12	44.270142	2.1501389
+4402	304	\N	Argences-en-Aubrac	12	44.794765	2.833527
 29435	190	\N	Épinac	71	46.991343	4.513434999999999
-4525	002	\N	Acqueville	14	\N	\N
-4527	004	\N	Aignerville	14	\N	\N
-4531	008	\N	Amblie	14	\N	\N
-4533	011	\N	Anctoville	14	\N	\N
-4535	013	\N	Angoville	14	\N	\N
-4548	028	\N	Auquainville	14	\N	\N
-4549	029	\N	Autels-Saint-Bazile	14	\N	\N
-4551	031	\N	Authieux-Papion	14	\N	\N
+4525	002	\N	Cesny-les-Sources	14	48.971723	-0.3664259
+4527	004	\N	Formigny La Bataille	14	49.32008099999999	-0.9205059999999999
+4531	008	\N	Ponts sur Seulles	14	49.289143	-0.490348
+4533	011	\N	Aurseulles	14	49.10459700000001	-0.706418
+4535	013	\N	Cesny-les-Sources	14	48.944536	-0.377715
+4548	028	\N	Livarot-Pays-d'Auge	14	49.057989	0.239318
+4549	029	\N	Livarot-Pays-d'Auge	14	48.9479534	0.09916169999999999
+4551	031	\N	Mézidon Vallée d'Auge	14	49.065395	0.053839
 10716	254	\N	Mittainvilliers-Vérigny	28	48.4986743	1.3100863
-4570	052	\N	Beaulieu	14	\N	\N
-4574	056	\N	Bauquay	14	\N	\N
-4576	058	\N	Bellou	14	\N	\N
-4583	065	\N	Bernières-le-Patry	14	\N	\N
-4588	073	\N	Bigne	14	\N	\N
-4589	074	\N	Billy	14	\N	\N
-4590	075	\N	Bissières	14	\N	\N
-4596	081	\N	Boissey	14	\N	\N
-4612	099	\N	Bretteville-sur-Dives	14	\N	\N
-4618	105	\N	Brévière	14	\N	\N
-4621	109	\N	Brouay	14	\N	\N
-4624	113	\N	Burcy	14	\N	\N
-4625	115	\N	Bures-les-Monts	14	\N	\N
-4638	128	\N	Campandré-Valcongrain	14	\N	\N
-4639	129	\N	Campeaux	14	\N	\N
-4648	139	\N	Carville	14	\N	\N
-4651	142	\N	Castilly	14	\N	\N
-4653	144	\N	Caumont-sur-Orne	14	\N	\N
-4657	148	\N	Cerqueux	14	\N	\N
-4660	151	\N	Champ-du-Boult	14	\N	\N
-4661	152	\N	Chapelle-Engerbold	14	\N	\N
-4662	153	\N	Chapelle-Haute-Grue	14	\N	\N
-4663	154	\N	Chapelle-Yvon	14	\N	\N
-4664	155	\N	Cheffreville-Tonnencourt	14	\N	\N
-4665	156	\N	Chênedollé	14	\N	\N
-4666	157	\N	Cheux	14	\N	\N
-4667	158	\N	Chicheboville	14	\N	\N
-4673	164	\N	Clinchamps-sur-Orne	14	\N	\N
-4679	170	\N	Colomby-sur-Thaon	14	\N	\N
-4685	176	\N	Conteville	14	\N	\N
-4687	178	\N	Corbon	14	\N	\N
-4694	185	\N	Coudray-Rabut	14	\N	\N
-4695	186	\N	Coulombs	14	\N	\N
-4696	187	\N	Coulonces	14	\N	\N
-4697	188	\N	Coulvain	14	\N	\N
-4698	189	\N	Coupesarte	14	\N	\N
-4701	192	\N	Courson	14	\N	\N
-4709	201	\N	Crèvecur-en-Auge	14	\N	\N
+4570	052	\N	Souleuvre en Bocage	14	48.910112	-0.8181849999999999
+4574	056	\N	Les Monts d'Aunay	14	49.031858	-0.6182010000000001
+4576	058	\N	Livarot-Pays-d'Auge	14	48.982809	0.226005
+4583	065	\N	Valdallière	14	48.816587	-0.737394
+4588	073	\N	Seulline	14	49.012569	-0.723478
+4589	074	\N	Valambray	14	49.089175	-0.196552
+4590	075	\N	Méry-Bissières-en-Auge	14	49.1134569	-0.092473
+4596	081	\N	Saint-Pierre-en-Auge	14	49.017944	0.045233
+4612	099	\N	Saint-Pierre-en-Auge	14	49.0376831	-0.0204481
+4618	105	\N	Val-de-Vie	14	48.9730777	0.1691265
+4621	109	\N	Thue et Mue	14	49.2100235	-0.5107633
+4624	113	\N	Valdallière	14	48.868162	-0.8025009999999999
+4625	115	\N	Souleuvre en Bocage	14	48.951498	-0.9690110999999999
+4638	128	\N	Les Monts d'Aunay	14	48.976687	-0.586087
+4639	129	\N	Souleuvre en Bocage	14	48.9520849	-0.9314989999999999
+4648	139	\N	Souleuvre en Bocage	14	48.92972	-0.8583379999999999
+4651	142	\N	Isigny-sur-Mer	14	49.27464260000001	-1.0133429
+4653	144	\N	Le Hom	14	48.956769	-0.482202
+4657	148	\N	Livarot-Pays-d'Auge	14	48.9939899	0.363032
+4660	151	\N	Noues de Sienne	14	48.793115	-1.006828
+4661	152	\N	Condé-en-Normandie	14	48.89227	-0.6068669999999999
+4662	153	\N	Val-de-Vie	14	48.966593	0.147351
+4663	154	\N	Valorbiquet	14	49.065625	0.335601
+4664	155	\N	Livarot-Pays-d'Auge	14	49.0259378	0.231464
+4665	156	\N	Valdallière	14	48.854964	-0.760374
+4666	157	\N	Thue et Mue	14	49.165555	-0.52582
+4667	158	\N	Moult-Chicheboville	14	49.105367	-0.217216
+4673	164	\N	Laize-Clinchamps	14	49.080002	-0.40106
+4679	170	\N	Colomby-Anguerny	14	49.265332	-0.410833
+4685	176	\N	Valambray	14	49.089338	-0.236914
+4687	178	\N	Notre-Dame-d'Estrées-Corbon	14	49.1448914	-0.0296624
+4694	185	\N	Pont-l'Évêque	14	49.29921539999999	0.1792466
+4695	186	\N	Moulins en Bessin	14	49.25204	-0.5623739999999999
+4696	187	\N	Vire-Normandie	14	48.872476	-0.9139459999999999
+4697	188	\N	Seulline	14	49.047595	-0.726398
+4698	189	\N	Mézidon Vallée d'Auge	14	49.058682	0.108701
+4701	192	\N	Noues de Sienne	14	48.85395399999999	-1.080931
+4709	201	\N	Mézidon Vallée d'Auge	14	49.117783	0.017762
 35882	399	\N	Soucy	89	48.24928	3.325656
-4716	208	\N	Croissanville	14	\N	\N
-4718	210	\N	Croupte	14	\N	\N
-4720	212	\N	Cully	14	\N	\N
-4721	213	\N	Curcy-sur-Orne	14	\N	\N
-4725	217	\N	Dampierre	14	\N	\N
-4727	219	\N	Danvou-la-Ferrière	14	\N	\N
-4730	222	\N	Désert	14	\N	\N
-4741	235	\N	Écrammeville	14	\N	\N
-4758	253	\N	Estry	14	\N	\N
-4760	255	\N	Étouvy	14	\N	\N
-4764	259	\N	Familly	14	\N	\N
-4767	264	\N	Ferrière-Harang	14	\N	\N
-4768	265	\N	Fervaques	14	\N	\N
-4770	268	\N	Fierville-Bray	14	\N	\N
-4781	279	\N	Fontenermont	14	\N	\N
-4794	292	\N	Friardel	14	\N	\N
-4796	294	\N	Garcelles-Secqueville	14	\N	\N
-4797	296	\N	Gast	14	\N	\N
-4808	307	\N	Goupillières	14	\N	\N
-4814	313	\N	Grandchamp-le-Château	14	\N	\N
-4816	317	\N	Graverie	14	\N	\N
-4821	324	\N	Hamars	14	\N	\N
-4827	330	\N	Heurtevent	14	\N	\N
-4828	331	\N	Hiéville	14	\N	\N
-4836	339	\N	Hubert-Folie	14	\N	\N
-4846	350	\N	Lande-sur-Drôme	14	\N	\N
-4851	356	\N	Lasson	14	\N	\N
-4854	359	\N	Lécaude	14	\N	\N
-4856	361	\N	Lénault	14	\N	\N
+4716	208	\N	Mézidon Vallée d'Auge	14	49.12043999999999	-0.101883
+4718	210	\N	Livarot-Pays-d'Auge	14	49.0258433	0.2746601
+4720	212	\N	Moulins en Bessin	14	49.250441	-0.534639
+4721	213	\N	Le Hom	14	49.008436	-0.518278
+4725	217	\N	Val de Drôme	14	49.042023	-0.870568
+4727	219	\N	Les Monts d'Aunay	14	48.954263	-0.672038
+4730	222	\N	Valdallière	14	48.9040899	-0.8108599999999999
+4741	235	\N	Formigny La Bataille	14	49.32317	-0.944444
+4758	253	\N	Valdallière	14	48.897516	-0.7392109
+4760	255	\N	Souleuvre en Bocage	14	48.893875	-0.890093
+4764	259	\N	Livarot-Pays-d'Auge	14	48.966567	0.356132
+4767	264	\N	Souleuvre en Bocage	14	48.97475	-0.887545
+4768	265	\N	Livarot-Pays-d'Auge	14	49.0423339	0.255051
+4770	268	\N	Valambray	14	49.0664223	-0.1777804
+4781	279	\N	Noues de Sienne	14	48.823908	-1.104279
+4794	292	\N	La Vespière-Friardel	14	49.000577	0.388138
+4796	294	\N	Le Castelet	14	49.097809	-0.290143
+4797	296	\N	Noues de Sienne	14	48.79566699999999	-1.073115
+4808	307	\N	Montillières-sur-Orne	14	49.032727	-0.480619
+4814	313	\N	Mézidon Vallée d'Auge	14	49.07806799999999	0.072668
+4816	317	\N	Souleuvre en Bocage	14	48.89253	-0.882644
+4821	324	\N	Le Hom	14	48.99853599999999	-0.5462739999999999
+4827	330	\N	Livarot-Pays-d'Auge	14	48.9832119	0.1315336
+4828	331	\N	Saint-Pierre-en-Auge	14	49.024356	-0.01114
+4836	339	\N	Castine-en-Plaine	14	49.1285049	-0.315368
+4846	350	\N	Val de Drôme	14	49.068938	-0.868942
+4851	356	\N	Rots	14	49.2338569	-0.4639734
+4854	359	\N	Mézidon Vallée d'Auge	14	49.1035169	0.07552299999999999
+4856	361	\N	Condé-en-Normandie	14	48.931326	-0.6291129999999999
 6515	151	\N	Montigny	18	47.238887	2.680923
-4866	372	\N	Livry	14	\N	\N
-4867	373	\N	Locheur	14	\N	\N
-4870	376	\N	Longraye	14	\N	\N
-4876	382	\N	Louvières	14	\N	\N
-4880	386	\N	Magny-la-Campagne	14	\N	\N
-4881	387	\N	Magny-le-Freule	14	\N	\N
-4882	388	\N	Maisoncelles-la-Jourdan	14	\N	\N
-4888	395	\N	Malloué	14	\N	\N
-4906	413	\N	Mesnil-Auzouf	14	\N	\N
-4907	414	\N	Mesnil-Bacley	14	\N	\N
-4908	415	\N	Mesnil-Benoist	14	\N	\N
-4909	416	\N	Mesnil-Caussois	14	\N	\N
-4910	417	\N	Mesnil-Clinchamps	14	\N	\N
-4911	418	\N	Mesnil-Durand	14	\N	\N
-4913	420	\N	Mesnil-Germain	14	\N	\N
-4915	422	\N	Mesnil-Mauger	14	\N	\N
-4916	423	\N	Mesnil-Patry	14	\N	\N
-4921	429	\N	Meulles	14	\N	\N
-4924	432	\N	Missy	14	\N	\N
-4925	433	\N	Mittois	14	\N	\N
-4931	440	\N	Montamy	14	\N	\N
-4932	441	\N	Mont-Bertrand	14	\N	\N
-4933	442	\N	Montchamp	14	\N	\N
-4934	443	\N	Montchauvet	14	\N	\N
-4935	444	\N	Monteille	14	\N	\N
-4940	450	\N	Montviette	14	\N	\N
-4948	459	\N	Moutiers-Hubert	14	\N	\N
-4951	462	\N	Neuilly-la-Forêt	14	\N	\N
-4957	471	\N	Notre-Dame-de-Courson	14	\N	\N
-4962	477	\N	Ondefontaine	14	\N	\N
-4965	481	\N	Oubeaux	14	\N	\N
-4971	489	\N	Ouville-la-Bien-Tournée	14	\N	\N
-4974	493	\N	Percy-en-Auge	14	\N	\N
-4984	503	\N	Pierres	14	\N	\N
-4986	505	\N	Placy	14	\N	\N
-4988	508	\N	Plessis-Grimoult	14	\N	\N
-4993	513	\N	Pont-Farcy	14	\N	\N
-4997	517	\N	Poussy-la-Campagne	14	\N	\N
-4998	518	\N	Préaux-Saint-Sébastien	14	\N	\N
-5001	521	\N	Presles	14	\N	\N
-5003	523	\N	Proussy	14	\N	\N
-5005	525	\N	Putot-en-Bessin	14	\N	\N
+4866	372	\N	Caumont-sur-Aure	14	49.1088189	-0.765729
+4867	373	\N	Val d'Arry	14	49.103783	-0.552821
+4870	376	\N	Aurseulles	14	49.156293	-0.698587
+4876	382	\N	Formigny La Bataille	14	49.36401	-0.919304
+4880	386	\N	Mézidon Vallée d'Auge	14	49.0499409	-0.100988
+4881	387	\N	Mézidon Vallée d'Auge	14	49.099678	-0.068824
+4882	388	\N	Vire-Normandie	14	48.8008219	-0.851068
+4888	395	\N	Souleuvre en Bocage	14	48.94532419999999	-0.9537566999999999
+4906	413	\N	Dialan sur Chaîne	14	48.9801689	-0.7524069999999999
+4907	414	\N	Livarot-Pays-d'Auge	14	48.9958299	0.1235242
+4908	415	\N	Noues de Sienne	14	48.867301	-0.9844269999999998
+4909	416	\N	Noues de Sienne	14	48.854268	-1.016117
+4910	417	\N	Noues de Sienne	14	48.852009	-0.9908770000000001
+4911	418	\N	Livarot-Pays-d'Auge	14	49.04411400000001	0.144433
+4913	420	\N	Livarot-Pays-d'Auge	14	49.042326	0.190551
+4915	422	\N	Mézidon Vallée d'Auge	14	49.087016	0.015558
+4916	423	\N	Thue et Mue	14	49.19494299999999	-0.545069
+4921	429	\N	Livarot-Pays-d'Auge	14	48.97600800000001	0.3299599
+4924	432	\N	Val d'Arry	14	49.12133499999999	-0.5509419999999999
+4925	433	\N	Saint-Pierre-en-Auge	14	49.009353	0.023953
+4931	440	\N	Souleuvre en Bocage	14	48.9657041	-0.7537412
+4932	441	\N	Souleuvre en Bocage	14	48.966553	-0.9164720000000001
+4933	442	\N	Valdallière	14	48.92153099999999	-0.765886
+4934	443	\N	Souleuvre en Bocage	14	48.942814	-0.737629
+4935	444	\N	Mézidon Vallée d'Auge	14	49.10893100000001	0.046338
+4940	450	\N	Saint-Pierre-en-Auge	14	48.999531	0.09342
+4948	459	\N	Livarot-Pays-d'Auge	14	48.976607	0.266162
+4951	462	\N	Isigny-sur-Mer	14	49.27226	-1.0996189
+4957	471	\N	Livarot-Pays-d'Auge	14	48.991077	0.2627689
+4962	477	\N	Les Monts d'Aunay	14	48.996241	-0.681369
+4965	481	\N	Isigny-sur-Mer	14	49.285972	-1.067489
+4971	489	\N	Saint-Pierre-en-Auge	14	49.05247800000001	-0.022951
+4974	493	\N	Mézidon Vallée d'Auge	14	49.056062	-0.06285299999999999
+4984	503	\N	Valdallière	14	48.8710639	-0.734367
+4986	505	\N	Cesny-les-Sources	14	48.9749797	-0.414597
+4988	508	\N	Les Monts d'Aunay	14	48.96224369999999	-0.6147408
+4993	513	\N	Calvados	14	49.1213315	-0.4330578
+4997	517	\N	Valambray	14	49.079717	-0.223569
+4998	518	\N	Livarot-Pays-d'Auge	14	48.986835	0.30729
+5001	521	\N	Valdallière	14	48.8768699	-0.781565
 16345	256	\N	Theillay	41	47.3140445	2.0397267
-5011	532	\N	Reculey	14	\N	\N
-5017	539	\N	Rocque	14	\N	\N
-5022	544	\N	Roucamps	14	\N	\N
-5023	545	\N	Roullours	14	\N	\N
-5026	548	\N	Rucqueville	14	\N	\N
-5027	549	\N	Rully	14	\N	\N
-5029	551	\N	Russy	14	\N	\N
-5031	553	\N	Saint-Agnan-le-Malherbe	14	\N	\N
-5040	564	\N	Saint-Charles-de-Percy	14	\N	\N
-5043	568	\N	Sainte-Croix-Grand-Tonne	14	\N	\N
-5048	573	\N	Saint-Denis-Maisoncelles	14	\N	\N
-5052	577	\N	Saint-Gabriel-Brécy	14	\N	\N
-5055	580	\N	Saint-Georges-en-Auge	14	\N	\N
-5058	583	\N	Saint-Germain-de-Montgommery	14	\N	\N
-5059	584	\N	Saint-Germain-de-Tallevende-la-Lande-Vaumont	14	\N	\N
-5060	585	\N	Saint-Germain-du-Crioult	14	\N	\N
-5070	596	\N	Saint-Jean-des-Essartiers	14	\N	\N
-5071	597	\N	Saint-Jean-le-Blanc	14	\N	\N
-5073	599	\N	Saint-Julien-de-Mailloc	14	\N	\N
-5074	600	\N	Saint-Julien-le-Faucon	14	\N	\N
-5078	604	\N	Saint-Laurent-du-Mont	14	\N	\N
-5082	608	\N	Saint-Loup-de-Fribois	14	\N	\N
-5085	611	\N	Saint-Manvieu-Bocage	14	\N	\N
-5088	615	\N	Sainte-Marguerite-des-Loges	14	\N	\N
-5089	616	\N	Sainte-Marguerite-de-Viette	14	\N	\N
-5090	618	\N	Sainte-Marie-Laumont	14	\N	\N
-5099	628	\N	Saint-Martin-de-Sallen	14	\N	\N
-5100	629	\N	Saint-Martin-des-Besaces	14	\N	\N
-5102	632	\N	Saint-Martin-Don	14	\N	\N
-5103	633	\N	Saint-Martin-du-Mesnil-Oury	14	\N	\N
-5104	634	\N	Saint-Michel-de-Livet	14	\N	\N
-5106	636	\N	Saint-Ouen-des-Besaces	14	\N	\N
-5108	638	\N	Saint-Ouen-le-Houx	14	\N	\N
-5115	647	\N	Saint-Pierre-de-Mailloc	14	\N	\N
-5121	653	\N	Saint-Pierre-la-Vieille	14	\N	\N
-5123	655	\N	Saint-Pierre-Tarentaine	14	\N	\N
-5130	662	\N	Saint-Vigor-des-Mézerets	14	\N	\N
+5003	523	\N	Condé-en-Normandie	14	48.88432	-0.536911
+5005	525	\N	Thue et Mue	14	49.2100235	-0.5107633
+5011	532	\N	Souleuvre en Bocage	14	48.908312	-0.8432489999999999
+5017	539	\N	Rocques	14	49.17131	0.243081
+5022	544	\N	Les Monts d'Aunay	14	48.99126099999999	-0.625651
+5023	545	\N	Vire-Normandie	14	48.832255	-0.83744
+5026	548	\N	Moulins en Bessin	14	49.256541	-0.5832459999999999
+5027	549	\N	Valdallière	14	48.824592	-0.713989
+5029	551	\N	Aure sur Mer	14	49.332639	-0.820253
+5031	553	\N	Malherbe-sur-Ajon	14	49.0423765	-0.5812771999999999
+5040	564	\N	Valdallière	14	48.92308999999999	-0.790232
+5043	568	\N	Thue et Mue	14	49.2100235	-0.5107633
+5048	573	\N	Souleuvre en Bocage	14	48.9813059	-0.8595039999999999
+5052	577	\N	Creully sur Seulles	14	49.2675232	-0.5721995000000001
+5055	580	\N	Saint-Pierre-en-Auge	14	48.991862	0.062087
+5058	583	\N	Val-de-Vie	14	48.9453565	0.1662743
+5059	584	\N	Vire-Normandie	14	48.7858428	-0.9144332
+5060	585	\N	Condé-en-Normandie	14	48.856875	-0.605635
+5070	596	\N	Val de Drôme	14	49.045393	-0.8352759999999999
+5071	597	\N	Terres de Druance	14	48.935593	-0.653397
+5073	599	\N	Valorbiquet	14	49.08374629999999	0.3375179
+5074	600	\N	Mézidon Vallée d'Auge	14	49.069446	0.08448499999999999
+5078	604	\N	Cambremer	14	49.1398342	0.0296571
+5082	608	\N	Belle Vie en Auge	14	49.11343300000001	0.009877
+5085	611	\N	Noues de Sienne	14	48.826117	-0.9773890000000001
+5088	615	\N	Livarot-Pays-d'Auge	14	49.01797	0.203385
+5089	616	\N	Saint-Pierre-en-Auge	14	49.011996	0.08896989999999999
+5090	618	\N	Souleuvre en Bocage	14	48.921045	-0.89984
+5099	628	\N	Le Hom	14	48.967481	-0.5222169999999999
+5100	629	\N	Souleuvre en Bocage	14	49.010248	-0.8453809999999999
+5102	632	\N	Souleuvre en Bocage	14	48.927275	-0.9430369999999999
+5103	633	\N	Livarot-Pays-d'Auge	14	49.0361978	0.1237001
+5104	634	\N	Livarot-Pays-d'Auge	14	49.0171459	0.130379
+5106	636	\N	Souleuvre en Bocage	14	49.023142	-0.848158
+5108	638	\N	Livarot-Pays-d'Auge	14	48.977633	0.18433
+5115	647	\N	Valorbiquet	14	49.0673419	0.315356
+5121	653	\N	Condé-en-Normandie	14	48.918246	-0.5752809999999999
+5123	655	\N	Souleuvre en Bocage	14	48.963942	-0.792879
+5130	662	\N	Terres de Druance	14	48.908273	-0.6425419
 36347	018	\N	Charenton-le-Pont	94	48.8193526	2.4162632
-5138	670	\N	Secqueville-en-Bessin	14	\N	\N
-5139	671	\N	Sept-Frères	14	\N	\N
-5152	686	\N	Theil-Bocage	14	\N	\N
-5154	688	\N	Thiéville	14	\N	\N
-5156	690	\N	Tierceville	14	\N	\N
-5157	691	\N	Tilly-la-Campagne	14	\N	\N
-5159	693	\N	Tordouet	14	\N	\N
-5161	695	\N	Torteval-Quesnay	14	\N	\N
-5162	696	\N	Tortisambert	14	\N	\N
-5163	697	\N	Oudon	14	\N	\N
-5168	702	\N	Tournay-sur-Odon	14	\N	\N
-5169	703	\N	Tournebu	14	\N	\N
-5170	704	\N	Tourneur	14	\N	\N
-5183	717	\N	Truttemer-le-Grand	14	\N	\N
-5184	718	\N	Truttemer-le-Petit	14	\N	\N
-5188	722	\N	Vacquerie	14	\N	\N
-5192	727	\N	Vaubadon	14	\N	\N
-5194	729	\N	Vaudeloges	14	\N	\N
-5195	730	\N	Vaudry	14	\N	\N
-5210	746	\N	Viessoix	14	\N	\N
-5213	749	\N	Vieux-Fumé	14	\N	\N
-5214	750	\N	Vieux-Pont-en-Auge	14	\N	\N
-5221	757	\N	Villiers-le-Sec	14	\N	\N
-5227	763	\N	Vouilly	14	\N	\N
-5258	031	\N	Celles	15	\N	\N
-5262	035	\N	Chalinargues	15	\N	\N
-5270	044	\N	Chastel-sur-Murat	15	\N	\N
-5273	047	\N	Chavagnac	15	\N	\N
+5138	670	\N	Rots	14	49.23368199999999	-0.517736
+5139	671	\N	Noues de Sienne	14	48.8645629	-1.030964
+5152	686	\N	Valdallière	14	48.880617	-0.7143689999999999
+5154	688	\N	Saint-Pierre-en-Auge	14	49.036342	-0.026494
+5156	690	\N	Ponts sur Seulles	14	49.294274	-0.531728
+5157	691	\N	Castine-en-Plaine	14	49.11100099999999	-0.305962
+5159	693	\N	Valorbiquet	14	49.049543	0.329675
+5161	695	\N	Aurseulles	14	49.1450987	-0.7338544
+5162	696	\N	Livarot-Pays-d'Auge	14	48.966369	0.118126
+5163	697	\N	Saint-Pierre-en-Auge	14	48.9706758	0.0321618
+5168	702	\N	Val d'Arry	14	49.0954188	-0.5796391
+5169	703	\N	Cesny-les-Sources	14	48.969366	-0.340558
+5170	704	\N	Souleuvre en Bocage	14	48.96441799999999	-0.8236019
+5183	717	\N	Vire-Normandie	14	48.782602	-0.817499
+5184	718	\N	Vire-Normandie	14	48.772773	-0.813635
+5188	722	\N	Caumont-sur-Aure	14	49.093017	-0.8587429999999999
+5192	727	\N	Balleroy-sur-Drôme	14	49.2061828	-0.8390137999999999
+5194	729	\N	Saint-Pierre-en-Auge	14	48.944222	-0.005266
+5195	730	\N	Vire-Normandie	14	48.840217	-0.8542259999999999
+5210	746	\N	Valdallière	14	48.840418	-0.797223
+5213	749	\N	Mézidon Vallée d'Auge	14	49.057892	-0.117465
+5214	750	\N	Saint-Pierre-en-Auge	14	49.037396	0.051672
+5221	757	\N	Creully sur Seulles	14	49.290762	-0.565658
+5227	763	\N	Isigny-sur-Mer	14	49.294461	-1.034143
+5258	031	\N	Neussargues en Pinatelle	15	45.120351	2.9596269
+5262	035	\N	Neussargues en Pinatelle	15	45.154656	2.934329
+5270	044	\N	Murat	15	45.124087	2.857609
+5273	047	\N	Neussargues en Pinatelle	15	45.153075	2.8832049
 36295	075	\N	Vanves	92	48.822484	2.288405
-5293	068	\N	Faverolles	15	\N	\N
-5296	071	\N	Fournoulès	15	\N	\N
-5324	099	\N	Lavastrie	15	\N	\N
-5359	136	\N	Mourjou	15	\N	\N
-5368	145	\N	Oradour	15	\N	\N
-5373	150	\N	Pers	15	\N	\N
-5394	171	\N	Sainte-Anastasie	15	\N	\N
-5416	195	\N	Saint-Just	15	\N	\N
-5418	197	\N	Saint-Marc	15	\N	\N
+5293	068	\N	Val-d'Arcomie	15	44.93915	3.147111
+5296	071	\N	Saint-Constant-Fournoulès	15	44.677051	2.275361
+5324	099	\N	Neuvéglise-sur-Truyère	15	44.93539	3.041881000000001
+5359	136	\N	Puycapel	15	44.69189	2.329928
+5368	145	\N	Neuvéglise-sur-Truyère	15	44.920521	2.934903
+5373	150	\N	Le Rouget-Pers	15	44.88802099999999	2.238903
+5394	171	\N	Neussargues en Pinatelle	15	45.172681	2.970616
+5416	195	\N	Val-d'Arcomie	15	44.890495	3.2086389
+5418	197	\N	Val-d'Arcomie	15	44.90157199999999	3.190928
 6441	077	\N	Couy	18	47.116644	2.824892
 27033	229	\N	Ilheu	65	42.995667	0.59553
-5447	227	\N	Sériers	15	\N	\N
-5492	004	\N	Aignes-et-Puypéroux	16	\N	\N
-5497	010	\N	Ambleville	16	\N	\N
-5504	017	\N	Anville	16	\N	\N
-5508	021	\N	Aubeville	16	\N	\N
-5519	033	\N	Bayers	16	\N	\N
-5529	043	\N	Bignac	16	\N	\N
-5537	051	\N	Bonneville	16	\N	\N
-5577	092	\N	Chavenat	16	\N	\N
-5579	094	\N	Chenommet	16	\N	\N
+5447	227	\N	Neuvéglise-sur-Truyère	15	44.9751199	3.036591
+5492	004	\N	Montmoreau	16	45.445016	0.1375797
+5497	010	\N	Lignières-Ambleville	16	45.552341	-0.221125
+5504	017	\N	Val-d'Auge	16	45.8289789	-0.112513
+5508	021	\N	Val des Vignes	16	45.49679099999999	-0.020499
+5519	033	\N	Aunac-sur-Charente	16	45.922522	0.230129
+5529	043	\N	Genac-Bignac	16	45.796519	0.061181
+5537	051	\N	Val-d'Auge	16	45.837933	-0.039742
+5577	092	\N	Boisné-la-Tude	16	45.455556	0.169829
 4000	339	\N	Saint-Denis	11	43.359895	2.221545
-5600	115	\N	Cressac-Saint-Genis	16	\N	\N
-5613	129	\N	Éraville	16	\N	\N
-5624	140	\N	Fontclaireau	16	\N	\N
-5633	149	\N	Genouillac	16	\N	\N
-5640	156	\N	Gourville	16	\N	\N
-5655	172	\N	Juillaguet	16	\N	\N
-5662	179	\N	Lamérac	16	\N	\N
-5684	201	\N	Mainfonds	16	\N	\N
-5685	202	\N	Mainxe	16	\N	\N
-5697	214	\N	Mazières	16	\N	\N
-5710	228	\N	Montigné	16	\N	\N
-5728	247	\N	Nonaville	16	\N	\N
+5579	094	\N	Aunac-sur-Charente	16	45.93651	0.24471
+5600	115	\N	Coteaux-du-Blanzacais	16	45.445943	0.012291
+5613	129	\N	Bellevigne	16	45.574831	-0.085851
+5624	140	\N	Mansle-les-Fontaines	16	45.89478	0.200286
+5633	149	\N	Terres-de-Haute-Charente	16	45.853285	0.5702929999999999
+5640	156	\N	Rouillac	16	45.82985100000001	-0.016086
+5655	172	\N	Boisné-la-Tude	16	45.476361	0.212314
+5662	179	\N	Montmérac	16	45.4353089	-0.222374
+5684	201	\N	Val des Vignes	16	45.518198	0.018916
+5685	202	\N	Mainxe-Gondeville	16	45.642606	-0.189012
+5697	214	\N	Terres-de-Haute-Charente	16	45.8366396	0.5714188
+5710	228	\N	Val-d'Auge	16	45.822593	-0.08107199999999999
+5728	247	\N	Bellevigne	16	45.538606	-0.08118700000000001
 36285	049	\N	Montrouge	92	48.8157655	2.3160079
 7584	651	\N	Val-Suzon	21	47.410148	4.898834000000001
-5738	257	\N	Péreuil	16	\N	\N
-5740	259	\N	Péruse	16	\N	\N
-5743	262	\N	Plaizac	16	\N	\N
-5753	274	\N	Rancogne	16	\N	\N
-5771	294	\N	Saint-Amant	16	\N	\N
-5773	296	\N	Saint-Amant-de-Bonnieure	16	\N	\N
-5784	309	\N	Sainte-Colombe	16	\N	\N
-5787	314	\N	Saint-Eutrope	16	\N	\N
-5794	322	\N	Saint-Germain-de-Confolens	16	\N	\N
-5798	328	\N	Saint-Laurent-de-Belzagot	16	\N	\N
-5802	332	\N	Saint-Léger	16	\N	\N
-5813	344	\N	Saint-Projet-Saint-Constant	16	\N	\N
-5820	351	\N	Saint-Simeux	16	\N	\N
-5824	355	\N	Saint-Sulpice-de-Cognac	16	\N	\N
-5839	371	\N	Sonneville	16	\N	\N
-5844	376	\N	Suris	16	\N	\N
-5854	386	\N	Touzac	16	\N	\N
-5859	391	\N	Tuzie	16	\N	\N
-5877	410	\N	Villegats	16	\N	\N
-5878	411	\N	Villejésus	16	\N	\N
+5738	257	\N	Val des Vignes	16	45.480861	-0.022993
+5740	259	\N	Terres-de-Haute-Charente	16	45.87493	0.61863
+5743	262	\N	Rouillac	16	45.755306	-0.124803
+5753	274	\N	Moulins-sur-Tardoire	16	45.696542	0.403458
+5771	294	\N	Montmoreau	16	45.396208	0.158982
+5773	296	\N	Val-de-Bonnieure	16	45.852098	0.294085
+5784	309	\N	Val-de-Bonnieure	16	45.834069	0.317816
+5787	314	\N	Montmoreau	16	45.417429	0.112885
+5794	322	\N	Confolens	16	46.053707	0.6844279999999999
+5798	328	\N	Montmoreau	16	45.39078	0.118247
+5802	332	\N	Coteaux-du-Blanzacais	16	45.4599339	0.0448
+5813	344	\N	La Rochefoucauld-en-Angoumois	16	45.727905	0.3410486
+5820	351	\N	Mosnac-Saint-Simeux	16	45.628864	-0.027237
+5824	355	\N	Val-de-Cognac	16	45.751945	-0.3859719
+5839	371	\N	Rouillac	16	45.803359	-0.133171
+5844	376	\N	Terres-de-Haute-Charente	16	45.848799	0.6364719999999999
+5854	386	\N	Bellevigne	16	45.5512878	-0.1563849
+5859	391	\N	Courcôme	16	45.97507	0.156091
 35829	342	\N	Saint-Denis-lès-Sens	89	48.228558	3.265136
 6407	043	\N	La Celle-Condé	18	46.792703	2.184675
-5884	417	\N	Viville	16	\N	\N
-5930	040	\N	Benâte	17	\N	\N
-5991	103	\N	Chervettes	17	\N	\N
+5877	410	\N	Courcôme	16	45.992613	0.195617
+5878	411	\N	Aigre	16	45.894443	0.028746
+5884	417	\N	Bellevigne	16	45.522369	-0.120796
+5930	040	\N	Essouvert	17	46.012379	-0.5702849999999999
+5991	103	\N	La Devise	17	46.050566	-0.7066779999999999
 29448	204	\N	Fragnes-la-Loyère	71	46.832069	4.847093999999999
-6055	169	\N	Frédière	17	\N	\N
-6074	189	\N	Hiers-Brouage	17	\N	\N
-6123	238	\N	Moings	17	\N	\N
-6156	272	\N	Péré	17	\N	\N
+6055	169	\N	Saint-Hilaire-de-Villefranche	17	45.866809	-0.58832
+6074	189	\N	Marennes-Hiers-Brouage	17	45.8515463	-1.061144
+6123	238	\N	Réaux	17	45.478559	-0.359977
+6156	272	\N	Saint-Pierre-la-Noue	17	46.091363	-0.818345
 29446	202	\N	Fontaines	71	46.8514594	4.7709546
-6236	352	\N	Saint-Laurent-de-la-Barrière	17	\N	\N
-6253	371	\N	Saint-Maurice-de-Tavernole	17	\N	\N
-6274	392	\N	Saint-Romain-sur-Gironde	17	\N	\N
+6236	352	\N	La Devise	17	46.035325	-0.700905
+6253	371	\N	Réaux	17	45.481383	-0.40485
+6274	392	\N	Saint-Romain-sur-Gironde	17	45.449753	-0.7576919999999999
 29320	073	\N	Chagny	71	46.9105285	4.7523089
 30323	137	\N	Jacob-Bellecombette	73	45.55167	5.916621
 36301	006	\N	Bagnolet	93	48.872321	2.4247393
-6487	123	\N	Laverdines	18	\N	\N
-6495	131	\N	Lugny-Bourbonnais	18	\N	\N
-6586	222	\N	Sainte-Lunaise	18	\N	\N
-6603	239	\N	Saligny-le-Vif	18	\N	\N
+6487	123	\N	Baugy	18	47.034507	2.788106
+6495	131	\N	Osmery	18	46.93096509999999	2.7038334
+6586	222	\N	Corquoy	18	46.920671	2.349164
 27412	134	\N	Passa	66	42.579242	2.813884
 14956	290	\N	Pact	38	45.352931	4.990400999999999
-6686	032	\N	Brivezac	19	\N	\N
-6746	092	\N	Jardin	19	\N	\N
-6781	127	\N	Marc-la-Tour	19	\N	\N
-6837	183	\N	Saint-Bazile-de-la-Roche	19	\N	\N
-6839	185	\N	Saint-Bonnet-Avalouze	19	\N	\N
-6871	218	\N	Saint-Julien-près-Bort	19	\N	\N
-6933	282	\N	Venarsal	19	\N	\N
-7012	073	\N	Bierre-lès-Semur	21	\N	\N
-7149	213	\N	Crimolois	21	\N	\N
-7254	318	\N	Ivry-en-Montagne	21	\N	\N
-7420	486	\N	Pluvault	21	\N	\N
-7441	507	\N	Premières	21	\N	\N
-7446	513	\N	Quemigny-Poisot	21	\N	\N
-7484	551	\N	Saint-Germain-Source-Seine	21	\N	\N
-7554	621	\N	Tart-l'Abbaye	21	\N	\N
-7590	658	\N	Vauchignon	21	\N	\N
-7654	007	\N	Binic	22	\N	\N
-7682	038	\N	Châtelaudren	22	\N	\N
-7695	051	\N	Dolo	22	\N	\N
-7702	058	\N	Ferrière	22	\N	\N
-7710	066	\N	Gouray	22	\N	\N
-7722	078	\N	Hengoat	22	\N	\N
-7724	080	\N	Hermitage-Lorge	22	\N	\N
-7743	100	\N	Langast	22	\N	\N
-7745	102	\N	Langourla	22	\N	\N
-7765	123	\N	Léhon	22	\N	\N
-7790	151	\N	Meslin	22	\N	\N
-7793	154	\N	Morieux	22	\N	\N
-7805	167	\N	Perret	22	\N	\N
-7811	173	\N	Planguenoual	22	\N	\N
-7829	191	\N	Plessala	22	\N	\N
-7830	192	\N	Plessix-Balisson	22	\N	\N
-7884	247	\N	Pommerit-Jaudy	22	\N	\N
-7889	253	\N	Pouldouran	22	\N	\N
-7925	290	\N	Saint-Gelven	22	\N	\N
-7927	292	\N	Saint-Gilles-du-Mené	22	\N	\N
-7932	297	\N	Saint-Gouéno	22	\N	\N
-7933	298	\N	Saint-Guen	22	\N	\N
-7937	303	\N	Saint-Jacut-du-Mené	22	\N	\N
-7988	357	\N	Trégon	22	\N	\N
-7998	367	\N	Tréméloir	22	\N	\N
-8139	121	\N	Malval	23	\N	\N
-8144	126	\N	Masbaraud-Mérignat	23	\N	\N
-8177	161	\N	Rimondeix	23	\N	\N
-8246	231	\N	Saint-Pierre-de-Fursac	23	\N	\N
-8292	013	\N	Atur	24	\N	\N
-8311	033	\N	Beaussac	24	\N	\N
-8319	041	\N	Bézenac	24	\N	\N
-8322	044	\N	Blis-et-Born	24	\N	\N
-8325	047	\N	Boissière-d'Ans	24	\N	\N
-8342	065	\N	Breuilh	24	\N	\N
-8354	079	\N	Cantillac	24	\N	\N
-8364	089	\N	Cazoulès	24	\N	\N
-8367	092	\N	Cendrieux	24	\N	\N
-8368	093	\N	Cercles	24	\N	\N
-8374	099	\N	Champeaux-et-la-Chapelle-Pommier	24	\N	\N
-8378	103	\N	Change	24	\N	\N
-8392	118	\N	Chenaud	24	\N	\N
-8400	127	\N	Coly	24	\N	\N
-8438	166	\N	Eyliac	24	\N	\N
-8441	170	\N	Eyvirat	24	\N	\N
-8448	178	\N	Festalemps	24	\N	\N
-8451	181	\N	Flaugeac	24	\N	\N
-8466	198	\N	Gonterie-Boulouneix	24	\N	\N
-8470	203	\N	Graulges	24	\N	\N
-8471	204	\N	Grèzes	24	\N	\N
-8486	219	\N	Labouquerie	24	\N	\N
-8500	233	\N	Laveyssière	24	\N	\N
-8502	235	\N	Léguillac-de-Cercles	24	\N	\N
-8506	239	\N	Ligueux	24	\N	\N
-8516	249	\N	Manaurie	24	\N	\N
-8524	258	\N	Marsaneix	24	\N	\N
-8535	270	\N	Milhac-d'Auberoche	24	\N	\N
-8547	283	\N	Monsec	24	\N	\N
-8562	298	\N	Mouzens	24	\N	\N
-8574	310	\N	Nojals-et-Clotte	24	\N	\N
-8578	314	\N	Orliaguet	24	\N	\N
-8595	333	\N	Ponteyraud	24	\N	\N
-8604	343	\N	Puymangou	24	\N	\N
-8605	344	\N	Puyrenier	24	\N	\N
-8623	363	\N	Saint-Amand-de-Belvès	24	\N	\N
-8628	368	\N	Saint-Antoine-Cumond	24	\N	\N
-8629	369	\N	Saint-Antoine-d'Auberoche	24	\N	\N
-8648	389	\N	Saint-Cirq	24	\N	\N
-8650	391	\N	Saint-Crépin-de-Richemont	24	\N	\N
-8660	402	\N	Sainte-Eulalie-d'Eymet	24	\N	\N
-8685	427	\N	Saint-Jean-d'Eyraud	24	\N	\N
-8688	430	\N	Saint-Julien-de-Bourdeilles	24	\N	\N
-8689	431	\N	Saint-Julien-de-Crempse	24	\N	\N
-8691	433	\N	Saint-Julien-d'Eymet	24	\N	\N
-8693	435	\N	Saint-Laurent-des-Bâtons	24	\N	\N
-8697	439	\N	Saint-Laurent-sur-Manoire	24	\N	\N
-8704	447	\N	Sainte-Marie-de-Chignac	24	\N	\N
-8730	475	\N	Saint-Pantaly-d'Ans	24	\N	\N
-8752	497	\N	Sainte-Sabine-Born	24	\N	\N
-8758	503	\N	Saint-Sulpice-de-Mareuil	24	\N	\N
-8784	530	\N	Sencenac-Puy-de-Fourches	24	\N	\N
-8813	561	\N	Valeuil	24	\N	\N
-8830	579	\N	Vieux-Mareuil	24	\N	\N
-8862	027	\N	Arguel	25	\N	\N
-8863	028	\N	Athose	25	\N	\N
-8869	034	\N	Auxon-Dessous	25	\N	\N
-8907	076	\N	Bonnevaux-le-Prieuré	25	\N	\N
-8951	123	\N	Charbonnières-les-Sapins	25	\N	\N
-8956	128	\N	Chasnans	25	\N	\N
-8962	134	\N	Châtillon-sur-Lison	25	\N	\N
-8964	137	\N	Chaudefontaine	25	\N	\N
-8967	140	\N	Chaux-lès-Clerval	25	\N	\N
-9068	250	\N	Foucherans	25	\N	\N
-9098	282	\N	Goux-les-Usiers	25	\N	\N
-9115	302	\N	Hautepierre-le-Châtelet	25	\N	\N
-9132	319	\N	Labergement-du-Navois	25	\N	\N
-9206	399	\N	Montfort	25	\N	\N
-9283	480	\N	Rantechaux	25	\N	\N
-9311	509	\N	Routelle	25	\N	\N
-9332	530	\N	Sancey-le-Long	25	\N	\N
-9333	531	\N	Santoche	25	\N	\N
-9350	549	\N	Sombacour	25	\N	\N
-9376	576	\N	Vaire-le-Petit	25	\N	\N
-9383	585	\N	Vanclans	25	\N	\N
-9385	587	\N	Vauchamps	25	\N	\N
-9391	593	\N	Vaux-les-Prés	25	\N	\N
-9406	610	\N	Verrières-du-Grosbois	25	\N	\N
-9424	628	\N	Villers-sous-Montrond	25	\N	\N
-9607	184	\N	Miribel	26	\N	\N
-9610	187	\N	Molières-Glandaz	26	\N	\N
-9642	219	\N	Mureils	26	\N	\N
-9715	297	\N	Saint-Bonnet-de-Valclérieux	26	\N	\N
-9772	354	\N	Treschenu-Creyers	26	\N	\N
-9784	366	\N	Veaunes	26	\N	\N
-9807	007	\N	Ajou	27	\N	\N
-9824	024	\N	Roncenay-Authenay	27	\N	\N
-9839	041	\N	Barre-en-Ouche	27	\N	\N
-9856	058	\N	Bernières-sur-Seine	27	\N	\N
-9858	060	\N	Berthenonville	27	\N	\N
-9881	084	\N	Bosc-Bénard-Commin	27	\N	\N
-9883	088	\N	Bosc-Renoult-en-Ouche	27	\N	\N
-9887	092	\N	Bosguérard-de-Marcouville	27	\N	\N
-9888	093	\N	Bosnormand	27	\N	\N
-9916	121	\N	Bus-Saint-Rémy	27	\N	\N
-9917	122	\N	Cahaignes	27	\N	\N
-9923	128	\N	Cantiers	27	\N	\N
-9926	131	\N	Carsix	27	\N	\N
-9938	143	\N	Champignolles	27	\N	\N
-9940	145	\N	Chanteloup	27	\N	\N
-9945	150	\N	Chapelle-Réanville	27	\N	\N
-9954	159	\N	Cintray	27	\N	\N
-9955	160	\N	Civières	27	\N	\N
-9961	166	\N	Condé-sur-Iton	27	\N	\N
-9967	172	\N	Corneuil	27	\N	\N
-9970	175	\N	Corny	27	\N	\N
-9988	195	\N	Dame-Marie	27	\N	\N
-9990	197	\N	Dampsmesnil	27	\N	\N
-10004	211	\N	Écardenville-sur-Eure	27	\N	\N
-10014	221	\N	Épinay	27	\N	\N
-10016	223	\N	Épreville-en-Roumois	27	\N	\N
-10018	225	\N	Essarts	27	\N	\N
-10036	244	\N	Flancourt-Catelon	27	\N	\N
-10042	250	\N	Fontaine-Heudebourg	27	\N	\N
-10045	253	\N	Fontaine-la-Soret	27	\N	\N
-10047	255	\N	Fontenay	27	\N	\N
-10049	257	\N	Forêt-la-Folie	27	\N	\N
-10054	262	\N	Fourges	27	\N	\N
-10056	264	\N	Fours-en-Vexin	27	\N	\N
-10057	265	\N	Francheville	27	\N	\N
-10060	268	\N	Fresne	27	\N	\N
-10062	270	\N	Fresne-l'Archevêque	27	\N	\N
-10065	274	\N	Gaillardbois-Cressenville	27	\N	\N
-10074	283	\N	Gisay-la-Coudre	27	\N	\N
-10083	292	\N	Gouttières	27	\N	\N
-10084	293	\N	Gouville	27	\N	\N
-10087	296	\N	Grandchain	27	\N	\N
-10088	297	\N	Grandvilliers	27	\N	\N
-10094	303	\N	Guernanville	27	\N	\N
-10096	305	\N	Guéroulde	27	\N	\N
-10099	308	\N	Guitry	27	\N	\N
-10133	344	\N	Houlbec-près-le-Gros-Theil	27	\N	\N
-10144	356	\N	Jonquerets-de-Livet	27	\N	\N
-10149	362	\N	Landepéreuse	27	\N	\N
-10174	387	\N	Manthelon	27	\N	\N
-10189	402	\N	Mesnil-Hardray	27	\N	\N
-10202	416	\N	Buis-sur-Damville	27	\N	\N
-10234	449	\N	Panilleuse	27	\N	\N
-10236	452	\N	Perriers-la-Campagne	27	\N	\N
-10266	484	\N	Quessigny	27	\N	\N
-10273	491	\N	Roman	27	\N	\N
-10280	499	\N	Roussière	27	\N	\N
-10284	503	\N	Sacq	27	\N	\N
-10287	506	\N	Saint-Amand-des-Hautes-Terres	27	\N	\N
-10290	510	\N	Saint-Aquilin-de-Pacy	27	\N	\N
-10293	513	\N	Saint-Aubin-des-Hayes	27	\N	\N
-10295	515	\N	Saint-Aubin-le-Guichard	27	\N	\N
-10299	519	\N	Sainte-Barbe-sur-Gaillon	27	\N	\N
-10303	523	\N	Saint-Clair-d'Arcey	27	\N	\N
-10306	526	\N	Sainte-Croix-sur-Aizier	27	\N	\N
-10312	532	\N	Saint-Denis-du-Béhélan	27	\N	\N
-10329	549	\N	Saint-Germain-Village	27	\N	\N
-10331	551	\N	Saint-Jean-de-la-Léqueraye	27	\N	\N
-10345	566	\N	Sainte-Marguerite-en-Ouche	27	\N	\N
-10352	573	\N	Saint-Nicolas-d'Attez	27	\N	\N
-10353	574	\N	Saint-Nicolas-du-Bosc	27	\N	\N
-10359	581	\N	Saint-Ouen-des-Champs	27	\N	\N
-10364	588	\N	Saint-Pierre-d'Autils	27	\N	\N
-10372	596	\N	Saint-Pierre-du-Mesnil	27	\N	\N
-10376	600	\N	Saint-Quentin-des-Isles	27	\N	\N
-10383	607	\N	Saint-Thurien	27	\N	\N
-10401	626	\N	Theillement	27	\N	\N
-10403	628	\N	Thevray	27	\N	\N
-10409	634	\N	Thomer-la-Sôgne	27	\N	\N
-10411	636	\N	Thuit-Anger	27	\N	\N
-10412	637	\N	Thuit-Hébert	27	\N	\N
-10414	639	\N	Thuit-Simer	27	\N	\N
-10417	642	\N	Tilleul-Othon	27	\N	\N
-10422	647	\N	Tosny	27	\N	\N
-10423	648	\N	Tostes	27	\N	\N
-10426	651	\N	Tournedos-sur-Seine	27	\N	\N
-10428	653	\N	Tourny	27	\N	\N
-10432	657	\N	Touville	27	\N	\N
-10461	687	\N	Vieux-Villez	27	\N	\N
-10462	688	\N	Villalet	27	\N	\N
-10477	002	\N	Allaines-Mervilliers	28	\N	\N
-10491	017	\N	Autheuil	28	\N	\N
-10494	020	\N	Baignolet	28	\N	\N
-10516	042	\N	Bleury	28	\N	\N
-10517	044	\N	Boisgasson	28	\N	\N
-10536	063	\N	Brunelles	28	\N	\N
-10539	066	\N	Bullou	28	\N	\N
-10542	069	\N	Champagne	28	\N	\N
-10556	083	\N	Charray	28	\N	\N
-10566	093	\N	Châtillon-en-Dunois	28	\N	\N
-10573	101	\N	Civry	28	\N	\N
-10584	112	\N	Coudreceau	28	\N	\N
-10587	115	\N	Courtalain	28	\N	\N
-10603	133	\N	Douy	28	\N	\N
-10614	145	\N	Fains-la-Folie	28	\N	\N
-10619	150	\N	Ferté-Villeneuil	28	\N	\N
-10633	165	\N	Frétigny	28	\N	\N
-10646	179	\N	Germignonville	28	\N	\N
-10669	204	\N	Langey	28	\N	\N
-10670	205	\N	Lanneray	28	\N	\N
-10689	224	\N	Lutz-en-Dunois	28	\N	\N
-10704	241	\N	Mée	28	\N	\N
-10712	250	\N	Mézières-au-Perche	28	\N	\N
-10720	258	\N	Montainville	28	\N	\N
-10724	262	\N	Montigny-le-Gannelon	28	\N	\N
-10749	288	\N	Orlu	28	\N	\N
-10756	295	\N	Ozoir-le-Breuil	28	\N	\N
-10758	297	\N	Pézy	28	\N	\N
-10771	311	\N	Puiset	28	\N	\N
-10778	318	\N	Romilly-sur-Aigre	28	\N	\N
-10780	320	\N	Rouvray-Saint-Florentin	28	\N	\N
-10798	340	\N	Saint-Hilaire-sur-Yerre	28	\N	\N
-10813	356	\N	Saint-Pellerin	28	\N	\N
-10818	361	\N	Saint-Symphorien-le-Château	28	\N	\N
-10833	376	\N	Soizé	28	\N	\N
-10856	402	\N	Vérigny	28	\N	\N
-10866	412	\N	Villeau	28	\N	\N
-10869	416	\N	Villeneuve-Saint-Nicolas	28	\N	\N
-10928	052	\N	Esquibien	29	\N	\N
-10998	127	\N	Loc-Eguiner-Saint-Thégonnec	29	\N	\N
-11000	129	\N	Locmaria-Berrien	29	\N	\N
-11019	149	\N	Milizac	29	\N	\N
-11068	203	\N	Plounéour-Trez	29	\N	\N
-11084	219	\N	Ponthou	29	\N	\N
-11675	157	\N	Mars	30	\N	\N
-11708	190	\N	Notre-Dame-de-la-Rouvière	30	\N	\N
-12168	298	\N	Lez	31	\N	\N
-12176	307	\N	Lunax	31	\N	\N
-12307	438	\N	Pradère-les-Bourguets	31	\N	\N
-12534	074	\N	Cannet	32	\N	\N
-12627	168	\N	Labarrère	32	\N	\N
-13015	091	\N	Cantenac	33	\N	\N
-13016	092	\N	Cantois	33	\N	\N
-13031	107	\N	Castillon-de-Castets	33	\N	\N
-13188	267	\N	Marcillac	33	\N	\N
-13257	338	\N	Prignac-en-Médoc	33	\N	\N
-13288	371	\N	Saint-Antoine	33	\N	\N
-13408	495	\N	Salignac	33	\N	\N
-13796	330	\N	Vérargues	34	\N	\N
-13821	011	\N	Baillé	35	\N	\N
-13855	048	\N	Campel	35	\N	\N
-13860	053	\N	Chancé	35	\N	\N
-13888	083	\N	Coglès	35	\N	\N
-13905	100	\N	Dompierre-du-Chemin	35	\N	\N
-13917	112	\N	Fleurigné	35	\N	\N
-13918	113	\N	Fontenelle	35	\N	\N
-13934	129	\N	Guipry	35	\N	\N
-13952	147	\N	Lanhélin	35	\N	\N
-13963	158	\N	Lou-du-Lac	35	\N	\N
-14013	209	\N	Ossé	35	\N	\N
-14057	254	\N	Saint-Aubin-du-Pavail	35	\N	\N
-14070	267	\N	Saint-Étienne-en-Coglès	35	\N	\N
-14072	269	\N	Saint-Georges-de-Chesné	35	\N	\N
-14096	293	\N	Saint-Marc-sur-Couesnon	35	\N	\N
-14103	301	\N	Saint-M'Hervon	35	\N	\N
-14105	303	\N	Saint-Ouen-la-Rouërie	35	\N	\N
-14123	323	\N	Selle-en-Coglès	35	\N	\N
-14141	341	\N	Tremblay	35	\N	\N
-14144	344	\N	Tressé	35	\N	\N
-14148	348	\N	Vendel	35	\N	\N
-14233	072	\N	Faverolles	36	\N	\N
-14312	151	\N	Parpeçay	36	\N	\N
-14344	183	\N	Sainte-Cécile	36	\N	\N
-14362	201	\N	Saint-Martin-de-Lamps	36	\N	\N
-14367	206	\N	Saint-Pierre-de-Lamps	36	\N	\N
-14406	245	\N	Villers-les-Ormes	36	\N	\N
-14510	102	\N	Essards	37	\N	\N
-14528	120	\N	Ingrandes-de-Touraine	37	\N	\N
-14543	135	\N	Louestault	37	\N	\N
-14616	209	\N	Saint-Bauld	37	\N	\N
-14633	227	\N	Saint-Michel-sur-Loire	37	\N	\N
-14699	014	\N	Arandon	38	\N	\N
-14701	016	\N	Arzay	38	\N	\N
-14706	021	\N	Autrans	38	\N	\N
-14709	024	\N	Badinières	38	\N	\N
-14710	025	\N	Balbins	38	\N	\N
-14713	028	\N	Bâtie-Divisin	38	\N	\N
-14802	121	\N	Commelle	38	\N	\N
-14804	125	\N	Cordéac	38	\N	\N
-14822	145	\N	Dionay	38	\N	\N
-14841	165	\N	Fitilieu	38	\N	\N
-14928	262	\N	Morêtel-de-Mailles	38	\N	\N
-14940	274	\N	Nantoin	38	\N	\N
-14959	293	\N	Panissage	38	\N	\N
-14968	302	\N	Périer	38	\N	\N
-14971	305	\N	Pin	38	\N	\N
-14972	306	\N	Pinsot	38	\N	\N
-14978	312	\N	Pommiers-la-Placette	38	\N	\N
-15032	367	\N	Saint-Bernard	38	\N	\N
-15097	435	\N	Saint-Pancrasse	38	\N	\N
-15186	534	\N	Vénosc	38	\N	\N
-15193	541	\N	Veyrins-Thuellin	38	\N	\N
-15240	023	\N	Aubépin	39	\N	\N
-15252	036	\N	Balme-d'Épy	39	\N	\N
-15279	064	\N	Bonnaud	39	\N	\N
-15283	069	\N	Bourcia	39	\N	\N
-15288	075	\N	Bréry	39	\N	\N
-15300	089	\N	Cézia	39	\N	\N
-15323	113	\N	Chassal	39	\N	\N
-15325	115	\N	Château-des-Prés	39	\N	\N
-15333	123	\N	Chatonnay	39	\N	\N
-15344	135	\N	Chazelles	39	\N	\N
-15356	148	\N	Chisséria	39	\N	\N
-15365	158	\N	Coisia	39	\N	\N
-15368	161	\N	Communailles-en-Montagne	39	\N	\N
-15392	186	\N	Cuttura	39	\N	\N
-15401	195	\N	Dessia	39	\N	\N
-15418	213	\N	Esserval-Combe	39	\N	\N
-15420	215	\N	Essia	39	\N	\N
-15429	224	\N	Fétigny	39	\N	\N
-15431	226	\N	Florentia	39	\N	\N
-15446	243	\N	Froideville	39	\N	\N
-15461	260	\N	Granges-sur-Baume	39	\N	\N
-15465	264	\N	Grusse	39	\N	\N
-15487	287	\N	Lavans-sur-Valouse	39	\N	\N
-15494	294	\N	Lézat	39	\N	\N
-15503	303	\N	Louvenne	39	\N	\N
-15509	309	\N	Mallerey	39	\N	\N
-15530	332	\N	Mirebel	39	\N	\N
-15538	340	\N	Molpré	39	\N	\N
-15539	341	\N	Molunes	39	\N	\N
-15545	347	\N	Montagna-le-Templier	39	\N	\N
-15566	371	\N	Mouille	39	\N	\N
-15576	382	\N	Nantey	39	\N	\N
-15587	395	\N	Orbagna	39	\N	\N
-15605	414	\N	Petit-Mercey	39	\N	\N
-15607	417	\N	Piards	39	\N	\N
-15627	438	\N	Ponthoux	39	\N	\N
-15629	440	\N	Pratz	39	\N	\N
-15631	442	\N	Prénovel	39	\N	\N
-15669	482	\N	Saint-Germain-lès-Arlay	39	\N	\N
-15670	483	\N	Saint-Hymetière	39	\N	\N
-15671	484	\N	Saint-Jean-d'Étreux	39	\N	\N
-15675	488	\N	Saint-Laurent-la-Roche	39	\N	\N
-15692	506	\N	Savigna	39	\N	\N
-15695	509	\N	Senaud	39	\N	\N
-15707	524	\N	Tancua	39	\N	\N
-15723	542	\N	Valfin-sur-Valouse	39	\N	\N
-15725	544	\N	Varessia	39	\N	\N
-15730	549	\N	Vercia	39	\N	\N
-15743	562	\N	Villard-sur-Bienne	39	\N	\N
-15744	564	\N	Villechantria	39	\N	\N
-15746	566	\N	Villeneuve-lès-Charnod	39	\N	\N
-15773	009	\N	Arjuzanx	40	\N	\N
-15810	048	\N	Boos	40	\N	\N
-15869	107	\N	Garrosse	40	\N	\N
-16063	302	\N	Sindères	40	\N	\N
-16100	005	\N	Arville	41	\N	\N
-16106	011	\N	Baigneaux	41	\N	\N
-16110	015	\N	Beauvilliers	41	\N	\N
-16117	023	\N	Bourré	41	\N	\N
-16127	033	\N	Chambon-sur-Cisse	41	\N	\N
-16150	056	\N	Colombe	41	\N	\N
-16158	064	\N	Coulanges	41	\N	\N
-16175	082	\N	Feings	41	\N	\N
-16185	092	\N	Fougères-sur-Bièvre	41	\N	\N
-16224	133	\N	Membrolles	41	\N	\N
-16255	165	\N	Oigny	41	\N	\N
-16259	169	\N	Orchaise	41	\N	\N
-16260	170	\N	Ouchamps	41	\N	\N
-16273	183	\N	Prénouvellon	41	\N	\N
-16287	197	\N	Saint-Agil	41	\N	\N
-16292	202	\N	Saint-Avit	41	\N	\N
-16300	210	\N	Sainte-Gemmes	41	\N	\N
-16329	240	\N	Seillac	41	\N	\N
-16333	244	\N	Semerville	41	\N	\N
-16346	257	\N	Thenay	41	\N	\N
-16352	263	\N	Tréhet	41	\N	\N
-16353	264	\N	Tripleville	41	\N	\N
-16359	270	\N	Verdes	41	\N	\N
-16361	272	\N	Veuves	41	\N	\N
-16390	004	\N	Amions	42	\N	\N
-16465	082	\N	Dancé	42	\N	\N
-16496	114	\N	Jeansagnière	42	\N	\N
-16667	291	\N	Saint-Thurin	42	\N	\N
-16794	081	\N	Croisances	43	\N	\N
-16887	176	\N	Saint-Didier-d'Allier	43	\N	\N
-16961	255	\N	Vazeilles-près-Saugues	43	\N	\N
-16977	004	\N	Anetz	44	\N	\N
-16981	008	\N	Barbechat	44	\N	\N
-16984	011	\N	Belligné	44	\N	\N
-16990	017	\N	Bonnuvre	44	\N	\N
-17007	034	\N	Chapelle-Saint-Sauveur	44	\N	\N
-17013	040	\N	Chéméré	44	\N	\N
-17031	059	\N	Fresnay-en-Retz	44	\N	\N
-17032	060	\N	Fresne-sur-Loire	44	\N	\N
-17065	093	\N	Maumusson	44	\N	\N
-17119	147	\N	Rouxière	44	\N	\N
-17132	160	\N	Saint-Géréon	44	\N	\N
-17151	181	\N	Saint-Même-le-Tenu	44	\N	\N
-17161	191	\N	Saint-Sulpice-des-Landes	44	\N	\N
-17189	219	\N	Vritz	44	\N	\N
-17248	057	\N	Labrosse	45	\N	\N
-17295	106	\N	Coudray	45	\N	\N
-17374	190	\N	Mainvilliers	45	\N	\N
-17376	192	\N	Manchecourt	45	\N	\N
-17395	211	\N	Montcorbon	45	\N	\N
-17405	221	\N	Nangeville	45	\N	\N
-17420	236	\N	Orveau-Bellesauve	45	\N	\N
-17451	267	\N	Saint-Aignan-des-Gués	45	\N	\N
-17471	287	\N	Saint-Loup-de-Gonois	45	\N	\N
-17542	014	\N	Bagat-en-Quercy	46	\N	\N
-17547	019	\N	Beaumat	46	\N	\N
-17553	025	\N	Belmontet	46	\N	\N
-17576	048	\N	Calviac	46	\N	\N
-17595	067	\N	Cazillac	46	\N	\N
-17599	071	\N	Comiac	46	\N	\N
-17605	077	\N	Cours	46	\N	\N
-17627	099	\N	Fargues	46	\N	\N
-17638	110	\N	Fontanes-du-Causse	46	\N	\N
-17669	141	\N	Lacam-d'Ourcet	46	\N	\N
-17678	150	\N	Lamativie	46	\N	\N
-17686	158	\N	Lascabanes	46	\N	\N
-17694	166	\N	Lebreil	46	\N	\N
-17776	248	\N	Sainte-Alauzie	46	\N	\N
-17789	261	\N	Sainte-Croix	46	\N	\N
-17802	274	\N	Saint-Laurent-Lolmie	46	\N	\N
-17803	275	\N	Saint-Martin-de-Vers	46	\N	\N
-17806	278	\N	Saint-Matré	46	\N	\N
-17813	285	\N	Saint-Pantaléon	46	\N	\N
-17815	287	\N	Saint-Paul-de-Loubressac	46	\N	\N
-17819	291	\N	Saint-Sauveur-la-Vallée	46	\N	\N
-17826	298	\N	Sarrazac	46	\N	\N
-17828	300	\N	Saux	46	\N	\N
-17853	325	\N	Vaillac	46	\N	\N
-17854	326	\N	Valprionde	46	\N	\N
-17855	327	\N	Valroufié	46	\N	\N
-17859	331	\N	Vers	46	\N	\N
-18199	014	\N	Bagnols-les-Bains	48	\N	\N
-18207	022	\N	Bédouès	48	\N	\N
-18208	023	\N	Belvezet	48	\N	\N
-18217	033	\N	Canilhac	48	\N	\N
-18223	040	\N	Chasseradès	48	\N	\N
-18230	047	\N	Chaze-de-Peyre	48	\N	\N
-18232	049	\N	Chirac	48	\N	\N
-18239	057	\N	Estables	48	\N	\N
-18242	060	\N	Fau-de-Peyre	48	\N	\N
-18244	062	\N	Fontanes	48	\N	\N
-18248	066	\N	Fraissinet-de-Lozère	48	\N	\N
-18258	076	\N	Javols	48	\N	\N
-18260	078	\N	Lachamp	48	\N	\N
-18266	084	\N	Laval-Atger	48	\N	\N
-18275	093	\N	Mas-d'Orcières	48	\N	\N
-18283	101	\N	Montbrun	48	\N	\N
-18297	120	\N	Prinsuéjols	48	\N	\N
-18299	122	\N	Quézac	48	\N	\N
-18302	125	\N	Recoux	48	\N	\N
-18310	133	\N	Saint-Amans	48	\N	\N
-18311	134	\N	Saint-Andéol-de-Clerguemort	48	\N	\N
-18319	142	\N	Sainte-Colombe-de-Peyre	48	\N	\N
-18330	154	\N	Saint-Georges-de-Lévéjac	48	\N	\N
-18337	162	\N	Saint-Julien-d'Arpaon	48	\N	\N
-18339	164	\N	Saint-Julien-du-Tournel	48	\N	\N
-18347	172	\N	Saint-Maurice-de-Ventalon	48	\N	\N
-18355	180	\N	Saint-Rome-de-Dolan	48	\N	\N
-18358	183	\N	Saint-Sauveur-de-Peyre	48	\N	\N
-18359	184	\N	Saint-Symphorien	48	\N	\N
-18361	186	\N	Salle-Prunet	48	\N	\N
-18364	189	\N	Servières	48	\N	\N
-18370	195	\N	Vignes	48	\N	\N
-18371	197	\N	Villedieu	48	\N	\N
-18373	001	\N	Alleuds	49	\N	\N
-18376	004	\N	Andard	49	\N	\N
-18377	005	\N	Andigné	49	\N	\N
-18378	006	\N	Andrezé	49	\N	\N
-18385	013	\N	Auverse	49	\N	\N
-18386	014	\N	Aviré	49	\N	\N
-18390	019	\N	Bauné	49	\N	\N
-18395	024	\N	Beausse	49	\N	\N
-18396	025	\N	Beauvau	49	\N	\N
-18402	031	\N	Bocé	49	\N	\N
-18403	032	\N	Bohalle	49	\N	\N
-18404	033	\N	Boissière-sur-Èvre	49	\N	\N
-18405	034	\N	Botz-en-Mauges	49	\N	\N
-18408	037	\N	Bourg-d'Iré	49	\N	\N
-18410	039	\N	Bourgneuf-en-Mauges	49	\N	\N
-18411	040	\N	Bouzillé	49	\N	\N
-18413	042	\N	Brain-sur-l'Authion	49	\N	\N
-18414	043	\N	Brain-sur-Longuenée	49	\N	\N
-18415	044	\N	Breil	49	\N	\N
-18417	046	\N	Brézé	49	\N	\N
-18418	047	\N	Brigné	49	\N	\N
-18420	049	\N	Brion	49	\N	\N
-18422	051	\N	Brissarthe	49	\N	\N
-18423	052	\N	Broc	49	\N	\N
-18430	059	\N	Cerqueux-sous-Passavant	49	\N	\N
-18433	062	\N	Chalonnes-sous-le-Lude	49	\N	\N
-18436	065	\N	Champigné	49	\N	\N
-18437	066	\N	Champ-sur-Layon	49	\N	\N
-18442	071	\N	Chanzeaux	49	\N	\N
-18443	072	\N	Chapelle-du-Genêt	49	\N	\N
-18444	073	\N	Chapelle-Hullin	49	\N	\N
-18445	074	\N	Chapelle-Rousselin	49	\N	\N
-18446	075	\N	Chapelle-Saint-Florent	49	\N	\N
-18448	077	\N	Chapelle-sur-Oudon	49	\N	\N
-18449	078	\N	Charcé-Saint-Ellier-sur-Aubance	49	\N	\N
-18450	079	\N	Chartrené	49	\N	\N
-18452	081	\N	Châtelais	49	\N	\N
-18454	083	\N	Chaudron-en-Mauges	49	\N	\N
-18455	084	\N	Chaumont-d'Anjou	49	\N	\N
-18456	085	\N	Chaussaire	49	\N	\N
-18458	087	\N	Chavaignes	49	\N	\N
-18459	088	\N	Chazé-Henry	49	\N	\N
-18462	091	\N	Chemellier	49	\N	\N
-18464	093	\N	Chemiré-sur-Sarthe	49	\N	\N
-18465	094	\N	Chênehutte-Trèves-Cunault	49	\N	\N
-18466	095	\N	Chenillé-Changé	49	\N	\N
-18467	096	\N	Cherré	49	\N	\N
-18468	097	\N	Cheviré-le-Rouge	49	\N	\N
-18469	098	\N	Chigné	49	\N	\N
-18472	101	\N	Clefs	49	\N	\N
-18474	103	\N	Combrée	49	\N	\N
-18475	104	\N	Concourson-sur-Layon	49	\N	\N
-18476	105	\N	Contigné	49	\N	\N
-18477	106	\N	Corné	49	\N	\N
-18479	108	\N	Cornuaille	49	\N	\N
-18482	111	\N	Cossé-d'Anjou	49	\N	\N
-18486	115	\N	Coutures	49	\N	\N
-18487	116	\N	Cuon	49	\N	\N
-18488	117	\N	Daguenière	49	\N	\N
-18489	119	\N	Daumeray	49	\N	\N
-18492	122	\N	Dénezé-sous-le-Lude	49	\N	\N
-18495	126	\N	Drain	49	\N	\N
-18497	128	\N	Échemiré	49	\N	\N
-18502	133	\N	Faveraye-Mâchelles	49	\N	\N
-18503	134	\N	Faye-d'Anjou	49	\N	\N
-18505	136	\N	Ferrière-de-Flée	49	\N	\N
-18506	137	\N	Fief-Sauvin	49	\N	\N
-18508	139	\N	Fontaine-Milon	49	\N	\N
-18510	141	\N	Forges	49	\N	\N
-18511	142	\N	Fosse-de-Tigné	49	\N	\N
-18512	143	\N	Fougeré	49	\N	\N
-18513	144	\N	Freigné	49	\N	\N
-18514	145	\N	Fuilet	49	\N	\N
-18515	147	\N	Gée	49	\N	\N
-18516	148	\N	Gené	49	\N	\N
-18517	149	\N	Gennes	49	\N	\N
-18518	150	\N	Genneteil	49	\N	\N
-18519	151	\N	Gesté	49	\N	\N
-18520	153	\N	Valanjou	49	\N	\N
-18521	154	\N	Grézillé	49	\N	\N
-18523	156	\N	Grugé-l'Hôpital	49	\N	\N
-18524	157	\N	Guédéniau	49	\N	\N
-18525	158	\N	Hôtellerie-de-Flée	49	\N	\N
-18526	159	\N	Huillé	49	\N	\N
-18529	162	\N	Jallais	49	\N	\N
-18531	165	\N	Jubaudière	49	\N	\N
-18533	169	\N	Jumellière	49	\N	\N
-18536	172	\N	Landemont	49	\N	\N
-18537	173	\N	Lasse	49	\N	\N
-18539	175	\N	Linières-Bouton	49	\N	\N
-18541	177	\N	Liré	49	\N	\N
-18543	179	\N	Longeron	49	\N	\N
-18545	181	\N	Louerre	49	\N	\N
-18548	184	\N	Louvaines	49	\N	\N
-18549	185	\N	Lué-en-Baugeois	49	\N	\N
-18550	186	\N	Luigné	49	\N	\N
-18551	187	\N	Marans	49	\N	\N
-18553	189	\N	Marigné	49	\N	\N
-18554	190	\N	Marillais	49	\N	\N
-18555	191	\N	Martigné-Briand	49	\N	\N
-18560	196	\N	Meignanne	49	\N	\N
-18561	197	\N	Meigné-le-Vicomte	49	\N	\N
-18562	198	\N	Meigné	49	\N	\N
-18563	199	\N	Melay	49	\N	\N
-18566	202	\N	Méon	49	\N	\N
-18567	204	\N	Mesnil-en-Vallée	49	\N	\N
-18569	206	\N	Montfaucon-Montigné	49	\N	\N
-18570	207	\N	Montfort	49	\N	\N
-18571	208	\N	Montguillon	49	\N	\N
-18574	212	\N	Montjean-sur-Loire	49	\N	\N
-18575	213	\N	Montpollin	49	\N	\N
-18587	225	\N	Neuvy-en-Mauges	49	\N	\N
-18588	226	\N	Noëllet	49	\N	\N
-18589	227	\N	Notre-Dame-d'Allençon	49	\N	\N
-18591	229	\N	Noyant-la-Gravoyère	49	\N	\N
-18592	230	\N	Noyant-la-Plaine	49	\N	\N
-18594	232	\N	Nueil-sur-Layon	49	\N	\N
-18595	233	\N	Nyoiseau	49	\N	\N
-18596	234	\N	Parçay-les-Pins	49	\N	\N
-18600	238	\N	Pellouailles-les-Vignes	49	\N	\N
-18601	239	\N	Pin-en-Mauges	49	\N	\N
-18604	242	\N	Plessis-Macé	49	\N	\N
-18605	243	\N	Poitevinière	49	\N	\N
-18607	245	\N	Pontigné	49	\N	\N
-18611	249	\N	Pouëze	49	\N	\N
-18612	250	\N	Prévière	49	\N	\N
-18613	251	\N	Pruillé	49	\N	\N
-18614	252	\N	Puiset-Doré	49	\N	\N
-18616	254	\N	Querré	49	\N	\N
-18617	256	\N	Rablay-sur-Layon	49	\N	\N
-18619	258	\N	Renaudière	49	\N	\N
-18624	263	\N	Roussay	49	\N	\N
-18625	264	\N	Saint-André-de-la-Marche	49	\N	\N
-18626	265	\N	Saint-Aubin-de-Luigné	49	\N	\N
-18629	268	\N	Sainte-Christine	49	\N	\N
-18631	270	\N	Saint-Christophe-la-Couperie	49	\N	\N
-18634	273	\N	Saint-Crespin-sur-Moine	49	\N	\N
-18635	274	\N	Saint-Cyr-en-Bourg	49	\N	\N
-18636	276	\N	Saint-Florent-le-Vieil	49	\N	\N
-18637	277	\N	Sainte-Gemmes-d'Andigné	49	\N	\N
-18639	279	\N	Saint-Georges-des-Sept-Voies	49	\N	\N
-18640	280	\N	Saint-Georges-du-Bois	49	\N	\N
-18641	281	\N	Saint-Georges-des-Gardes	49	\N	\N
-18642	282	\N	Saint-Georges-sur-Layon	49	\N	\N
-18645	285	\N	Saint-Germain-sur-Moine	49	\N	\N
-18647	289	\N	Saint-Jean-de-Linières	49	\N	\N
-18648	290	\N	Saint-Jean-des-Mauvrets	49	\N	\N
-18652	295	\N	Saint-Laurent-de-la-Plaine	49	\N	\N
-18653	296	\N	Saint-Laurent-des-Autels	49	\N	\N
-18654	297	\N	Saint-Laurent-du-Mottay	49	\N	\N
-18657	300	\N	Saint-Lézin	49	\N	\N
-18660	303	\N	Saint-Martin-d'Arcé	49	\N	\N
-18661	304	\N	Saint-Martin-de-la-Place	49	\N	\N
-18662	305	\N	Saint-Martin-du-Bois	49	\N	\N
-18666	309	\N	Saint-Michel-et-Chanveaux	49	\N	\N
-18669	312	\N	Saint-Philbert-en-Mauges	49	\N	\N
-18670	313	\N	Saint-Pierre-Montlimart	49	\N	\N
-18671	314	\N	Saint-Quentin-en-Mauges	49	\N	\N
-18672	315	\N	Saint-Quentin-lès-Beaurepaire	49	\N	\N
-18673	316	\N	Saint-Rémy-en-Mauges	49	\N	\N
-18674	317	\N	Saint-Rémy-la-Varenne	49	\N	\N
-18675	318	\N	Saint-Saturnin-sur-Loire	49	\N	\N
-18676	319	\N	Saint-Sauveur-de-Flée	49	\N	\N
-18677	320	\N	Saint-Sauveur-de-Landemont	49	\N	\N
-18678	321	\N	Saint-Sigismond	49	\N	\N
-18679	322	\N	Saint-Sulpice	49	\N	\N
-18681	324	\N	Salle-et-Chapelle-Aubry	49	\N	\N
-18682	325	\N	Salle-de-Vihiers	49	\N	\N
-18684	327	\N	Saulgé-l'Hôpital	49	\N	\N
-18692	335	\N	Surdres	49	\N	\N
-18694	337	\N	Soucelles	49	\N	\N
-18698	342	\N	Tancoigné	49	\N	\N
-18702	346	\N	Thoureil	49	\N	\N
-18704	348	\N	Tigné	49	\N	\N
-18705	349	\N	Tillières	49	\N	\N
-18706	350	\N	Torfou	49	\N	\N
-18707	351	\N	Tourlandry	49	\N	\N
-18710	354	\N	Tremblay	49	\N	\N
-18712	356	\N	Trémont	49	\N	\N
-18715	360	\N	Varenne	49	\N	\N
-18718	363	\N	Vauchrétien	49	\N	\N
-18720	365	\N	Verchers-sur-Layon	49	\N	\N
-18721	366	\N	Vergonnes	49	\N	\N
-18727	372	\N	Vieil-Baugé	49	\N	\N
-18730	375	\N	Villedieu-la-Blouère	49	\N	\N
-18731	376	\N	Villemoisan	49	\N	\N
-18734	380	\N	Vaulandry	49	\N	\N
-18736	001	\N	Acqueville	50	\N	\N
-18740	005	\N	Amfreville	50	\N	\N
-18742	007	\N	Ancteville	50	\N	\N
-18744	009	\N	Angey	50	\N	\N
-18745	010	\N	Angoville-au-Plain	50	\N	\N
-18746	012	\N	Angoville-sur-Ay	50	\N	\N
-18748	014	\N	Anneville-sur-Mer	50	\N	\N
-18749	015	\N	Annoville	50	\N	\N
-18751	018	\N	Argouges	50	\N	\N
-18753	020	\N	Auderville	50	\N	\N
-18768	035	\N	Baudreville	50	\N	\N
-18770	037	\N	Bazoge	50	\N	\N
-18776	043	\N	Bellefontaine	50	\N	\N
-18783	051	\N	Beuzeville-au-Plain	50	\N	\N
-18787	056	\N	Bion	50	\N	\N
-18788	057	\N	Biville	50	\N	\N
-18792	061	\N	Boisroger	50	\N	\N
-18794	063	\N	Bolleville	50	\N	\N
-18799	071	\N	Braffais	50	\N	\N
-18801	073	\N	Branville-Hague	50	\N	\N
-18803	075	\N	Brectouville	50	\N	\N
-18808	080	\N	Brévands	50	\N	\N
-18817	089	\N	Brucheville	50	\N	\N
-18827	100	\N	Carnet	50	\N	\N
-18830	103	\N	Carquebut	50	\N	\N
-18833	107	\N	Catz	50	\N	\N
-18839	114	\N	Chambres	50	\N	\N
-18841	116	\N	Champcey	50	\N	\N
-18844	119	\N	Champs-de-Losque	50	\N	\N
-18847	123	\N	Chapelle-en-Juger	50	\N	\N
-18849	125	\N	Chasseguey	50	\N	\N
-18851	127	\N	Chef-du-Pont	50	\N	\N
-18852	128	\N	Chefresne	50	\N	\N
-18855	131	\N	Chérencé-le-Roussel	50	\N	\N
-18856	132	\N	Chéris	50	\N	\N
-18857	133	\N	Chèvreville	50	\N	\N
-18858	134	\N	Chevry	50	\N	\N
-18860	136	\N	Coigny	50	\N	\N
-18864	140	\N	Contrières	50	\N	\N
-18876	153	\N	Cretteville	50	\N	\N
-18877	154	\N	Croix-Avranchin	50	\N	\N
-18882	160	\N	Denneville	50	\N	\N
-18885	163	\N	Digulleville	50	\N	\N
-18892	170	\N	Écoquenéauville	50	\N	\N
-18893	171	\N	Éculleville	50	\N	\N
-18895	173	\N	Équeurdreville-Hainneville	50	\N	\N
-18901	179	\N	Ferrières	50	\N	\N
-18902	180	\N	Fervaches	50	\N	\N
-18909	187	\N	Flottemanville-Hague	50	\N	\N
-18911	189	\N	Fontenay	50	\N	\N
-18913	191	\N	Foucarville	50	\N	\N
-18923	202	\N	Giéville	50	\N	\N
-18924	203	\N	Glacerie	50	\N	\N
-18925	204	\N	Glatigny	50	\N	\N
-18927	206	\N	Gohannière	50	\N	\N
-18932	211	\N	Gouberville	50	\N	\N
-18933	212	\N	Gourbesville	50	\N	\N
-18934	213	\N	Gourfaleur	50	\N	\N
-18941	220	\N	Gréville-Hague	50	\N	\N
-18944	223	\N	Guéhébert	50	\N	\N
-18945	224	\N	Guilberville	50	\N	\N
-18962	242	\N	Herqueville	50	\N	\N
-18964	244	\N	Hérenguerville	50	\N	\N
-18965	245	\N	Heussé	50	\N	\N
-18968	248	\N	Hommet-d'Arthenay	50	\N	\N
-18969	249	\N	Houesville	50	\N	\N
-18970	250	\N	Houtteville	50	\N	\N
-18974	254	\N	Husson	50	\N	\N
-18975	255	\N	Hyenville	50	\N	\N
-18977	257	\N	Jobourg	50	\N	\N
-18999	280	\N	Lozon	50	\N	\N
-19003	284	\N	Macey	50	\N	\N
-19005	287	\N	Mancellière-sur-Vire	50	\N	\N
-19011	293	\N	Martigny	50	\N	\N
-19019	301	\N	Mesnil-Amand	50	\N	\N
-19021	303	\N	Mesnil-Angot	50	\N	\N
-19024	308	\N	Mesnilbus	50	\N	\N
-19028	313	\N	Mesnil-Herman	50	\N	\N
-19030	316	\N	Mesnil-Opac	50	\N	\N
-19032	318	\N	Mesnil-Rainfray	50	\N	\N
-19033	319	\N	Mesnil-Raoult	50	\N	\N
-19034	320	\N	Mesnil-Rogues	50	\N	\N
-19036	323	\N	Mesnil-Tôve	50	\N	\N
-19038	325	\N	Mesnil-Vigot	50	\N	\N
-19042	329	\N	Milly	50	\N	\N
-19043	330	\N	Mobecq	50	\N	\N
-19045	333	\N	Moitiers-en-Bauptois	50	\N	\N
-19049	337	\N	Montanel	50	\N	\N
-19051	339	\N	Montchaton	50	\N	\N
-19055	343	\N	Montgardon	50	\N	\N
-19058	348	\N	Montmartin-en-Graignes	50	\N	\N
-19064	354	\N	Montsurvent	50	\N	\N
-19065	355	\N	Montviron	50	\N	\N
-19068	358	\N	Morsalines	50	\N	\N
-19083	375	\N	Néville-sur-Mer	50	\N	\N
-19087	380	\N	Notre-Dame-d'Elle	50	\N	\N
-19088	381	\N	Notre-Dame-du-Touchet	50	\N	\N
-19091	385	\N	Omonville-la-Petite	50	\N	\N
-19092	386	\N	Omonville-la-Rogue	50	\N	\N
-19101	396	\N	Perques	50	\N	\N
-19109	404	\N	Placy-Montaigu	50	\N	\N
-19111	406	\N	Plomb	50	\N	\N
-19119	414	\N	Précorbin	50	\N	\N
-19120	415	\N	Prétot-Sainte-Suzanne	50	\N	\N
-19121	416	\N	Querqueville	50	\N	\N
-19123	418	\N	Quettetot	50	\N	\N
-19131	427	\N	Ravenoville	50	\N	\N
-19136	432	\N	Réthoville	50	\N	\N
-19138	434	\N	Rochelle-Normande	50	\N	\N
-19142	438	\N	Ronde-Haye	50	\N	\N
-19143	440	\N	Rouffigny	50	\N	\N
-19144	441	\N	Rouxeville	50	\N	\N
-19152	449	\N	Saint-Aubin-du-Perron	50	\N	\N
-19161	458	\N	Saint-Côme-du-Mont	50	\N	\N
-19162	460	\N	Sainte-Croix-Hague	50	\N	\N
-19167	465	\N	Saint-Ébremond-de-Bonfossé	50	\N	\N
-19171	470	\N	Saint-Georges-de-Bohon	50	\N	\N
-19178	477	\N	Saint-Germain-des-Vaux	50	\N	\N
-19186	485	\N	Saint-Hilaire-Petitville	50	\N	\N
-19195	494	\N	Saint-Jean-du-Corail	50	\N	\N
-19198	497	\N	Saint-Jores	50	\N	\N
-19203	503	\N	Saint-Lô-d'Ourville	50	\N	\N
-19208	508	\N	Sainte-Marie-du-Bois	50	\N	\N
-19215	515	\N	Saint-Martin-de-Landelles	50	\N	\N
-19216	516	\N	Saint-Martin-des-Champs	50	\N	\N
-19220	520	\N	Saint-Martin-le-Hébert	50	\N	\N
-19224	524	\N	Saint-Michel-de-la-Pierre	50	\N	\N
-19231	534	\N	Saint-Pellerin	50	\N	\N
-19241	544	\N	Saint-Rémy-des-Landes	50	\N	\N
-19242	545	\N	Saint-Romphaire	50	\N	\N
-19252	557	\N	Saint-Symphorien-des-Monts	50	\N	\N
-19253	558	\N	Saint-Symphorien-le-Valois	50	\N	\N
-19264	573	\N	Servigny	50	\N	\N
-19272	581	\N	Soulles	50	\N	\N
-19274	583	\N	Sourdeval-les-Bois	50	\N	\N
-19277	586	\N	Surville	50	\N	\N
-19286	595	\N	Theil	50	\N	\N
-19291	600	\N	Tonneville	50	\N	\N
-19293	602	\N	Tourlaville	50	\N	\N
-19296	605	\N	Trelly	50	\N	\N
-19299	608	\N	Troisgots	50	\N	\N
-19302	611	\N	Urville-Nacqueville	50	\N	\N
-19305	614	\N	Valdécie	50	\N	\N
-19311	620	\N	Vasteville	50	\N	\N
-19313	622	\N	Vaudrimesnil	50	\N	\N
-19314	623	\N	Vauville	50	\N	\N
-19316	625	\N	Vengeons	50	\N	\N
-19318	627	\N	Vergoncey	50	\N	\N
-19321	630	\N	Vessey	50	\N	\N
-19322	631	\N	Veys	50	\N	\N
-19325	635	\N	Vidouville	50	\N	\N
-19326	636	\N	Vierville	50	\N	\N
-19328	638	\N	Villechien	50	\N	\N
-19330	640	\N	Villiers-le-Pré	50	\N	\N
-19332	642	\N	Vindefontaine	50	\N	\N
-19334	644	\N	Virey	50	\N	\N
-19335	646	\N	Vrétot	50	\N	\N
-19396	063	\N	Binson-et-Orquigny	51	\N	\N
-19397	064	\N	Bisseuil	51	\N	\N
-19581	261	\N	Fresne-lès-Reims	51	\N	\N
-19591	271	\N	Gionges	51	\N	\N
-19649	331	\N	Louvois	51	\N	\N
-19663	347	\N	Mareuil-sur-Ay	51	\N	\N
-19719	411	\N	Oger	51	\N	\N
-19932	637	\N	Villers-sous-Châtillon	51	\N	\N
-19946	651	\N	Voipreux	51	\N	\N
-19985	036	\N	Balesmes-sur-Marne	52	\N	\N
-20098	180	\N	Droyes	52	\N	\N
-20134	225	\N	Goncourt	52	\N	\N
-20145	239	\N	Heuilley-Cotton	52	\N	\N
-20163	262	\N	Lamothe-en-Blaisy	52	\N	\N
-20186	293	\N	Longeville-sur-la-Laines	52	\N	\N
-20189	296	\N	Louze	52	\N	\N
-20222	340	\N	Montsaugeon	52	\N	\N
-20231	351	\N	Nijon	52	\N	\N
-20257	379	\N	Pautaines-Augeville	52	\N	\N
-20293	427	\N	Robert-Magny-Laneuville-à-Rémy	52	\N	\N
-20355	509	\N	Vaux-sous-Aubigny	52	\N	\N
-20393	004	\N	Ampoigné	53	\N	\N
-20395	006	\N	Argenton-Notre-Dame	53	\N	\N
-20403	014	\N	Azé	53	\N	\N
-20419	032	\N	Blandouet	53	\N	\N
-20436	050	\N	Chammes	53	\N	\N
-20450	065	\N	Châtres-la-Forêt	53	\N	\N
-20475	092	\N	Deux-Évailles	53	\N	\N
-20478	095	\N	Épineux-le-Seguin	53	\N	\N
-20521	138	\N	Longuefuye	53	\N	\N
-20541	159	\N	Montourtier	53	\N	\N
-20572	194	\N	Ruillé-le-Gravelais	53	\N	\N
-20583	205	\N	Saint-Céneré	53	\N	\N
-20585	207	\N	Saint-Christophe-du-Luat	53	\N	\N
-20593	215	\N	Saint-Fort	53	\N	\N
-20607	231	\N	Saint-Laurent-des-Mortiers	53	\N	\N
-20615	239	\N	Saint-Martin-de-Connée	53	\N	\N
-20617	241	\N	Saint-Michel-de-Feins	53	\N	\N
-20620	244	\N	Saint-Ouën-des-Vallons	53	\N	\N
-20628	252	\N	Saint-Samson	53	\N	\N
-20630	254	\N	Saint-Sulpice	53	\N	\N
-20649	274	\N	Vimarcé	53	\N	\N
-20989	341	\N	Mance	54	\N	\N
-20990	342	\N	Mancieulles	54	\N	\N
-21148	506	\N	Sexey-les-Bois	54	\N	\N
-21269	030	\N	Baudignécourt	55	\N	\N
-21384	164	\N	Douaumont	55	\N	\N
-21760	016	\N	Bieuzy	56	\N	\N
-21781	037	\N	Chapelle-Caro	56	\N	\N
-21782	038	\N	Chapelle-Gaceline	56	\N	\N
-21793	049	\N	Croixanvec	56	\N	\N
-21803	059	\N	Forges	56	\N	\N
-21808	064	\N	Glénac	56	\N	\N
-21881	138	\N	Monterrein	56	\N	\N
-21885	142	\N	Moustoir-Remungol	56	\N	\N
-21893	150	\N	Noyalo	56	\N	\N
-21926	183	\N	Quelneuc	56	\N	\N
-21930	187	\N	Quily	56	\N	\N
-21935	192	\N	Remungol	56	\N	\N
-22180	184	\N	Dornot	57	\N	\N
-22416	432	\N	Maizery	57	\N	\N
-22502	523	\N	Ogy	57	\N	\N
-22564	585	\N	Ritzing	57	\N	\N
-22695	722	\N	Vionville	57	\N	\N
-22757	022	\N	Balleray	58	\N	\N
-22834	100	\N	Dompierre-sur-Héry	58	\N	\N
-22901	167	\N	Michaugues	58	\N	\N
-23197	154	\N	Coudekerque	59	\N	\N
-23289	248	\N	Fort-Mardyck	59	\N	\N
-23439	404	\N	Moëres	59	\N	\N
-23572	540	\N	Saint-Pol-sur-Mer	59	\N	\N
-23717	018	\N	Anserville	60	\N	\N
-23737	038	\N	Bachivillers	60	\N	\N
-23779	080	\N	Boissy-le-Bois	60	\N	\N
-23795	096	\N	Boutavent	60	\N	\N
-23944	246	\N	Fosseuse	60	\N	\N
-23997	300	\N	Hardivillers-en-Vexin	60	\N	\N
-24112	417	\N	Montherlant	60	\N	\N
-24147	453	\N	Neuville-d'Aumont	60	\N	\N
-24149	455	\N	Neuville-Garnier	60	\N	\N
-24168	475	\N	Ognon	60	\N	\N
-24225	532	\N	Ressons-l'Abbaye	60	\N	\N
-24339	649	\N	Troussures	60	\N	\N
-24380	690	\N	Villers-sur-Trie	60	\N	\N
-24395	003	\N	Anceins	61	\N	\N
-24396	004	\N	Antoigny	61	\N	\N
-24401	009	\N	Aubry-en-Exmes	61	\N	\N
-24408	016	\N	Autheuil	61	\N	\N
-24411	019	\N	Avernes-sous-Exmes	61	\N	\N
-24416	025	\N	Baroche-sous-Lucé	61	\N	\N
-24418	027	\N	Batilly	61	\N	\N
-24422	031	\N	Beauchêne	61	\N	\N
-24424	033	\N	Beaulandais	61	\N	\N
-24433	042	\N	Bellou-sur-Huisne	61	\N	\N
-24436	045	\N	Bivilliers	61	\N	\N
-24438	047	\N	Bocquencé	61	\N	\N
-24448	057	\N	Bourg-Saint-Léonard	61	\N	\N
-24449	058	\N	Bréel	61	\N	\N
-24450	059	\N	Bresolettes	61	\N	\N
-24456	065	\N	Bubertré	61	\N	\N
-24464	073	\N	Carneille	61	\N	\N
-24474	083	\N	Chambois	61	\N	\N
-24481	090	\N	Champs	61	\N	\N
-24497	106	\N	Chênedouit	61	\N	\N
-24500	109	\N	Clairefougère	61	\N	\N
-24501	110	\N	Cochère	61	\N	\N
-24503	112	\N	Colonard-Corubert	61	\N	\N
-24506	115	\N	Condeau	61	\N	\N
-24515	125	\N	Coulonges-les-Sablons	61	\N	\N
-24517	127	\N	Courbe	61	\N	\N
-24518	128	\N	Courcerault	61	\N	\N
-24521	131	\N	Courménil	61	\N	\N
-24523	135	\N	Couterne	61	\N	\N
-24524	136	\N	Couvains	61	\N	\N
-24532	144	\N	Dancé	61	\N	\N
-24535	147	\N	Dorceau	61	\N	\N
-24542	154	\N	Eperrais	61	\N	\N
-24543	155	\N	Épinay-le-Comte	61	\N	\N
-24545	157	\N	Exmes	61	\N	\N
-24549	161	\N	Fel	61	\N	\N
-24560	172	\N	Fontenai-les-Louvets	61	\N	\N
-24561	173	\N	Fontenai-sur-Orne	61	\N	\N
-24562	174	\N	Forêt-Auvray	61	\N	\N
-24563	175	\N	Forges	61	\N	\N
-24565	177	\N	Frênes	61	\N	\N
-24567	179	\N	Fresnaye-au-Sauvage	61	\N	\N
-24572	184	\N	Gauville	61	\N	\N
-24573	185	\N	Gémages	61	\N	\N
-24574	186	\N	Geneslay	61	\N	\N
-24579	191	\N	Glos-la-Ferrière	61	\N	\N
-24588	200	\N	Haleine	61	\N	\N
-24589	201	\N	Haute-Chapelle	61	\N	\N
-24592	204	\N	Hermitière	61	\N	\N
-24593	205	\N	Heugon	61	\N	\N
-24608	220	\N	Lande-sur-Eure	61	\N	\N
-24611	223	\N	Larchamp	61	\N	\N
-24614	226	\N	Lignerolles	61	\N	\N
-24619	231	\N	Longuenoë	61	\N	\N
-24623	235	\N	Loré	61	\N	\N
-24624	236	\N	Loucé	61	\N	\N
-24627	239	\N	Lucé	61	\N	\N
-24633	245	\N	Maison-Maugis	61	\N	\N
-24634	246	\N	Mâle	61	\N	\N
-24635	247	\N	Malétable	61	\N	\N
-24637	249	\N	Marcei	61	\N	\N
-24638	250	\N	Marchainville	61	\N	\N
-24641	253	\N	Marmouillé	61	\N	\N
-24657	270	\N	Ménil-Jean	61	\N	\N
-24667	280	\N	Monceaux-au-Perche	61	\N	\N
-24669	282	\N	Monnai	61	\N	\N
-24672	285	\N	Montgaroult	61	\N	\N
-24683	296	\N	Moulicent	61	\N	\N
-24686	299	\N	Moussonvilliers	61	\N	\N
-24692	305	\N	Neuilly-sur-Eure	61	\N	\N
-24693	306	\N	Neuville-près-Sées	61	\N	\N
-24698	311	\N	Normandel	61	\N	\N
-24699	313	\N	Notre-Dame-du-Rocher	61	\N	\N
-24701	315	\N	Omméel	61	\N	\N
-24704	318	\N	Origny-le-Butin	61	\N	\N
-24706	320	\N	Orville	61	\N	\N
-24711	325	\N	Perrière	61	\N	\N
-24720	335	\N	Poterie-au-Perche	61	\N	\N
-24722	337	\N	Préaux-du-Perche	61	\N	\N
-24723	338	\N	Prépotin	61	\N	\N
-24725	340	\N	Rabodanges	61	\N	\N
-24728	343	\N	Randonnai	61	\N	\N
-24738	353	\N	Ronfeugerai	61	\N	\N
-24739	354	\N	Rotours	61	\N	\N
-24740	355	\N	Rouellé	61	\N	\N
-24741	356	\N	Rouge	61	\N	\N
-24744	359	\N	Saint-Agnan-sur-Erre	61	\N	\N
+6603	239	\N	Baugy	18	47.046117	2.768158
+6686	032	\N	Beaulieu-sur-Dordogne	19	45.02547	1.840193
+6746	092	\N	Corrèze	19	45.3727224	1.8743978
+6781	127	\N	Lagarde-Marc-la-Tour	19	45.204713	1.845843
+6837	183	\N	Argentat-sur-Dordogne	19	45.160775	1.954867
+6839	185	\N	Laguenne-sur-Avalouze	19	45.254927	1.831579
+6871	218	\N	Sarroux - Saint Julien	19	45.415627	2.403343
+18516	148	\N	Erdre-en-Anjou	49	47.630982	-0.802125
+18517	149	\N	Gennes-Val-de-Loire	49	47.339678	-0.233325
+18518	150	\N	Noyant-Villages	49	47.59283	0.04844690000000001
+18519	151	\N	Beaupréau-en-Mauges	49	47.181163	-1.112449
+18520	153	\N	Chemillé-en-Anjou	49	47.212944	-0.5943849999999999
+18521	154	\N	Gennes-Val-de-Loire	49	47.326852	-0.346577
+18523	156	\N	Ombrée d'Anjou	49	47.75027799999999	-1.040742
+18524	157	\N	Baugé-en-Anjou	49	47.494848	-0.047005
+18525	158	\N	Segré-en-Anjou Bleu	49	47.744191	-0.888048
+18526	159	\N	Huillé-Lézigné	49	47.64843399999999	-0.304846
+18529	162	\N	Beaupréau-en-Mauges	49	47.195407	-0.867684
+18531	165	\N	Baugé-en-Anjou	49	47.574108	-0.080584
+18533	169	\N	Chemillé-en-Anjou	49	47.281594	-0.7304889999999999
+18536	172	\N	Orée-d'Anjou	49	47.265528	-1.2432669
+18537	173	\N	Noyant-Villages	49	47.536645	0.010947
+18539	175	\N	Noyant-Villages	49	47.459919	0.076937
+18541	177	\N	Orée-d'Anjou	49	47.342087	-1.164507
+18543	179	\N	Sèvremoine	49	47.018247	-1.059431
+18545	181	\N	Tuffalun	49	47.29294900000001	-0.325903
+18548	184	\N	Segré-en-Anjou Bleu	49	47.691858	-0.8017959
+18549	185	\N	Jarzé Villages	49	47.527297	-0.277968
+18550	186	\N	Brissac Loire Aubance	49	47.284842	-0.391717
+18551	187	\N	Segré-en-Anjou Bleu	49	47.638447	-0.846996
+18553	189	\N	Les Hauts-d'Anjou	49	47.7230272	-0.619618
+18554	190	\N	Mauges-sur-Loire	49	47.358063	-1.07345
+18555	191	\N	Terranjou	49	47.232795	-0.429988
+18560	196	\N	Longuenée-en-Anjou	49	47.519368	-0.6679879999999999
+18561	197	\N	Noyant-Villages	49	47.508216	0.189989
+18562	198	\N	Doué-la-Fontaine	49	47.23162	-0.209477
+18563	199	\N	Chemillé-en-Anjou	49	47.181183	-0.696705
+18566	202	\N	Noyant-Villages	49	47.493564	0.119497
+18567	204	\N	Mauges-sur-Loire	49	47.365296	-0.9350090000000001
+18569	206	\N	Sèvremoine	49	47.101355	-1.128084
+18570	207	\N	Doué-la-Fontaine	49	47.197181	-0.211207
+18571	208	\N	Segré-en-Anjou Bleu	49	47.728614	-0.7436849999999999
+18574	212	\N	Mauges-sur-Loire	49	47.3866581	-0.8624879
+18575	213	\N	Baugé-en-Anjou	49	47.5856594	-0.1043754
+18674	317	\N	Brissac Loire Aubance	49	47.397589	-0.315247
+18675	318	\N	Brissac Loire Aubance	49	47.394963	-0.436822
+18676	319	\N	Segré-en-Anjou Bleu	49	47.753927	-0.791859
+18677	320	\N	Orée-d'Anjou	49	47.2840429	-1.255967
+18678	321	\N	Ingrandes-le-Fresne-sur-Loire	49	47.4539247	-0.9420779
+18679	322	\N	Blaison-Saint-Sulpice	49	47.400594	-0.417403
+18681	324	\N	Montrevault-sur-Èvre	49	47.2442855	-0.9745115000000001
+18682	325	\N	Chemillé-en-Anjou	49	47.15538	-0.6364099999999999
+18684	327	\N	Brissac Loire Aubance	49	47.295871	-0.38315
+18694	337	\N	Rives-du-Loir-en-Anjou	49	47.568314	-0.418153
+18698	342	\N	Lys-Haut-Layon	49	47.175076	-0.408699
+18702	346	\N	Gennes-Val-de-Loire	49	47.370354	-0.27093
+18704	348	\N	Lys-Haut-Layon	49	47.200241	-0.427962
+18705	349	\N	Sèvremoine	49	47.145553	-1.163662
+18706	350	\N	Sèvremoine	49	47.037875	-1.114807
+18707	351	\N	Chemillé-en-Anjou	49	47.14287700000001	-0.698469
+18710	354	\N	Ombrée d'Anjou	49	47.677975	-1.017303
+18712	356	\N	Lys-Haut-Layon	49	47.157109	-0.445862
+18715	360	\N	Orée-d'Anjou	49	47.314075	-1.322192
+18718	363	\N	Brissac Loire Aubance	49	47.331235	-0.477918
+18720	365	\N	Doué-la-Fontaine	49	47.154247	-0.297333
+6933	282	\N	Malemort	19	45.19506	1.619254
+7012	073	\N	Le Val-Larrey	21	47.419894	4.299693
+36622	18	\N	Le Morne-Rouge	972	14.7721928	-61.1347823
+36623	19	\N	Le Prêcheur	972	14.8022712	-61.22483740000001
+36624	20	\N	Rivière-Pilote	972	14.482587	-60.9057568
+36625	21	\N	Rivière-Salée	972	14.5267646	-60.9770324
+36626	22	\N	France	972	46.227638	2.213749
+36627	23	\N	Saint-Esprit	972	14.5618515	-60.937506
+36628	24	\N	France	972	46.227638	2.213749
+36629	25	\N	France	972	46.227638	2.213749
+36630	26	\N	France	972	46.227638	2.213749
+36631	27	\N	France	972	46.227638	2.213749
+36632	28	\N	France	972	46.227638	2.213749
+36633	29	\N	Schœlcher	972	14.61563	-61.1016571
+36634	30	\N	France	972	46.227638	2.213749
+36635	31	\N	Les Trois-Îlets	972	14.5382958	-61.0340838
+36636	32	\N	Le Vauclin	972	14.5456526	-60.83968
+36637	33	\N	Le Morne-Vert	972	14.7070314	-61.14500100000001
+36638	34	\N	France	972	46.227638	2.213749
+36639	01	\N	Regina	973	4.3136572	-52.1296646
+36640	02	\N	Cayenne	973	4.937977399999999	-52.3354386
+36641	03	\N	Iracoubo	973	5.4793173	-53.2060492
+36642	04	\N	Kourou	973	5.1573958	-52.6430108
+36643	05	\N	Macouria	973	5.0138858	-52.4739136
+36644	06	\N	Mana	973	5.6680095	-53.7789581
+36645	07	\N	Matoury	973	4.8503574	-52.3318445
+36646	08	\N	Saint Georges	973	3.8888947	-51.8013955
+36647	09	\N	Remire-Montjoly	973	4.9048028	-52.2732839
+36648	10	\N	Roura	973	4.727321	-52.3263616
+36649	11	\N	Saint-Laurent-du-Maroni	973	5.5036634	-54.0294336
+36650	12	\N	Sinnamary	973	5.3771635	-52.9573827
+36651	13	\N	Montsinery-Tonnegrande	973	4.8918494	-52.4931525
+36652	14	\N	Quanary	973	4.2090852	-51.6710441
+36653	52	\N	Saul	973	3.862786399999999	-53.391782
+36654	53	\N	Maripasoula	973	3.6413216	-54.02893
+36655	56	\N	Camopi	973	3.1653485	-52.3349183
+36656	57	\N	Grand-Santi	973	4.275512300000001	-54.3836005
+36657	58	\N	Saint-Élie	973	4.8262542	-53.2880218
+36658	60	\N	Apatou	973	5.1501081	-54.3418035
+36659	61	\N	Awala-Yalimapo	973	5.7362392	-53.9095244
+36660	62	\N	Papaichton	973	3.8069237	-54.1495542
+36661	01	\N	Les Avirons	974	-21.2425638	55.333168
+36662	02	\N	Bras-Panon	974	-20.995368	55.6772486
+36663	03	\N	Entre-Deux	974	-21.2496061	55.470807
+36664	04	\N	L'Étang-Salé	974	-21.2655375	55.3668668
+36665	05	\N	Petite-Île	974	-21.3555623	55.5655548
+36666	06	\N	La Plaine-des-Palmistes	974	-21.1354928	55.6256749
+36667	07	\N	France	974	46.227638	2.213749
+36668	08	\N	La Possession	974	-20.9313685	55.3337397
+36669	09	\N	Saint Andre	974	-20.9603972	55.65089159999999
+36670	10	\N	Saint-Benoît	974	-21.033524	55.71301279999999
+36672	12	\N	Saint Joseph	974	-21.3788371	55.618982
+36673	13	\N	France	974	46.227638	2.213749
+36674	14	\N	Saint-Louis	974	-21.2866039	55.4078708
+36675	15	\N	Saint-Paul	974	-21.0093476	55.2701702
+36676	16	\N	France	974	46.227638	2.213749
+36677	17	\N	Saint-Philippe	974	-21.3595223	55.7665126
+36678	18	\N	Sainte-Marie	974	-20.8973789	55.549018
+36679	19	\N	Sainte Rose	974	-21.1281127	55.79343009999999
+36680	20	\N	Sainte-Suzanne	974	-20.9072551	55.6106762
+36681	21	\N	Salazie	974	-21.027999	55.5391963
+36682	22	\N	Le Tampon	974	-21.2790444	55.515318
+36683	23	\N	Les Trois-Bassins	974	-21.1055992	55.2951171
+36684	24	\N	Cilaos	974	-21.1344903	55.4711507
+7149	213	\N	Neuilly-Crimolois	21	47.270748	5.124844
+7254	318	\N	Val-Mont	21	47.028866	4.637113
+7420	486	\N	Longeault-Pluvault	21	47.215851	5.252897
+7441	507	\N	Collonges-et-Premières	21	47.233256	5.282853999999999
+7446	513	\N	Valforêt	21	47.22957599999999	4.864745
+7484	551	\N	Source-Seine	21	47.495793	4.697057000000001
+7554	621	\N	Tart	21	47.183822	5.24261
+7590	658	\N	Cormot-Vauchignon	21	46.9767582	4.6442673
+7654	007	\N	Binic-Étables-sur-Mer	22	48.6012421	-2.8269525
+7682	038	\N	Châtelaudren-Plouagat	22	48.543588	-2.967909
+7695	051	\N	Jugon-les-Lacs	22	48.384117	-2.328728
+7702	058	\N	Plémet	22	48.141779	-2.606732
+7710	066	\N	Le Mené	22	48.329697	-2.487672
+7722	078	\N	La Roche-Jaudy	22	48.742788	-3.1974459
+7724	080	\N	Plœuc-L'Hermitage	22	48.3327699	-2.828803
+7743	100	\N	Plouguenast-Langast	22	48.281203	-2.663971
+7745	102	\N	Le Mené	22	48.28431	-2.414984
+7765	123	\N	Dinan	22	48.4422939	-2.03902
+7790	151	\N	Lamballe-Armor	22	48.445272	-2.568495
+7793	154	\N	Lamballe-Armor	22	48.5228012	-2.6089922
+7805	167	\N	Bon Repos sur Blavet	22	48.1753069	-3.157511
+7811	173	\N	Lamballe-Armor	22	48.533027	-2.5781489
+7829	191	\N	Le Mené	22	48.2758139	-2.618648
+7830	192	\N	Beaussais-sur-Mer	22	48.538233	-2.142334
+7884	247	\N	La Roche-Jaudy	22	48.732232	-3.2417889
+7889	253	\N	La Roche-Jaudy	22	48.76584500000001	-3.19767
+7925	290	\N	Bon Repos sur Blavet	22	48.22473799999999	-3.0966619
+7927	292	\N	Le Mené	22	48.2476259	-2.548244
+7932	297	\N	Le Mené	22	48.26781099999999	-2.568681
+7933	298	\N	Guerlédan	22	48.217242	-2.934505
+7937	303	\N	Le Mené	22	48.283128	-2.481886
+7988	357	\N	Beaussais-sur-Mer	22	48.569868	-2.181523
+7998	367	\N	Pordic	22	48.555087	-2.857276
+8139	121	\N	Linard-Malval	23	46.34891409999999	1.8874681
+8144	126	\N	Saint-Dizier-Masbaraud	23	45.97554	1.739982
+8177	161	\N	Parsac-Rimondeix	23	46.227596	2.101772
+8246	231	\N	Fursac	23	46.1707283	1.4941107
+8292	013	\N	Boulazac Isle Manoire	24	45.13991100000001	0.7483059999999999
+8311	033	\N	Mareuil en Périgord	24	45.49442699999999	0.499653
+8319	041	\N	Castels et Bézenac	24	44.844237	1.088257
+8322	044	\N	Bassillac et Auberoche	24	45.18200299999999	0.908125
+8325	047	\N	Cubjac-Auvézère-Val d'Ans	24	45.226234	0.984522
+8342	065	\N	Sanilhac	24	45.056772	0.7528849999999999
+8354	079	\N	Brantôme en Périgord	24	45.396816	0.642365
+8364	089	\N	Pechs-de-l'Espérance	24	44.8786772	1.4307899
+8367	092	\N	Val de Louyre et Caudeau	24	44.995517	0.823009
+8368	093	\N	La Tour-Blanche-Cercles	24	45.3639439	0.4610395
+8374	099	\N	Mareuil en Périgord	24	45.474371	0.5809259999999999
+8378	103	\N	Dordogne	24	45.14694859999999	0.7572205
+8392	118	\N	Parcoul-Chenaud	24	45.218806	0.103205
+8400	127	\N	Coly-Saint-Amand	24	45.084781	1.267475
+8438	166	\N	Bassillac et Auberoche	24	45.161735	0.8554999999999999
+8441	170	\N	Brantôme en Périgord	24	45.32329	0.7535120000000001
+8448	178	\N	Saint Privat en Périgord	24	45.22535	0.241045
+8451	181	\N	Sigoulès-et-Flaugeac	24	44.74801799999999	0.442998
+8466	198	\N	Brantôme en Périgord	24	45.389406	0.5905739999999999
+8470	203	\N	Mareuil en Périgord	24	45.49603500000001	0.441603
+8471	204	\N	Les Coteaux Périgourdins	24	45.104837	1.365276
+8486	219	\N	Beaumontois-en-Périgord	24	44.742509	0.795501
+8500	233	\N	Eyraud-Crempse-Maurens	24	44.94142799999999	0.440907
+8502	235	\N	Mareuil en Périgord	24	45.391936	0.514774
+8506	239	\N	Sorges et Ligueux en Périgord	24	45.3086072	0.8195727
+8516	249	\N	Les Eyzies	24	44.959122	0.9902999999999998
+8524	258	\N	Sanilhac	24	45.09775500000001	0.784836
+8535	270	\N	Bassillac et Auberoche	24	45.110743	0.9155070000000001
+8547	283	\N	Mareuil en Périgord	24	45.421394	0.53225
+8562	298	\N	Coux-et-Bigaroque-Mouzens	24	44.844888	1.015069
+8574	310	\N	Beaumontois-en-Périgord	24	44.724718	0.757838
+8578	314	\N	Dordogne	24	45.14694859999999	0.7572205
+8595	333	\N	La Jemaye-Ponteyraud	24	45.193627	0.244291
+8604	343	\N	Saint-Aulaye-Puymangou	24	45.190086	0.07636100000000001
+8605	344	\N	Mareuil en Périgord	24	45.479057	0.475093
+8623	363	\N	Pays-de-Belvès	24	44.7568255	1.0442502
+8628	368	\N	Saint Privat en Périgord	24	45.25617099999999	0.199377
+8629	369	\N	Bassillac et Auberoche	24	45.14265899999999	0.943472
+8648	389	\N	Les Eyzies	24	44.92510799999999	0.9697340000000001
+8650	391	\N	Brantôme en Périgord	24	45.418999	0.6010559999999999
+8660	402	\N	Saint-Julien-Innocence-Eulalie	24	44.700161	0.366283
+8685	427	\N	Eyraud-Crempse-Maurens	24	44.95556	0.453363
+8688	430	\N	Brantôme en Périgord	24	45.360493	0.589885
+8689	431	\N	Eyraud-Crempse-Maurens	24	44.951746	0.525744
+8691	433	\N	Saint-Julien-Innocence-Eulalie	24	44.7260289	0.439211
+8693	435	\N	Val de Louyre et Caudeau	24	44.95957	0.7388840000000001
+8697	439	\N	Boulazac Isle Manoire	24	45.14893499999999	0.794901
+8704	447	\N	Boulazac Isle Manoire	24	45.130947	0.826668
+8730	475	\N	Cubjac-Auvézère-Val d'Ans	24	45.24195599999999	0.991513
+8752	497	\N	Beaumontois-en-Périgord	24	44.707707	0.724773
+8758	503	\N	Mareuil en Périgord	24	45.46637	0.5046539999999999
+8784	530	\N	Brantôme en Périgord	24	45.3114503	0.67996
+8813	561	\N	Brantôme en Périgord	24	45.333409	0.617227
+8830	579	\N	Mareuil en Périgord	24	45.431189	0.497968
+8862	027	\N	Fontain	25	47.1979169	6.001434
+8863	028	\N	Les Premiers-Sapins	25	47.077962	6.308754
+8869	034	\N	Les Auxons	25	47.3004928	5.949359800000001
+8907	076	\N	Ornans	25	47.13361399999999	6.168063
+8951	123	\N	Étalans	25	47.146705	6.215269999999999
+8956	128	\N	Les Premiers-Sapins	25	47.085681	6.313454
+8962	134	\N	Cussey-sur-Lison	25	47.0655775	5.982005099999999
+8964	137	\N	Marchaux-Chaudefontaine	25	47.33973599999999	6.160874000000001
+8967	140	\N	Pays-de-Clerval	25	47.38259499999999	6.508614
+9068	250	\N	Tarcenay-Foucherans	25	47.157308	6.13688
+9098	282	\N	Val-d'Usiers	25	46.9705933	6.2759503
+9115	302	\N	Les Premiers-Sapins	25	47.047998	6.287205
+9132	319	\N	Levier	25	46.977038	6.078895
+9206	399	\N	Le Val	25	47.058589	5.900389
+9283	480	\N	Les Premiers-Sapins	25	47.111568	6.374496
+9311	509	\N	Osselle-Routelle	25	47.16745299999999	5.849940999999999
+9332	530	\N	Sancey	25	47.305509	6.603922
+9333	531	\N	Pays-de-Clerval	25	47.4041659	6.5077
+9350	549	\N	Val-d'Usiers	25	46.9527355	6.2565458
+9376	576	\N	Vaire	25	47.286871	6.146937899999999
+9383	585	\N	Les Premiers-Sapins	25	47.0986199	6.359183
+9385	587	\N	Bouclans	25	47.27155399999999	6.241954
+9391	593	\N	Chemaudin et Vaux	25	47.238131	5.889937
+9406	610	\N	Étalans	25	47.200774	6.276806
+9424	628	\N	Les Monts-Ronds	25	47.144794	6.08785
+9607	184	\N	Valherbasse	26	45.19903499999999	5.110870999999999
+9610	187	\N	Solaure-en-Diois	26	44.72587	5.40022
+9642	219	\N	Saint-Jean-de-Galaure	26	45.2218862	4.9197659
+9715	297	\N	Valherbasse	26	45.195926	5.144019999999999
+9772	354	\N	Châtillon-en-Diois	26	44.73509869999999	5.5407299
+9784	366	\N	Mercurol-Veaunes	26	45.083409	4.9197559
+9807	007	\N	Mesnil-en-Ouche	27	48.979414	0.783152
+9824	024	\N	Mesnils-sur-Iton	27	48.8702626	1.0427019
+9839	041	\N	Mesnil-en-Ouche	27	48.946012	0.6652939999999999
+9856	058	\N	Les Trois Lacs	27	49.233306	1.3394299
+9858	060	\N	Vexin-sur-Epte	27	49.182901	1.660179
+9881	084	\N	Grand-Bourgtheroulde	27	49.318546	0.850073
+9883	088	\N	Mesnil-en-Ouche	27	48.949046	0.7092499999999999
+9887	092	\N	Les Monts du Roumois	27	49.2658387	0.8472031999999999
+9888	093	\N	Bosroumois	27	49.280384	0.9091100000000001
+9916	121	\N	Vexin-sur-Epte	27	49.1455008	1.6213934
+9917	122	\N	Vexin-sur-Epte	27	49.2077699	1.5997189
+9923	128	\N	Vexin-sur-Epte	27	49.2351699	1.58514
+9926	131	\N	Nassandres sur Risle	27	49.135696	0.6711279
+9938	143	\N	La Vieille-Lyre	27	48.955435	0.762703
+9940	145	\N	Marbois	27	48.882726	1.018171
+9945	150	\N	La Chapelle-Longueville	27	49.097296	1.378625
+9954	159	\N	Breteuil	27	48.79530399999999	0.8901549999999999
+9955	160	\N	Vexin-sur-Epte	27	49.17122699999999	1.5881019
+9961	166	\N	Mesnils-sur-Iton	27	48.83235	0.9646760000000001
+9967	172	\N	Chambois	27	48.882518	1.142402
+9970	175	\N	Frenelles-en-Vexin	27	49.283457	1.459533
+9988	195	\N	Tillières-sur-Avre	27	48.806014	0.995447
+9990	197	\N	Vexin-sur-Epte	27	49.167405	1.638898
+10004	211	\N	Clef Vallée d'Eure	27	49.101574	1.26446
+10014	221	\N	Mesnil-en-Ouche	27	48.980867	0.6422089999999999
+10016	223	\N	Flancourt-Crescy-en-Roumois	27	49.32041299999999	0.7721587
+10018	225	\N	Marbois	27	48.8903109	0.984323
+10036	244	\N	Flancourt-Crescy-en-Roumois	27	49.3318997	0.7663487
+10042	250	\N	Clef Vallée d'Eure	27	49.1302779	1.215593
+10045	253	\N	Nassandres sur Risle	27	49.148373	0.71397
+10047	255	\N	Vexin-sur-Epte	27	49.209036	1.568777
+10049	257	\N	Vexin-sur-Epte	27	49.224033	1.5290729
+10054	262	\N	Vexin-sur-Epte	27	49.121423	1.639808
+10056	264	\N	Vexin-sur-Epte	27	49.185923	1.606913
+10057	265	\N	Verneuil d'Avre et d'Iton	27	48.788066	0.8498829999999999
+10060	268	\N	Le Val-Doré	27	48.950816	0.97458
+10062	270	\N	Frenelles-en-Vexin	27	49.2897279	1.4049
+10065	274	\N	Val d'Orger	27	49.338622	1.4014549
+10074	283	\N	Mesnil-en-Ouche	27	48.948907	0.6254719999999999
+10083	292	\N	Mesnil-en-Ouche	27	49.024036	0.745223
+10084	293	\N	Mesnils-sur-Iton	27	48.850019	0.9927159999999999
+10087	296	\N	Mesnil-en-Ouche	27	49.039663	0.6570539999999999
+10088	297	\N	Mesnils-sur-Iton	27	48.814199	1.062133
+10094	303	\N	Le Lesme	27	48.88915	0.842115
+10096	305	\N	Breteuil	27	48.81692400000001	0.8865419999999999
+10099	308	\N	Vexin-sur-Epte	27	49.21543399999999	1.548568
+10133	344	\N	Les Monts du Roumois	27	49.255443	0.832252
+10144	356	\N	Mesnil-en-Ouche	27	49.021916	0.610754
+10149	362	\N	Mesnil-en-Ouche	27	49.003959	0.637818
+10174	387	\N	Mesnils-sur-Iton	27	48.909448	1.047707
+10189	402	\N	Le Val-Doré	27	48.93666899999999	0.9904109999999999
+10202	416	\N	Mesnils-sur-Iton	27	48.8393649	1.1180745
+10234	449	\N	Vexin-sur-Epte	27	49.154427	1.504696
+10236	452	\N	Nassandres sur Risle	27	49.1474682	0.7585875999999999
+10266	484	\N	La Baronnie	27	48.930294	1.270001
+10273	491	\N	Mesnils-sur-Iton	27	48.8459689	1.045854
+10280	499	\N	Mesnil-en-Ouche	27	48.9604659	0.579101
+10284	503	\N	Mesnils-sur-Iton	27	48.8901943	1.0653195
+10287	506	\N	Amfreville-Saint-Amand	27	49.23452400000001	0.9308289999999999
+10290	510	\N	Pacy-sur-Eure	27	49.011668	1.359461
+10293	513	\N	Mesnil-en-Ouche	27	49.008761	0.67955
+10295	515	\N	Mesnil-en-Ouche	27	49.038556	0.700975
+10299	519	\N	Le Val-d'Hazey	27	49.167299	1.312795
+10303	523	\N	Treis-Sants-en-Ouche	27	49.06544	0.66471
+10306	526	\N	Bourneville-Sainte-Croix	27	49.416675	0.628891
+10312	532	\N	Marbois	27	48.8711068	0.9444472
+10329	549	\N	Pont-Audemer	27	49.3483373	0.5045366
+10331	551	\N	Le Mesnil-Saint-Jean	27	49.2270479	0.5604308
+10345	566	\N	Mesnil-en-Ouche	27	49.023409	0.658061
+10352	573	\N	Sainte-Marie-d'Attez	27	48.807288	0.939889
+10353	574	\N	Le Bosc-du-Theil	27	49.211712	0.868796
+10359	581	\N	Le Perrey	27	49.39153200000001	0.5392479
+10364	588	\N	Saint-Pierre-d'Autils	27	49.119043	1.436665
+10372	596	\N	Mesnil-en-Ouche	27	48.935365	0.577579
+10376	600	\N	Treis-Sants-en-Ouche	27	49.048739	0.579994
+10383	607	\N	Le Perrey	27	49.4034679	0.546623
+10401	626	\N	Thénouville	27	49.28768300000001	0.8001539999999999
+10403	628	\N	Mesnil-en-Ouche	27	48.9783169	0.7328399999999999
+10409	634	\N	Chambois	27	48.9111959	1.168385
+10411	636	\N	Le Thuit-de-l'Oison	27	49.274293	0.9687979999999999
+10412	637	\N	Thuit-Hébert	27	49.327471	0.8279019999999999
+10414	639	\N	Le Thuit-de-l'Oison	27	49.268808	0.908237
+10417	642	\N	Goupil-Othon	27	49.11689	0.791373
+10422	647	\N	Les Trois Lacs	27	49.21835799999999	1.374973
+10423	648	\N	Terres de Bord	27	49.25756	1.111646
+10426	651	\N	Porte-de-Seine	27	49.274095	1.26093
+10428	653	\N	Vexin-sur-Epte	27	49.184751	1.545622
+10432	657	\N	Thénouville	27	49.301127	0.7572789999999999
+10461	687	\N	Le Val-d'Hazey	27	49.172512	1.286008
+10462	688	\N	Sylvains-les-Moulins	27	48.9280347	1.0585219
+10477	002	\N	Janville-en-Beauce	28	48.2044894	1.8242124
+10491	017	\N	Cloyes-les-Trois-Rivières	28	48.007	1.291438
+10494	020	\N	Éole-en-Beauce	28	48.17293799999999	1.62655
+10516	042	\N	Auneau-Bleury-Saint-Symphorien	28	48.519968	1.748013
+10517	044	\N	Vald’Yerre	28	48.048492	1.151217
+10536	063	\N	Arcisses	28	48.323915	0.893639
+10539	066	\N	Dangeau	28	48.240308	1.250552
+10542	069	\N	Goussainville	28	48.76296	1.56946
+10556	083	\N	Cloyes-les-Trois-Rivières	28	47.972328	1.324924
+10566	093	\N	Vald’Yerre	28	48.115212	1.184577
+10573	101	\N	Villemaury	28	48.09108699999999	1.491153
+10584	112	\N	Arcisses	28	48.346385	0.9209700000000001
+10587	115	\N	Vald’Yerre	28	48.078384	1.1369229
+10603	133	\N	Cloyes-les-Trois-Rivières	28	48.035579	1.272272
+10614	145	\N	Éole-en-Beauce	28	48.2239069	1.634365
+10619	150	\N	Cloyes-les-Trois-Rivières	28	47.983596	1.343716
+10633	165	\N	Saintigny	28	48.3728164	0.9698932000000001
+10646	179	\N	Éole-en-Beauce	28	48.19258	1.740665
+10669	204	\N	Vald’Yerre	28	48.04419300000001	1.18731
+10670	205	\N	Saint-Denis-Lanneray	28	48.085974	1.238798
+10689	224	\N	Villemaury	28	48.05954	1.4137329
+10704	241	\N	Cloyes-les-Trois-Rivières	28	47.98766	1.415084
+10712	250	\N	Dangeau	28	48.250449	1.273917
+10720	258	\N	Les Villages-Vovéens	28	48.2708749	1.54278
+10724	262	\N	Cloyes-les-Trois-Rivières	28	48.0134479	1.234505
+10749	288	\N	Gommerville	28	48.370399	1.918739
+10756	295	\N	Villemaury	28	48.013741	1.480384
+10758	297	\N	Theuville	28	48.319292	1.577718
+10771	311	\N	Janville-en-Beauce	28	48.20790059999999	1.8662345
+10778	318	\N	Cloyes-les-Trois-Rivières	28	47.98050600000001	1.283498
+10780	320	\N	Les Villages-Vovéens	28	48.25755299999999	1.567642
+10798	340	\N	Cloyes-les-Trois-Rivières	28	48.0248	1.25498
+10813	356	\N	Vald’Yerre	28	48.070321	1.140058
+10818	361	\N	Auneau-Bleury-Saint-Symphorien	28	48.51667699999999	1.75893
+10833	376	\N	Authon-du-Perche	28	48.168038	0.88676
+10856	402	\N	Mittainvilliers-Vérigny	28	48.520368	1.321824
+10866	412	\N	Éole-en-Beauce	28	48.241594	1.601999
+10869	416	\N	Les Villages-Vovéens	28	48.286561	1.564225
+10928	052	\N	Audierne	29	48.024744	-4.562468
+10998	127	\N	Saint-Thégonnec Loc-Eguiner	29	48.46249299999999	-3.969631999999999
+11000	129	\N	Poullaouen	29	48.353625	-3.69497
+11019	149	\N	Milizac-Guipronvel	29	48.466883	-4.566677900000001
+11068	203	\N	Plounéour-Brignogan-plages	29	48.650208	-4.318079
+11084	219	\N	Plouigneau	29	48.565543	-3.638197
+11675	157	\N	Bréau-Mars	30	44.000282	3.556101
+11708	190	\N	Val-d'Aigoual	30	44.048143	3.701035999999999
+12168	298	\N	Saint-Béat-Lez	31	42.908876	0.700449
+12176	307	\N	Péguilhan	31	43.339672	0.687354
+12307	438	\N	Lasserre-Pradère	31	43.6436926	1.1568962
+12534	074	\N	Riscle	32	43.6159206	-0.0536592
+12627	168	\N	Castelnau-d'Auzan-Labarrère	32	43.959931	0.146447
+13015	091	\N	Morizès	33	44.612861	-0.089171
+13016	092	\N	Porte-de-Benauge	33	44.69300399999999	-0.231319
+13031	107	\N	Castets et Castillon	33	44.55158	-0.115768
+13188	267	\N	Val-de-Livenne	33	45.269046	-0.5232089999999999
+13257	338	\N	Blaignan-Prignac	33	45.3261314	-0.9130028999999998
+13288	371	\N	Val de Virvée	33	45.016166	-0.42263
+13408	495	\N	Val de Virvée	33	45.01555399999999	-0.379659
+13796	330	\N	Entre-Vignes	34	43.716449	4.100409
+13821	011	\N	Saint-Marc-le-Blanc	35	48.360124	-1.379586
+13855	048	\N	Val d'Anast	35	47.93713	-2.0092469
+13860	053	\N	Piré-Chancé	35	48.034745	-1.38029
+13888	083	\N	Les Portes du Coglais	35	48.459476	-1.364517
+13905	100	\N	Luitré-Dompierre	35	48.26672199999999	-1.1450689
+13917	112	\N	La Chapelle-Fleurigné	35	48.336008	-1.120155
+13918	113	\N	Val-Couesnon	35	48.466081	-1.504318
+13934	129	\N	Guipry-Messac	35	47.8251986	-1.8422505
+13952	147	\N	Mesnil-Roc'h	35	48.4586024	-1.8293765
+13963	158	\N	La Chapelle du Lou du Lac	35	48.209153	-1.99375
+14013	209	\N	Châteaugiron	35	48.0558	-1.4494769
+14057	254	\N	Châteaugiron	35	48.0445459	-1.463669
+14070	267	\N	Maen-Roch	35	48.402533	-1.32441
+14072	269	\N	Rives-du-Couesnon	35	48.27356899999999	-1.291094
+14096	293	\N	Rives-du-Couesnon	35	48.304174	-1.36473
+14103	301	\N	Montauban-de-Bretagne	35	48.22882999999999	-2.059206
+14105	303	\N	Val-Couesnon	35	48.463063	-1.443316
+14123	323	\N	Les Portes du Coglais	35	48.4384982	-1.3376139
+14141	341	\N	Val-Couesnon	35	48.423296	-1.476708
+14144	344	\N	Mesnil-Roc'h	35	48.480351	-1.873188
+14148	348	\N	Rives-du-Couesnon	35	48.29949	-1.309764
+14233	072	\N	Villentrois-Faverolles-en-Berry	36	47.17133700000001	1.41053
+14312	151	\N	Val-Fouzon	36	47.207594	1.651487
+14344	183	\N	Val-Fouzon	36	47.187596	1.668383
+14362	201	\N	Levroux	36	46.990935	1.52436
+14367	206	\N	Levroux	36	46.972744	1.511833
+14406	245	\N	Saint-Maur	36	46.868498	1.633106
+14510	102	\N	Langeais	37	47.3451482	0.3024584
+14528	120	\N	Coteaux-sur-Loire	37	47.282328	0.266382
+14543	135	\N	Beaumont-Louestault	37	47.617132	0.649524
+14616	209	\N	Tauxigny-Saint-Bauld	37	47.180356	0.83748
+14633	227	\N	Coteaux-sur-Loire	37	47.307685	0.348746
+14699	014	\N	Arandon-Passins	38	45.711602	5.432983
+14701	016	\N	Porte-des-Bonnevaux	38	45.425694	5.171708
+14706	021	\N	Autrans-Méaudre-en-Vercors	38	45.1729041	5.539739
+14709	024	\N	Eclose-Badinières	38	45.508054	5.30279
+14710	025	\N	Ornacieux-Balbins	38	45.3920386	5.2193634
+14713	028	\N	Les Abrets-en-Dauphiné	38	45.50876299999999	5.596648999999999
+14802	121	\N	Porte-des-Bonnevaux	38	45.426139	5.225271999999999
+14804	125	\N	Châtel-en-Trièves	38	44.8278062	5.8399555
+14822	145	\N	Saint-Antoine-l'Abbaye	38	45.203042	5.219388899999999
+14841	165	\N	Les Abrets-en-Dauphiné	38	45.546202	5.562493
+14928	262	\N	Crêts en Belledonne	38	45.3811907	6.0153921
+14940	274	\N	Porte-des-Bonnevaux	38	45.43686539999999	5.2704283
+14959	293	\N	Val-de-Virieu	38	45.493954	5.463634
+14968	302	\N	Chantepérier	38	44.937039	5.973281
+14971	305	\N	Villages du Lac de Paladru	38	45.458011	5.504868999999999
+14972	306	\N	Le Haut-Bréda	38	45.356672	6.099746
+14978	312	\N	La Sure en Chartreuse	38	45.317876	5.656277999999999
+15032	367	\N	Plateau-des-Petites-Roches	38	45.3631926	5.908445200000001
+15097	435	\N	Plateau-des-Petites-Roches	38	45.29574059999999	5.8458327
+15186	534	\N	Les Deux Alpes	38	45.0362	6.131857
+15193	541	\N	Les Avenières Veyrins-Thuellin	38	45.626513	5.539128000000001
+15240	023	\N	Les Trois-Châteaux	39	46.44041	5.373619000000001
+15252	036	\N	Val-d'Épy	39	46.380759	5.414404999999999
+15279	064	\N	Val-Sonnette	39	46.618792	5.429018
+15283	069	\N	Val Suran	39	46.35380199999999	5.4084199
+15288	075	\N	Domblans	39	46.782227	5.579237
+15300	089	\N	Saint-Hymetière-sur-Valouse	39	46.360706	5.574714
+15323	113	\N	Chassal-Molinges	39	46.3587289	5.7877277
+15325	115	\N	Grande-Rivière Château	39	46.49944	5.89933
+15333	123	\N	Valzin en Petite Montagne	39	46.425497	5.545856
+15344	135	\N	Les Trois-Châteaux	39	46.404335	5.344298999999999
+15356	148	\N	Arinthod	39	46.379166	5.564748
+15365	158	\N	Thoirette-Coisia	39	46.306102	5.580462
+15368	161	\N	Mignovillard	39	46.799124	6.097244
+15392	186	\N	Coteaux du Lizon	39	46.414676	5.811648
+15401	195	\N	Montlainsia	39	46.38402199999999	5.500969
+15418	213	\N	Mièges	39	46.800891	6.03999
+15420	215	\N	La Chailleuse	39	46.585046	5.549607000000001
+15429	224	\N	Valzin en Petite Montagne	39	46.442365	5.598445
+15431	226	\N	Val-d'Épy	39	46.395668	5.423083
+15446	243	\N	Vincent-Froideville	39	46.809995	5.485683
+15461	260	\N	Hauteroche	39	46.714006	5.643867999999999
+15465	264	\N	Val-Sonnette	39	46.597323	5.501710999999999
+15487	287	\N	Saint-Hymetière-sur-Valouse	39	46.333552	5.5568289
+15494	294	\N	Hauts-de-Bienne	39	46.498281	5.937056
+15503	303	\N	Val Suran	39	46.421777	5.466498
+15509	309	\N	Trenal	39	46.630267	5.448098
+15530	332	\N	Hauteroche	39	46.697512	5.728236
+15538	340	\N	Mièges	39	46.787626	6.068249
+15539	341	\N	Septmoncel Les Molunes	39	46.3482473	5.9310784
+15545	347	\N	Montlainsia	39	46.354487	5.451874999999999
+15566	371	\N	Hauts-de-Bienne	39	46.505699	5.980042999999999
+15576	382	\N	Val-d'Épy	39	46.408102	5.399689
+15587	395	\N	Beaufort-Orbagna	39	46.582315	5.450009
+15605	414	\N	Dampierre	39	47.192372	5.743646
+15607	417	\N	Nanchez	39	46.496343	5.828278
+15627	438	\N	Lavans-lès-Saint-Claude	39	46.3956639	5.809826
+15629	440	\N	Lavans-lès-Saint-Claude	39	46.378698	5.764399999999999
+15631	442	\N	Nanchez	39	46.51202	5.840052
+15669	482	\N	Arlay	39	46.760016	5.557775899999999
+15670	483	\N	Saint-Hymetière-sur-Valouse	39	46.360287	5.556901
+15671	484	\N	Les Trois-Châteaux	39	46.404247	5.357138
+15675	488	\N	La Chailleuse	39	46.599465	5.511608
+15692	506	\N	Valzin en Petite Montagne	39	46.440188	5.578240999999999
+15695	509	\N	Val-d'Épy	39	46.39711399999999	5.377954
+15707	524	\N	Tancua	39	46.536667	6.014615999999999
+15723	542	\N	Vosbles-Valfin	39	46.36907	5.519949
+15725	544	\N	La Chailleuse	39	46.558856	5.540915000000001
+15730	549	\N	Val-Sonnette	39	46.593183	5.455336
+15743	562	\N	Nanchez	39	46.476055	5.897432999999999
+15744	564	\N	Val Suran	39	46.37409	5.442025999999999
+15746	566	\N	Aromas	39	46.336756	5.477873000000001
+15773	009	\N	Morcenx-la-Nouvelle	40	44.013272	-0.8550089999999999
+15810	048	\N	Rion-des-Landes	40	43.891452	-0.994106
+15869	107	\N	Morcenx-la-Nouvelle	40	44.0134203	-0.9261779
+16063	302	\N	Morcenx-la-Nouvelle	40	44.0290869	-0.984439
+16100	005	\N	Couëtron-au-Perche	41	48.063812	0.9478209999999999
+16106	011	\N	Oucques La Nouvelle	41	47.782629	1.254043
+16110	015	\N	Oucques La Nouvelle	41	47.8375119	1.255886
+16117	023	\N	Montrichard-Val-de-Cher	41	47.34610199999999	1.222672
+16127	033	\N	Valencisse	41	47.5625	1.213765
+16150	056	\N	Beauce-la-Romaine	41	47.89012	1.371094
+16158	064	\N	Valloire-sur-Cisse	41	47.54078089999999	1.2311438
+16175	082	\N	Le Controis-en-Sologne	41	47.438008	1.354161
+16185	092	\N	Le Controis-en-Sologne	41	47.4478099	1.3411169
+16224	133	\N	Beauce-la-Romaine	41	47.984294	1.465163
+16255	165	\N	Couëtron-au-Perche	41	48.063524	0.9207400000000001
+16259	169	\N	Valencisse	41	47.59069	1.198809
+16260	170	\N	Le Controis-en-Sologne	41	47.472977	1.30789
+16273	183	\N	Beauce-la-Romaine	41	47.968046	1.53733
+16287	197	\N	Couëtron-au-Perche	41	48.035872	0.927719
+16292	202	\N	Couëtron-au-Perche	41	48.089605	0.9139700000000001
+16300	210	\N	Oucques La Nouvelle	41	47.794605	1.270217
+16329	240	\N	Valloire-sur-Cisse	41	47.54317090000001	1.1579511
+16333	244	\N	Beauce-la-Romaine	41	47.932263	1.379531
+16346	257	\N	Le Controis-en-Sologne	41	47.388316	1.2895859
+16352	263	\N	Vallée-de-Ronsard	41	47.733106	0.622018
+16353	264	\N	Beauce-la-Romaine	41	47.942951	1.484613
+16359	270	\N	Beauce-la-Romaine	41	47.959305	1.429142
+16361	272	\N	Veuzain-sur-Loire	41	47.472971	1.124927
+16390	004	\N	Vézelin-sur-Loire	42	45.877312	4.034114
+16465	082	\N	Vézelin-sur-Loire	42	45.902671	4.025075999999999
+16496	114	\N	Chalmazel-Jeansagnière	42	45.72676999999999	3.834335
+16667	291	\N	Vêtre-sur-Anzon	42	45.8162949	3.87166
+16794	081	\N	Thoras	43	44.898561	3.613626
+16887	176	\N	Saint-Privat-d'Allier	43	44.969622	3.690795
+16961	255	\N	Esplantas-Vazeilles	43	44.89734	3.588247
+16977	004	\N	Vair-sur-Loire	44	47.380251	-1.10191
+16981	008	\N	Divatte-sur-Loire	44	47.278754	-1.286615
+16984	011	\N	Loireauxence	44	47.467583	-1.028176
+17007	034	\N	Loireauxence	44	47.44061199999999	-0.9856809999999999
+17013	040	\N	Chaumes-en-Retz	44	47.122223	-1.91511
+17031	059	\N	Villeneuve-en-Retz	44	47.025363	-1.878034
+17032	060	\N	Ingrandes-le-Fresne-sur-Loire	44	47.40109899999999	-0.927792
+17065	093	\N	Vallons-de-L'Erdre	44	47.482113	-1.106323
+17119	147	\N	Loireauxence	44	47.443008	-1.066849
+16990	017	\N	Vallons-de-L'Erdre	44	47.527808	-1.238905
+17132	160	\N	Ancenis-Saint-Géréon	44	47.369643	-1.198681
+17151	181	\N	Machecoul-Saint-Même	44	47.020922	-1.794218
+17161	191	\N	Vallons-de-L'Erdre	44	47.5750155	-1.2066458
+17189	219	\N	Vallons-de-L'Erdre	44	47.58128199999999	-1.07009
+17248	057	\N	Le Malesherbois	45	48.2476399	2.3948459
+17295	106	\N	Le Malesherbois	45	48.272214	2.3684599
+17374	190	\N	Le Malesherbois	45	48.300356	2.280374
+17376	192	\N	Le Malesherbois	45	48.24037999999999	2.34093
+17395	211	\N	Douchy-Montcorbon	45	47.969418	3.070281
+17405	221	\N	Le Malesherbois	45	48.31764099999999	2.324704
+17420	236	\N	Le Malesherbois	45	48.288852	2.340866
+17451	267	\N	Bray-Saint-Aignan	45	47.840181	2.320179
+17471	287	\N	La Selle-sur-le-Bied	45	48.059216	2.920887
+17542	014	\N	Barguelonne-en-Quercy	46	44.371828	1.242072
+17547	019	\N	Cœur-de-Causse	46	44.660688	1.518358
+17553	025	\N	Montcuq-en-Quercy-Blanc	46	44.365775	1.15357
+17576	048	\N	Sousceyrac-en-Quercy	46	44.92375	2.045852
+17595	067	\N	Le Vignon-en-Quercy	46	44.998729	1.609344
+17599	071	\N	Sousceyrac-en-Quercy	46	44.940694	1.989113
+17605	077	\N	Bellefont-La Rauze	46	44.518998	1.540446
+17627	099	\N	Porte-du-Quercy	46	44.409094	1.195088
+17638	110	\N	Cœur-de-Causse	46	44.6650769	1.661477
+17669	141	\N	Sousceyrac-en-Quercy	46	44.8474204	2.003358
+17678	150	\N	Sousceyrac-en-Quercy	46	44.958646	2.040944
+17686	158	\N	Lendou-en-Quercy	46	44.339505	1.307646
+17694	166	\N	Montcuq-en-Quercy-Blanc	46	44.322952	1.168306
+17776	248	\N	Castelnau-Montratier	46	44.31251	1.31459
+17789	261	\N	Montcuq-en-Quercy-Blanc	46	44.33953	1.166133
+17802	274	\N	Lendou-en-Quercy	46	44.2918273	1.2281353
+17803	275	\N	Les Pechs-du-Vers	46	44.580906	1.558734
+17806	278	\N	Porte-du-Quercy	46	44.400739	1.119801
+17813	285	\N	Barguelonne-en-Quercy	46	44.368039	1.265301
+17815	287	\N	Saint-Paul-Flaugnac	46	44.297154	1.447891
+17819	291	\N	Cœur-de-Causse	46	44.60616599999999	1.553008
+17826	298	\N	Cressensac-Sarrazac	46	45.017027	1.589309
+17828	300	\N	Porte-du-Quercy	46	44.389161	1.085297
+17853	325	\N	Cœur-de-Causse	46	44.674585	1.5296019
+17854	326	\N	Montcuq-en-Quercy-Blanc	46	44.355047	1.108929
+17855	327	\N	Bellefont-La Rauze	46	44.514299	1.488299
+17859	331	\N	Saint Géry-Vers	46	44.486067	1.553376
+18199	014	\N	Mont Lozère et Goulet	48	44.507851	3.662914
+18207	022	\N	Bédouès-Cocurès	48	44.340217	3.604151
+18208	023	\N	Mont Lozère et Goulet	48	44.563313	3.74394
+18217	033	\N	Banassac-Canilhac	48	44.424473	3.150429
+18223	040	\N	Mont Lozère et Goulet	48	44.550406	3.825141
+18230	047	\N	Peyre en Aubrac	48	44.7036476	3.2528944
+18232	049	\N	Bourgs-sur-Colagne	48	44.522967	3.265272
+18239	057	\N	Monts-de-Randon	48	44.669314	3.488739
+18242	060	\N	Peyre en Aubrac	48	44.7483014	3.2231234
+18244	062	\N	Naussac-Fontanes	48	44.770205	3.784081
+18248	066	\N	Pont-de-Montvert-Sud-Mont-Lozère	48	44.374472	3.700984
+18258	076	\N	Peyre en Aubrac	48	44.6934079	3.3425047
+18260	078	\N	Lachamp-Ribennes	48	44.611175	3.369777
+18266	084	\N	Saint Bonnet-Laval	48	44.807909	3.695312
+18275	093	\N	Mont Lozère et Goulet	48	44.4617471	3.7130493
+18283	101	\N	Gorges du Tarn Causses	48	44.336602	3.503761
+18297	120	\N	Prinsuéjols-Malbouzon	48	44.674466	3.168045
+18299	122	\N	Gorges du Tarn Causses	48	44.3713819	3.524454
+18302	125	\N	Massegros Causses Gorges	48	44.337973	3.147552
+18310	133	\N	Monts-de-Randon	48	44.663222	3.448698
+18311	134	\N	Ventalon en Cévennes	48	44.302812	3.897965999999999
+18319	142	\N	Peyre en Aubrac	48	44.6908196	3.2397408
+18330	154	\N	Massegros Causses Gorges	48	44.318736	3.2309359
+18337	162	\N	Cans-et-Cévennes	48	44.299807	3.662099
+18339	164	\N	Mont Lozère et Goulet	48	44.500555	3.683065
+18347	172	\N	Pont-de-Montvert-Sud-Mont-Lozère	48	44.32268	3.829584
+18355	180	\N	Massegros Causses Gorges	48	44.27275299999999	3.215929
+18358	183	\N	Peyre en Aubrac	48	44.658773	3.2872146
+18359	184	\N	Bel-Air-Val-d'Ance	48	44.8393919	3.625666
+18361	186	\N	Florac-Trois-Rivières	48	44.316113	3.61353
+18364	189	\N	Monts-de-Randon	48	44.574408	3.404447
+18370	195	\N	Massegros Causses Gorges	48	44.277643	3.227256
+18371	197	\N	Monts-de-Randon	48	44.714994	3.521479
+18373	001	\N	Brissac Loire Aubance	49	47.318571	-0.409402
+18376	004	\N	Loire-Authion	49	47.456726	-0.398542
+18377	005	\N	Le Lion-d'Angers	49	47.66608799999999	-0.78003
+18378	006	\N	Beaupréau-en-Mauges	49	47.171099	-0.954517
+18385	013	\N	Noyant-Villages	49	47.517785	0.052245
+18386	014	\N	Segré-en-Anjou Bleu	49	47.70588	-0.795824
+18390	019	\N	Loire-Authion	49	47.499304	-0.318934
+18395	024	\N	Mauges-sur-Loire	49	47.320774	-0.9258999999999998
+18396	025	\N	Jarzé Villages	49	47.5796645	-0.2559384
+18402	031	\N	Baugé-en-Anjou	49	47.5056356	-0.08263949999999999
+18403	032	\N	Loire-Authion	49	47.42185	-0.390903
+18404	033	\N	Montrevault-sur-Èvre	49	47.30118299999999	-1.079984
+18405	034	\N	Mauges-sur-Loire	49	47.30681	-1.001185
+18408	037	\N	Segré-en-Anjou Bleu	49	47.679944	-0.967733
+18410	039	\N	Mauges-sur-Loire	49	47.310799	-0.8357009999999999
+18411	040	\N	Orée-d'Anjou	49	47.3383309	-1.110932
+18413	042	\N	Loire-Authion	49	47.44549199999999	-0.411922
+18414	043	\N	Erdre-en-Anjou	49	47.584449	-0.765756
+18415	044	\N	Noyant-Villages	49	47.47402899999999	0.158996
+18417	046	\N	Bellevigne-les-Châteaux	49	47.175523	-0.060476
+18418	047	\N	Doué-la-Fontaine	49	47.24248799999999	-0.38427
+18420	049	\N	Les Bois-d'Anjou	49	47.443608	-0.157202
+18422	051	\N	Les Hauts-d'Anjou	49	47.700093	-0.451235
+18423	052	\N	Noyant-Villages	49	47.5798119	0.167151
+18430	059	\N	Lys-Haut-Layon	49	47.1085629	-0.4688290000000001
+18433	062	\N	Noyant-Villages	49	47.55869999999999	0.1731004
+18436	065	\N	Les Hauts-d'Anjou	49	47.665387	-0.571184
+18437	066	\N	Bellevigne-en-Layon	49	47.266427	-0.576541
+18442	071	\N	Chemillé-en-Anjou	49	47.263939	-0.644285
+18443	072	\N	Beaupréau-en-Mauges	49	47.18297399999999	-1.018836
+18444	073	\N	Ombrée d'Anjou	49	47.75771899999999	-1.073337
+18445	074	\N	Chemillé-en-Anjou	49	47.212288	-0.7959459999999999
+18446	075	\N	Mauges-sur-Loire	49	47.332045	-1.055352
+18448	077	\N	Segré-en-Anjou Bleu	49	47.6793989	-0.827062
+18449	078	\N	Brissac Loire Aubance	49	47.355793	-0.410854
+18450	079	\N	Baugé-en-Anjou	49	47.490666	-0.132028
+18452	081	\N	Segré-en-Anjou Bleu	49	47.75834099999999	-0.9271560000000001
+18454	083	\N	Montrevault-sur-Èvre	49	47.286822	-0.984018
+18455	084	\N	Jarzé Villages	49	47.539881	-0.282311
+18456	085	\N	Montrevault-sur-Èvre	49	47.20136	-1.1471499
+18458	087	\N	Noyant-Villages	49	47.541469	0.0362909
+18459	088	\N	Ombrée d'Anjou	49	47.754105	-1.112872
+18462	091	\N	Brissac Loire Aubance	49	47.341271	-0.3581849
+18464	093	\N	Morannes sur Sarthe-Daumeray	49	47.750789	-0.431192
+18465	094	\N	Gennes-Val-de-Loire	49	47.30200500000001	-0.1924719
+18466	095	\N	Chenillé-Champteussé	49	47.699822	-0.6661210000000001
+18467	096	\N	Les Hauts-d'Anjou	49	47.709399	-0.561025
+18468	097	\N	Baugé-en-Anjou	49	47.5953235	-0.1825159
+18469	098	\N	Noyant-Villages	49	47.58458599999999	0.08895399999999999
+18472	101	\N	Baugé-en-Anjou	49	47.6240169	-0.0710296
+18474	103	\N	Ombrée d'Anjou	49	47.70399099999999	-1.029204
+18475	104	\N	Doué-la-Fontaine	49	47.1758669	-0.334406
+18476	105	\N	Les Hauts-d'Anjou	49	47.72889499999999	-0.5183639999999999
+18477	106	\N	Loire-Authion	49	47.470827	-0.350232
+18479	108	\N	Val d'Erdre-Auxence	49	47.510929	-0.983971
+18482	111	\N	Chemillé-en-Anjou	49	47.163111	-0.6800929
+18486	115	\N	Brissac Loire Aubance	49	47.362414	-0.354697
+18487	116	\N	Baugé-en-Anjou	49	47.478431	-0.101609
+18488	117	\N	Loire-Authion	49	47.419503	-0.435102
+18489	119	\N	Morannes sur Sarthe-Daumeray	49	47.70005	-0.364153
+18492	122	\N	Noyant-Villages	49	47.529919	0.132862
+18495	126	\N	Orée-d'Anjou	49	47.33913099999999	-1.206224
+18497	128	\N	Baugé-en-Anjou	49	47.551159	-0.170128
+18502	133	\N	Bellevigne-en-Layon	49	47.227744	-0.5122049
+18503	134	\N	Bellevigne-en-Layon	49	47.294365	-0.523355
+18505	136	\N	Segré-en-Anjou Bleu	49	47.730432	-0.846413
+18506	137	\N	Montrevault-sur-Èvre	49	47.221459	-1.042197
+18508	139	\N	Mazé-Milon	49	47.5015133	-0.2500409
+18510	141	\N	Doué-la-Fontaine	49	47.217878	-0.244571
+18511	142	\N	Lys-Haut-Layon	49	47.182364	-0.4284
+18512	143	\N	Baugé-en-Anjou	49	47.6280147	-0.1490814
+18513	144	\N	Maine-et-Loire	49	47.2913545	-0.4877852
+18514	145	\N	Maine-et-Loire	49	47.2913545	-0.4877852
+18515	147	\N	Beaufort-en-Anjou	49	47.457637	-0.23019
+18587	225	\N	Chemillé-en-Anjou	49	47.266702	-0.82578
+18588	226	\N	Ombrée d'Anjou	49	47.693206	-1.089601
+18589	227	\N	Terranjou	49	47.302373	-0.449086
+18591	229	\N	Segré-en-Anjou Bleu	49	47.705277	-0.9594039999999999
+18592	230	\N	Tuffalun	49	47.276478	-0.355357
+18594	232	\N	Lys-Haut-Layon	49	47.1171239	-0.366133
+18595	233	\N	Segré-en-Anjou Bleu	49	47.716305	-0.9149379999999999
+18596	234	\N	Noyant-Villages	49	47.436792	0.1593892
+18600	238	\N	Verrières-en-Anjou	49	47.52215	-0.442044
+18601	239	\N	Beaupréau-en-Mauges	49	47.25383	-0.899243
+18604	242	\N	Longuenée-en-Anjou	49	47.544174	-0.673835
+18605	243	\N	Beaupréau-en-Mauges	49	47.226909	-0.8970209999999998
+18607	245	\N	Baugé-en-Anjou	49	47.547723	-0.04224899999999999
+18611	249	\N	Erdre-en-Anjou	49	47.55108999999999	-0.809549
+18612	250	\N	Ombrée d'Anjou	49	47.71749399999999	-1.1795929
+18613	251	\N	Longuenée-en-Anjou	49	47.576996	-0.6623599
+18614	252	\N	Montrevault-sur-Èvre	49	47.230659	-1.115202
+18616	254	\N	Les Hauts-d'Anjou	49	47.67909299999999	-0.621181
+18617	256	\N	Bellevigne-en-Layon	49	47.29501699999999	-0.5761419999999999
+18619	258	\N	Sèvremoine	49	47.120706	-1.059221
+18624	263	\N	Sèvremoine	49	47.091187	-1.064498
+18625	264	\N	Sèvremoine	49	47.100094	-0.9955579999999999
+18626	265	\N	Val-du-Layon	49	47.325913	-0.6646520000000001
+18629	268	\N	Chemillé-en-Anjou	49	47.28643	-0.84812
+18631	270	\N	Orée-d'Anjou	49	47.253639	-1.179836
+18634	273	\N	Sèvremoine	49	47.099639	-1.187829
+18635	274	\N	Bellevigne-les-Châteaux	49	47.193685	-0.06080899999999999
+18636	276	\N	Mauges-sur-Loire	49	47.357131	-1.015158
+18637	277	\N	Segré-en-Anjou Bleu	49	47.675403	-0.883481
+18639	279	\N	Gennes-Val-de-Loire	49	47.345794	-0.2996801
+18640	280	\N	Les Bois-d'Anjou	49	47.492918	-0.223567
+18641	281	\N	Chemillé-en-Anjou	49	47.150275	-0.7600939999999999
+18642	282	\N	Doué-la-Fontaine	49	47.199148	-0.369745
+18645	285	\N	Sèvremoine	49	47.118714	-1.123923
+18647	289	\N	Saint-Léger-de-Linières	49	47.457871	-0.658269
+18648	290	\N	Les Garennes sur Loire	49	47.398199	-0.4485889999999999
+18652	295	\N	Mauges-sur-Loire	49	47.31742	-0.802284
+18653	296	\N	Orée-d'Anjou	49	47.28666	-1.191299
+18654	297	\N	Mauges-sur-Loire	49	47.350705	-0.9501700000000001
+18657	300	\N	Chemillé-en-Anjou	49	47.249737	-0.7745814999999999
+18660	303	\N	Baugé-en-Anjou	49	47.559717	-0.085341
+18661	304	\N	Gennes-Val-de-Loire	49	47.31604400000001	-0.138543
+18662	305	\N	Segré-en-Anjou Bleu	49	47.706925	-0.744224
+18666	309	\N	Ombrée d'Anjou	49	47.680585	-1.130007
+18669	312	\N	Beaupréau-en-Mauges	49	47.15211	-1.017536
+18670	313	\N	Montrevault-sur-Èvre	49	47.2707793	-1.0252696
+18671	314	\N	Montrevault-sur-Èvre	49	47.291345	-0.91496
+18672	315	\N	Baugé-en-Anjou	49	47.626011	-0.108571
+18673	316	\N	Montrevault-sur-Èvre	49	47.270795	-1.075065
+18692	335	\N	Les Hauts-d'Anjou	49	47.7387766	-0.5740443
+18721	366	\N	Ombrée d'Anjou	49	47.726429	-1.0855189
+18727	372	\N	Baugé-en-Anjou	49	47.532006	-0.120234
+18730	375	\N	Beaupréau-en-Mauges	49	47.147958	-1.065132
+18731	376	\N	Val d'Erdre-Auxence	49	47.4641955	-0.8930528
+18734	380	\N	Baugé-en-Anjou	49	47.5971704	-0.0432421
+18736	001	\N	La Hague	50	49.609894	-1.749786
+18740	005	\N	Picauville	50	49.410486	-1.3921269
+18742	007	\N	Saint-Sauveur-Villages	50	49.102925	-1.478446
+18744	009	\N	Sartilly-Baie-Bocage	50	48.7506709	-1.491113
+18745	010	\N	Carentan les Marais	50	49.3503169	-1.255489
+18746	012	\N	Lessay	50	49.25317399999999	-1.551131
+18748	014	\N	Gouville-sur-Mer	50	49.118334	-1.580926
+18749	015	\N	Tourneville-sur-Mer	50	48.966888	-1.536804
+18751	018	\N	Saint-James	50	48.500073	-1.397745
+18753	020	\N	La Hague	50	49.711657	-1.932204
+18768	035	\N	La Haye	50	49.305466	-1.626692
+18770	037	\N	Juvigny les Vallées	50	48.646113	-1.029658
+18776	043	\N	Juvigny les Vallées	50	48.688908	-0.9745279999999998
+18783	051	\N	Sainte-Mère-Église	50	49.431072	-1.2857209
+18787	056	\N	Mortain-Bocage	50	48.620219	-0.918959
+18788	057	\N	La Hague	50	49.613674	-1.822043
+18792	061	\N	Gouville-sur-Mer	50	49.094265	-1.5356032
+18794	063	\N	La Haye	50	49.301316	-1.576606
+18799	071	\N	Le Parc	50	48.75587900000001	-1.264174
+18801	073	\N	La Hague	50	49.655601	-1.788064
+18803	075	\N	Torigny-les-Villes	50	49.022686	-1.0211269
+18808	080	\N	Carentan les Marais	50	49.330466	-1.189732
+18817	089	\N	Carentan les Marais	50	49.35397080000001	-1.2054379
+18827	100	\N	Saint-James	50	48.509148	-1.356108
+18830	103	\N	Sainte-Mère-Église	50	49.37164199999999	-1.329574
+18833	107	\N	Carentan les Marais	50	49.311147	-1.180002
+18839	114	\N	Manche	50	49.114712	-1.3115949
+18841	116	\N	Sartilly-Baie-Bocage	50	48.726731	-1.4474149
+18844	119	\N	Remilly Les Marais	50	49.183499	-1.232186
+18847	123	\N	Thèreval	50	49.12844	-1.213873
+18849	125	\N	Juvigny les Vallées	50	48.647348	-1.0786579
+18851	127	\N	Sainte-Mère-Église	50	49.384451	-1.341854
+18852	128	\N	Percy-en-Normandie	50	48.903205	-1.154817
+18855	131	\N	Juvigny les Vallées	50	48.7088154	-1.017914
+18856	132	\N	Ducey-les-Chéris	50	48.633251	-1.257456
+18857	133	\N	Grandparigny	50	48.614005	-1.047868
+18858	134	\N	Moyon Villages	50	48.969369	-1.120032
+18860	136	\N	Montsenelle	50	49.3215404	-1.3826857
+18864	140	\N	Quettreville-sur-Sienne	50	48.98751	-1.428805
+18876	153	\N	Picauville	50	49.343087	-1.387572
+18877	154	\N	Saint-James	50	48.54506	-1.381299
+18882	160	\N	Port-Bail-sur-Mer	50	49.31312399999999	-1.65996
+18885	163	\N	La Hague	50	49.698865	-1.859213
+18892	170	\N	Sainte-Mère-Église	50	49.40183099999999	-1.29162
+18893	171	\N	La Hague	50	49.682289	-1.821812
+18895	173	\N	Cherbourg-en-Cotentin	50	49.648868	-1.653674
+18901	179	\N	Le Teilleul	50	48.544428	-0.957935
+18902	180	\N	Tessy-Bocage	50	48.994074	-1.083855
+18909	187	\N	La Hague	50	49.62209	-1.721996
+18911	189	\N	Romagny-Fontenay	50	48.628184	-1.028647
+18913	191	\N	Sainte-Mère-Église	50	49.442792	-1.257109
+18923	202	\N	Torigny-les-Villes	50	49.014075	-0.9770719999999999
+18924	203	\N	Cherbourg-en-Cotentin	50	49.6090607	-1.5722878
+18925	204	\N	La Haye	50	49.271196	-1.636944
+18927	206	\N	Tirepied-sur-Sée	50	48.705959	-1.255876
+18932	211	\N	Vicq-sur-Mer	50	49.686044	-1.32067
+18933	212	\N	Picauville	50	49.421264	-1.410488
+18934	213	\N	Bourgvallées	50	49.07941	-1.114048
+18941	220	\N	La Hague	50	49.674704	-1.801155
+18944	223	\N	Quettreville-sur-Sienne	50	48.96988	-1.3750309
+18945	224	\N	Torigny-les-Villes	50	48.9882009	-0.945414
+18962	242	\N	La Hague	50	49.668146	-1.876775
+18964	244	\N	Quettreville-sur-Sienne	50	48.976647	-1.501203
+18965	245	\N	Le Teilleul	50	48.50668899999999	-0.9000269999999999
+18968	248	\N	Pont-Hébert	50	49.189776	-1.188463
+18969	249	\N	Carentan les Marais	50	49.351092	-1.287522
+18970	250	\N	Picauville	50	49.337702	-1.36417
+18974	254	\N	Le Teilleul	50	48.57015000000001	-0.893368
+18975	255	\N	Quettreville-sur-Sienne	50	48.994169	-1.467913
+18977	257	\N	La Hague	50	49.683378	-1.904163
+18999	280	\N	Marigny-le-Lozon	50	49.143975	-1.263518
+19003	284	\N	Pontorson	50	48.5602639	-1.4358439
+19005	287	\N	Bourgvallées	50	49.06872200000001	-1.07087
+19011	293	\N	Grandparigny	50	48.614391	-1.105035
+19019	301	\N	Gavray-sur-Sienne	50	48.881924	-1.361198
+19021	303	\N	Graignes-Mesnil-Angot	50	49.222815	-1.197116
+19024	308	\N	Saint-Sauveur-Villages	50	49.132836	-1.349893
+19028	313	\N	Bourgvallées	50	49.0262699	-1.143225
+19030	316	\N	Moyon Villages	50	49.013031	-1.096842
+19032	318	\N	Juvigny les Vallées	50	48.666662	-1.0577589
+19033	319	\N	Condé-sur-Vire	50	49.03519000000001	-1.058889
+19034	320	\N	Gavray-sur-Sienne	50	48.862547	-1.379902
+19036	323	\N	Juvigny les Vallées	50	48.699865	-1.022863
+19038	325	\N	Remilly Les Marais	50	49.157255	-1.282018
+19042	329	\N	Grandparigny	50	48.601795	-1.021034
+19043	330	\N	La Haye	50	49.26840600000001	-1.520669
+19045	333	\N	Picauville	50	49.3615784	-1.4294706
+19049	337	\N	Saint-James	50	48.493906	-1.4213929
+19051	339	\N	Orval-sur-Sienne	50	49.008829	-1.503211
+19055	343	\N	La Haye	50	49.280186	-1.573579
+19058	348	\N	Carentan les Marais	50	49.275507	-1.145495
+19064	354	\N	Gouville-sur-Mer	50	49.1155649	-1.498677
+19065	355	\N	Sartilly-Baie-Bocage	50	48.736826	-1.42139
+19068	358	\N	Quettehou	50	49.569153	-1.316043
+19083	375	\N	Vicq-sur-Mer	50	49.690286	-1.342384
+19087	380	\N	Saint-Jean-d'Elle	50	49.113442	-0.96007
+19088	381	\N	Mortain-Bocage	50	48.580971	-0.9564940000000001
+19091	385	\N	La Hague	50	49.699976	-1.883166
+19092	386	\N	La Hague	50	49.702378	-1.844
+19101	396	\N	Bricquebec-en-Cotentin	50	49.4461299	-1.657846
+19109	404	\N	Saint-Amand-Villages	50	49.030349	-0.9048849999999998
+19111	406	\N	Le Parc	50	48.730806	-1.300344
+19119	414	\N	Saint-Jean-d'Elle	50	49.083642	-0.9631919999999998
+19120	415	\N	Montsenelle	50	49.323364	-1.426828
+19121	416	\N	Cherbourg-en-Cotentin	50	49.664767	-1.695441
+19123	418	\N	Bricquebec-en-Cotentin	50	49.48699999999999	-1.665371
+19131	427	\N	Sainte-Mère-Église	50	49.456131	-1.271424
+19136	432	\N	Vicq-sur-Mer	50	49.690982	-1.360256
+19138	434	\N	Sartilly-Baie-Bocage	50	48.765569	-1.436947
+19142	438	\N	Saint-Sauveur-Villages	50	49.1252769	-1.44338
+19143	440	\N	Villedieu-les-Poêles-Rouffigny	50	48.838032	-1.221714
+19144	441	\N	Saint-Jean-d'Elle	50	49.101219	-0.9476739999999999
+19152	449	\N	Saint-Sauveur-Villages	50	49.1438	-1.369723
+19161	458	\N	Carentan les Marais	50	49.335455	-1.274279
+19162	460	\N	La Hague	50	49.639345	-1.762059
+19167	465	\N	Canisy	50	49.067773	-1.151189
+19171	470	\N	Terre-et-Marais	50	49.251137	-1.270252
+19178	477	\N	La Hague	50	49.710688	-1.91322
+19186	485	\N	Carentan les Marais	50	49.3031341	-1.2144125
+19195	494	\N	Mortain-Bocage	50	48.610132	-0.91046
+19198	497	\N	Montsenelle	50	49.3043989	-1.422385
+19203	503	\N	Port-Bail-sur-Mer	50	49.33476599999999	-1.66839
+19208	508	\N	Le Teilleul	50	48.563725	-0.889459
+19215	515	\N	Saint-Hilaire-du-Harcouët	50	48.546107	-1.172382
+19216	516	\N	Avranches	50	48.670253	-1.3302909
+19220	520	\N	Bricquebec-en-Cotentin	50	49.508715	-1.614285
+19224	524	\N	Saint-Sauveur-Villages	50	49.138379	-1.385607
+19231	534	\N	Carentan les Marais	50	49.2957895	-1.1890502
+19241	544	\N	La Haye	50	49.30094200000001	-1.657059
+19242	545	\N	Bourgvallées	50	49.038144	-1.105899
+19252	557	\N	Buais-les-Monts	50	48.543206	-1.000588
+19253	558	\N	La Haye	50	49.29611	-1.553584
+19264	573	\N	Gouville-sur-Mer	50	49.093549	-1.473724
+19272	581	\N	Bourgvallées	50	49.01456899999999	-1.190004
+19274	583	\N	Gavray-sur-Sienne	50	48.908679	-1.267938
+19277	586	\N	La Haye	50	49.282562	-1.648754
+19286	595	\N	Gonneville-Le Theil	50	49.609101	-1.472375
+19291	600	\N	La Hague	50	49.64428299999999	-1.715578
+19293	602	\N	Cherbourg-en-Cotentin	50	49.643509	-1.569449
+19296	605	\N	Quettreville-sur-Sienne	50	48.9600077	-1.4259473
+19299	608	\N	Condé-sur-Vire	50	49.012518	-1.074559
+19302	611	\N	La Hague	50	49.674442	-1.736793
+19305	614	\N	Bricquebec-en-Cotentin	50	49.423511	-1.655611
+19311	620	\N	La Hague	50	49.594868	-1.773481
+19313	622	\N	Saint-Sauveur-Villages	50	49.153138	-1.4150609
+19314	623	\N	La Hague	50	49.63462500000001	-1.837699
+19316	625	\N	Sourdeval	50	48.755785	-0.9159609999999999
+19318	627	\N	Saint-James	50	48.561025	-1.398437
+19321	630	\N	Pontorson	50	48.525018	-1.432753
+19322	631	\N	Carentan les Marais	50	49.3088294	-1.1534257
+19325	635	\N	Saint-Jean-d'Elle	50	49.0985198	-0.9003311999999999
+19326	636	\N	Carentan les Marais	50	49.360041	-1.246973
+19328	638	\N	Mortain-Bocage	50	48.578622	-0.9864350000000001
+19330	640	\N	Saint-James	50	48.540617	-1.396068
+19332	642	\N	Picauville	50	49.33850100000001	-1.418166
+19334	644	\N	Saint-Hilaire-du-Harcouët	50	48.585067	-1.1315789
+19335	646	\N	Bricquebec-en-Cotentin	50	49.45127799999999	-1.710024
+19396	063	\N	Cœur-de-la-Vallée	51	49.093231	3.788082
+19397	064	\N	Aÿ-Champagne	51	49.044596	4.0865
+19581	261	\N	Bourgogne-Fresne	51	49.338398	4.0971399
+19591	271	\N	Blancs-Coteaux	51	48.934841	3.979972
+19649	331	\N	Val de Livre	51	49.101232	4.11492
+19663	347	\N	Aÿ-Champagne	51	49.0439409	4.042327999999999
+19719	411	\N	Blancs-Coteaux	51	48.9574799	4.009901
+19932	637	\N	Cœur-de-la-Vallée	51	49.095524	3.797549
+19946	651	\N	Blancs-Coteaux	51	48.908525	4.039861999999999
+19985	036	\N	Saints-Geosmes	52	47.820866	5.372652
+20098	180	\N	Rives Dervoises	52	48.512325	4.69811
+20134	225	\N	Bourmont-entre-Meuse-et-Mouzon	52	48.240373	5.607900000000001
+20145	239	\N	Villegusien-le-Lac	52	47.7729069	5.364215
+20163	262	\N	Colombey-les-Deux-Églises	52	48.24033	4.94461
+20186	293	\N	Rives Dervoises	52	48.454586	4.6894539
+20189	296	\N	Rives Dervoises	52	48.433271	4.718959
+20222	340	\N	Le Montsaugeonnais	52	47.665753	5.308790999999999
+20231	351	\N	Bourmont-entre-Meuse-et-Mouzon	52	48.192836	5.640783000000001
+20257	379	\N	Épizon	52	48.352324	5.314363
+20293	427	\N	La Porte-du-Der	52	48.461278	4.848062
+20355	509	\N	Le Montsaugeonnais	52	47.657295	5.285016
+20393	004	\N	Prée-d'Anjou	53	47.810755	-0.8246279999999999
+20395	006	\N	Bierné-les-Villages	53	47.78066	-0.588078
+20403	014	\N	Château-Gontier	53	47.82273199999999	-0.681987
+20419	032	\N	Blandouet-Saint Jean	53	48.05192779999999	-0.3261611
+20436	050	\N	Sainte-Suzanne-et-Chammes	53	48.0776743	-0.3763316
+20450	065	\N	Évron	53	48.133171	-0.430779
+20475	092	\N	Montsûrs	53	48.192366	-0.526466
+20478	095	\N	Val-du-Maine	53	47.942241	-0.361171
+20521	138	\N	Gennes-Longuefuye	53	47.867088	-0.614715
+20541	159	\N	Montsûrs	53	48.203255	-0.550292
+20572	194	\N	Loiron-Ruillé	53	48.05619300000001	-0.9546399999999999
+20583	205	\N	Montsûrs	53	48.122181	-0.595082
+20585	207	\N	Évron	53	48.132219	-0.462585
+20593	215	\N	Château-Gontier	53	47.795932	-0.7199989
+20607	231	\N	Bierné-les-Villages	53	47.7719093	-0.5465666
+20615	239	\N	Vimartin-sur-Orthe	53	48.2140107	-0.2176738
+20617	241	\N	Bierné-les-Villages	53	47.7780879	-0.568562
+20620	244	\N	Montsûrs	53	48.167085	-0.549125
+20628	252	\N	Pré-en-Pail-Saint-Samson	53	48.482039	-0.191177
+20630	254	\N	La Roche-Neuville	53	47.90100700000001	-0.716625
+20649	274	\N	Vimartin-sur-Orthe	53	48.194875	-0.217882
+20989	341	\N	Val de Briey	54	49.274864	5.917357
+20990	342	\N	Val de Briey	54	49.285399	5.893635
+21148	506	\N	Bois-de-Haye	54	48.71605599999999	6.020124
+21269	030	\N	Demange-aux-Eaux	55	48.569267	5.461964
+21384	164	\N	Douaumont-Vaux	55	49.222412	5.4357165
+21760	016	\N	Pluméliau-Bieuzy	56	47.982895	-3.063957
+21781	037	\N	Val d'Oust	56	47.866155	-2.42314
+21782	038	\N	La Gacilly	56	47.784793	-2.107368
+21793	049	\N	Saint-Gérand-Croixanvec	56	48.138972	-2.869576
+21803	059	\N	Forges de Lanouée	56	48.017421	-2.646481
+21808	064	\N	La Gacilly	56	47.727177	-2.133709
+21881	138	\N	Ploërmel	56	47.880605	-2.358697
+21885	142	\N	Évellys	56	47.9965339	-2.902304
+21893	150	\N	Theix-Noyalo	56	47.609944	-2.67972
+21926	183	\N	Carentoir	56	47.823353	-2.066858
+21930	187	\N	Val d'Oust	56	47.891431	-2.468085
+21935	192	\N	Évellys	56	47.93397700000001	-2.898462
+22180	184	\N	Ancy-Dornot	57	49.047069	6.052096
+22416	432	\N	Colligny-Maizery	57	49.1054389	6.3362569
+22502	523	\N	Ogy-Montoy-Flanville	57	49.10425000000001	6.311205999999999
+22564	585	\N	Manderen-Ritzing	57	49.44500739999999	6.4529669
+22695	722	\N	Rezonville-Vionville	57	49.09034	5.946625
+22757	022	\N	Vaux d'Amognes	58	47.07608	3.280849
+22834	100	\N	Beaulieu	58	47.262212	3.566083
+22901	167	\N	Beaulieu	58	47.26837099999999	3.519912
+23197	154	\N	Coudekerque-Branche	59	51.015681	2.397046
+23289	248	\N	Dunkirk	59	51.030968	2.3053659
+23439	404	\N	Ghyvelde	59	51.015431	2.549672
+23572	540	\N	Dunkirk	59	51.026461	2.34247
+23717	018	\N	Bornel	60	49.224861	2.20864
+23737	038	\N	Montchevreuil	60	49.289097	1.96319
+23779	080	\N	La Corne-en-Vexin	60	49.279623	1.944735
+23795	096	\N	Formerie	60	49.64147000000001	1.757297
+23944	246	\N	Bornel	60	49.212066	2.187765
+23997	300	\N	La Corne-en-Vexin	60	49.303616	1.938038
+24112	417	\N	Saint-Crépin-Ibouvillers	60	49.277106	2.047534
+24147	453	\N	La Drenne	60	49.310858	2.101728
+24149	455	\N	Les Hauts Talican	60	49.333322	2.039299
+24168	475	\N	Villers-Saint-Frambourg	60	49.25469210000001	2.6401386
+24225	532	\N	La Drenne	60	49.302181	2.08913
+24339	649	\N	Auneuil	60	49.389225	1.973207
+24380	690	\N	Trie-Château	60	49.3083389	1.823987
+24395	003	\N	La Ferté-en-Ouche	61	48.86405	0.502293
+24396	004	\N	La Ferté-Macé	61	48.52478900000001	-0.368456
+24401	009	\N	Gouffern en Auge	61	48.7921653	0.0685369
+24408	016	\N	Tourouvre au Perche	61	48.570821	0.6688149999999999
+24411	019	\N	Gouffern en Auge	61	48.7842467	0.2081015
+24416	025	\N	Juvigny-Val-d'Andaine	61	48.54260499999999	-0.578
+24418	027	\N	Écouché-les-Vallées	61	48.718864	-0.187078
+24422	031	\N	Tinchebray-Bocage	61	48.679504	-0.725162
+24424	033	\N	Juvigny-Val-d'Andaine	61	48.545513	-0.542315
+24433	042	\N	Rémalard-en-Perche	61	48.425275	0.757481
+24436	045	\N	Tourouvre au Perche	61	48.579293	0.617972
+24438	047	\N	La Ferté-en-Ouche	61	48.83476	0.455719
+24448	057	\N	Gouffern en Auge	61	48.7597	0.105997
+24449	058	\N	Athis-Val-de-Rouvre	61	48.813077	-0.389668
+24450	059	\N	Tourouvre au Perche	61	48.63005099999999	0.626904
+24456	065	\N	Tourouvre au Perche	61	48.596139	0.599876
+24464	073	\N	Athis-Val-de-Rouvre	61	48.7767089	-0.447836
+24474	083	\N	Gouffern en Auge	61	48.806401	0.105433
+24481	090	\N	Tourouvre au Perche	61	48.584228	0.554033
+24497	106	\N	Putanges-le-Lac	61	48.759455	-0.34202
+24500	109	\N	Montsecret-Clairefougère	61	48.806332	-0.695035
+24501	110	\N	Gouffern en Auge	61	48.724257	0.151567
+24503	112	\N	Perche-en-Nocé	61	48.409489	0.6542669999999999
+24506	115	\N	Sablons sur Huisne	61	48.384612	0.830379
+24515	125	\N	Sablons sur Huisne	61	48.401032	0.8996
+24517	127	\N	Écouché-les-Vallées	61	48.749023	-0.186776
+24518	128	\N	Cour-Maugis-sur-Huisne	61	48.436124	0.658073
+24521	131	\N	Gouffern en Auge	61	48.77746399999999	0.235088
+24523	135	\N	Rives-d'Andaine	61	48.512681	-0.414875
+24524	136	\N	La Ferté-en-Ouche	61	48.859188	0.5593319999999999
+24532	144	\N	Perche-en-Nocé	61	48.3627759	0.758624
+24535	147	\N	Rémalard-en-Perche	61	48.4238969	0.80301
+24542	154	\N	Belforêt-en-Perche	61	48.4228359	0.550403
+24543	155	\N	Passais-Villages	61	48.470719	-0.8100799999999999
+24545	157	\N	Gouffern en Auge	61	48.761056	0.177448
+24549	161	\N	Gouffern en Auge	61	48.7944314	0.1119718
+24560	172	\N	L'Orée-d'Écouves	61	48.528857	-0.0031939
+24561	173	\N	Écouché-les-Vallées	61	48.722504	-0.071522
+24562	174	\N	Putanges-le-Lac	61	48.810953	-0.343874
+24563	175	\N	Écouves	61	48.498054	0.118585
+24565	177	\N	Tinchebray-Bocage	61	48.785065	-0.6810809999999999
+24567	179	\N	Putanges-le-Lac	61	48.739107	-0.260055
+24572	184	\N	La Ferté-en-Ouche	61	48.829004	0.554171
+24573	185	\N	Val-au-Perche	61	48.2935019	0.615321
+24574	186	\N	Rives-d'Andaine	61	48.51081199999999	-0.481309
+24579	191	\N	La Ferté-en-Ouche	61	48.857277	0.601005
+24588	200	\N	Rives-d'Andaine	61	48.516315	-0.439518
+24589	201	\N	Domfront en Poiraie	61	48.605887	-0.669126
+24592	204	\N	Val-au-Perche	61	48.280706	0.645249
+24593	205	\N	La Ferté-en-Ouche	61	48.85587	0.398551
+24608	220	\N	Longny-les-Villages	61	48.55723700000001	0.8641019999999999
+24611	223	\N	Tinchebray-Bocage	61	48.6944159	-0.6852619999999999
+24614	226	\N	Tourouvre au Perche	61	48.59163600000001	0.582894
+24619	231	\N	L'Orée-d'Écouves	61	48.51829799999999	-0.065577
+24623	235	\N	Juvigny-Val-d'Andaine	61	48.487554	-0.584753
+24624	236	\N	Écouché-les-Vallées	61	48.70147799999999	-0.10151
+24627	239	\N	Juvigny-Val-d'Andaine	61	48.550675	-0.5958359999999999
+24633	245	\N	Cour-Maugis-sur-Huisne	61	48.453527	0.7038130000000001
+24634	246	\N	Val-au-Perche	61	48.27117699999999	0.736781
+24635	247	\N	Longny-les-Villages	61	48.56490600000001	0.697832
+24637	249	\N	Boischampré	61	48.662305	0.0440619
+24638	250	\N	Longny-les-Villages	61	48.584448	0.81467
+24641	253	\N	Chailloué	61	48.673272	0.201988
+24657	270	\N	Putanges-le-Lac	61	48.73977499999999	-0.224315
+24667	280	\N	Longny-les-Villages	61	48.483657	0.705008
+24669	282	\N	La Ferté-en-Ouche	61	48.892195	0.39775
+24672	285	\N	Monts-sur-Orne	61	48.74892699999999	-0.130989
+24683	296	\N	Longny-les-Villages	61	48.563044	0.758687
+24686	299	\N	Charencey	61	48.637274	0.794936
+24692	305	\N	Longny-les-Villages	61	48.541959	0.902055
+24693	306	\N	Chailloué	61	48.647	0.22418
+24698	311	\N	Charencey	61	48.647011	0.715355
+24699	313	\N	Athis-Val-de-Rouvre	61	48.79384899999999	-0.406122
+24701	315	\N	Gouffern en Auge	61	48.8044355	0.1547578
+24704	318	\N	Belforêt-en-Perche	61	48.3708389	0.468627
+24706	320	\N	Sap-en-Auge	61	48.889742	0.272143
+24711	325	\N	Belforêt-en-Perche	61	48.3887829	0.442778
+24720	335	\N	Tourouvre au Perche	61	48.62664400000001	0.718444
+24722	337	\N	Perche-en-Nocé	61	48.330266	0.701167
+24723	338	\N	Tourouvre au Perche	61	48.613966	0.5789960000000001
+24725	340	\N	Putanges-le-Lac	61	48.80088199999999	-0.2833069
+24728	343	\N	Tourouvre au Perche	61	48.648635	0.672997
+24738	353	\N	Athis-Val-de-Rouvre	61	48.78207	-0.476077
+24739	354	\N	Putanges-le-Lac	61	48.779647	-0.262953
+24740	355	\N	Domfront en Poiraie	61	48.601419	-0.726974
+24741	356	\N	Orne	61	48.6388567	0.0848201
+24744	359	\N	Val-au-Perche	61	48.31845	0.726615
 24727	342	\N	Rai	61	48.7559403194515	0.562444409454062
-24749	364	\N	Saint-Aubert-sur-Orne	61	\N	\N
-24753	368	\N	Saint-Aubin-des-Grois	61	\N	\N
-24762	377	\N	Saint-Cornier-des-Landes	61	\N	\N
-24763	378	\N	Sainte-Croix-sur-Orne	61	\N	\N
-24765	380	\N	Saint-Denis-de-Villenette	61	\N	\N
-24768	383	\N	Saint-Didier-sous-Écouves	61	\N	\N
-24788	403	\N	Saint-Hilaire-la-Gérard	61	\N	\N
-24794	409	\N	Saint-Jean-de-la-Forêt	61	\N	\N
-24795	410	\N	Saint-Jean-des-Bois	61	\N	\N
-24802	417	\N	Saint-Loyer-des-Champs	61	\N	\N
-24813	428	\N	Saint-Maurice-du-Désert	61	\N	\N
-24815	430	\N	Saint-Maurice-sur-Huisne	61	\N	\N
-24816	431	\N	Saint-Michel-des-Andaines	61	\N	\N
-24819	434	\N	Saint-Nicolas-des-Laitiers	61	\N	\N
-24822	437	\N	Saint-Ouen-de-la-Cour	61	\N	\N
-24826	441	\N	Saint-Ouen-sur-Maire	61	\N	\N
-24834	449	\N	Saint-Pierre-la-Rivière	61	\N	\N
-24840	455	\N	Saint-Siméon	61	\N	\N
-24843	458	\N	Saint-Victor-de-Réno	61	\N	\N
-24850	465	\N	Ségrie-Fontaine	61	\N	\N
-24853	468	\N	Sentilly	61	\N	\N
-24854	469	\N	Sept-Forges	61	\N	\N
-24855	470	\N	Serans	61	\N	\N
-24856	471	\N	Sérigny	61	\N	\N
-24862	477	\N	Survie	61	\N	\N
-24863	478	\N	Taillebois	61	\N	\N
-24874	489	\N	Tourailles	61	\N	\N
-24880	496	\N	Urou-et-Crennes	61	\N	\N
-24888	504	\N	Villebadin	61	\N	\N
-24890	506	\N	Villers-en-Ouche	61	\N	\N
-24893	509	\N	Vingt-Hanaps	61	\N	\N
-24895	511	\N	Vrigny	61	\N	\N
-24897	513	\N	Yvrandes	61	\N	\N
-25103	210	\N	Canteleux	62	\N	\N
-25119	226	\N	Clarques	62	\N	\N
-25186	294	\N	Enguinegatte	62	\N	\N
-25319	431	\N	Herbelles	62	\N	\N
-25691	807	\N	Tatinghem	62	\N	\N
-25809	018	\N	Aulhat-Saint-Privat	63	\N	\N
-25859	068	\N	Cellule	63	\N	\N
-25869	078	\N	Chaméane	63	\N	\N
-25918	127	\N	Creste	63	\N	\N
-25924	133	\N	Dallet	63	\N	\N
-26056	266	\N	Orsonnette	63	\N	\N
+24749	364	\N	Putanges-le-Lac	61	48.790433	-0.331395
+24753	368	\N	Perche-en-Nocé	61	48.355129	0.6436140000000001
+24762	377	\N	Tinchebray-Bocage	61	48.71877	-0.7233689999999999
+24763	378	\N	Putanges-le-Lac	61	48.778808	-0.2883839
+24765	380	\N	Juvigny-Val-d'Andaine	61	48.515232	-0.540482
+24768	383	\N	L'Orée-d'Écouves	61	48.53629	-0.038169
+24788	403	\N	Mortrée	61	48.601342	0.060859
+24794	409	\N	Perche-en-Nocé	61	48.37909399999999	0.6348199999999999
+24795	410	\N	Tinchebray-Bocage	61	48.722779	-0.791774
+24802	417	\N	Boischampré	61	48.701598	0.019385
+24813	428	\N	Les Monts d'Andaine	61	48.610854	-0.3883740000000001
+24815	430	\N	Cour-Maugis-sur-Huisne	61	48.44085099999999	0.700141
+24816	431	\N	Bagnoles de l'Orne Normandie	61	48.5798574	-0.4160074
+24819	434	\N	La Ferté-en-Ouche	61	48.8380719	0.422014
+24822	437	\N	Belforêt-en-Perche	61	48.412558	0.587683
+24826	441	\N	Écouché-les-Vallées	61	48.704598	-0.180448
+24834	449	\N	Gouffern en Auge	61	48.826859	0.1900969
+24840	455	\N	Passais-Villages	61	48.4678102	-0.7453196
+24843	458	\N	Longny-les-Villages	61	48.502534	0.6999799999999999
+24850	465	\N	Athis-Val-de-Rouvre	61	48.8245239	-0.408563
+24853	468	\N	Monts-sur-Orne	61	48.7660259	-0.116035
+24854	469	\N	Juvigny-Val-d'Andaine	61	48.493833	-0.542253
+24855	470	\N	Écouché-les-Vallées	61	48.72281	-0.1276
+24856	471	\N	Belforêt-en-Perche	61	48.37266	0.5758019999999999
+24862	477	\N	Gouffern en Auge	61	48.842591	0.198001
+24863	478	\N	Athis-Val-de-Rouvre	61	48.8023049	-0.428584
+24874	489	\N	Athis-Val-de-Rouvre	61	48.756	-0.400845
+24880	496	\N	Gouffern en Auge	61	48.7542888	0.0159558
+24888	504	\N	Gouffern en Auge	61	48.779029	0.154186
+24890	506	\N	La Ferté-en-Ouche	61	48.858982	0.455822
+24893	509	\N	Écouves	61	48.5231459	0.136417
+24895	511	\N	Boischampré	61	48.670666	-0.018408
+24897	513	\N	Tinchebray-Bocage	61	48.719527	-0.7524799999999999
+25103	210	\N	Bonnières	62	50.215029	2.306889
+25119	226	\N	Saint-Augustin	62	50.64585400000001	2.276282
+25186	294	\N	Enquin-lez-Guinegatte	62	50.608334	2.279401
+25319	431	\N	Bellinghem	62	50.6566498	2.2264309
+25691	807	\N	Saint-Martin-lez-Tatinghem	62	50.744105	2.208499
+25809	018	\N	Aulhat-Flat	63	45.57426599999999	3.312289
+25859	068	\N	Chambaron sur Morge	63	45.9471281	3.1410402
+25869	078	\N	Le Vernet-Chaméane	63	45.511833	3.453179
+25918	127	\N	Saint-Diéry	63	45.54938	3.044544
+25924	133	\N	Mur-sur-Allier	63	45.770596	3.239197
+26056	266	\N	Nonette-Orsonnette	63	45.4761	3.296822
 25979	188	\N	Laps	63	45.671039969448	3.26776210732099
-26281	020	\N	Ance	64	\N	\N
-26790	541	\N	Urdès	64	\N	\N
-26834	027	\N	Armenteule	65	\N	\N
-26928	122	\N	Camous	65	\N	\N
-26993	188	\N	Gavarnie	65	\N	\N
-27114	312	\N	Molère	65	\N	\N
-27280	480	\N	Vizos	65	\N	\N
-27521	014	\N	Auenheim	67	\N	\N
-27546	041	\N	Birkenwald	67	\N	\N
-27658	158	\N	Gingsheim	67	\N	\N
-27703	207	\N	Hohatzenheim	67	\N	\N
-27785	297	\N	Mittelhausen	67	\N	\N
-27857	374	\N	Pfettisheim	67	\N	\N
-27881	402	\N	Ringeldorf	67	\N	\N
-27909	431	\N	Salenthal	67	\N	\N
-27917	439	\N	Schaffhouse-sur-Zorn	67	\N	\N
-27946	469	\N	Singrist	67	\N	\N
-27973	496	\N	Uberach	67	\N	\N
-27989	512	\N	Walck	67	\N	\N
-28034	560	\N	Zbersdorf	67	\N	\N
-28064	031	\N	Bernwiller	68	\N	\N
-28100	070	\N	Didenheim	68	\N	\N
-28138	108	\N	Grentzingen	68	\N	\N
-28163	133	\N	Henflingen	68	\N	\N
-28194	164	\N	Kientzheim	68	\N	\N
-28236	206	\N	Michelbach	68	\N	\N
-28262	233	\N	Niederbruck	68	\N	\N
-28300	272	\N	Riedwihr	68	\N	\N
-28338	310	\N	Sigolsheim	68	\N	\N
-28342	314	\N	Soppe-le-Haut	68	\N	\N
-28347	319	\N	Spechbach-le-Bas	68	\N	\N
-28425	015	\N	Avenas	69	\N	\N
-28435	025	\N	Bourg-de-Thizy	69	\N	\N
-28451	041	\N	Chapelle-de-Mardore	69	\N	\N
-28458	048	\N	Chassagny	69	\N	\N
-28483	073	\N	Dareizé	69	\N	\N
-28510	101	\N	Jarnioux	69	\N	\N
-28523	114	\N	Liergues	69	\N	\N
-28537	128	\N	Mardore	69	\N	\N
-28538	129	\N	Marnand	69	\N	\N
-28553	144	\N	Nuelles	69	\N	\N
-28555	146	\N	Oingt	69	\N	\N
-28556	147	\N	Olmes	69	\N	\N
-28559	150	\N	Ouroux	69	\N	\N
-28561	152	\N	Pierre-Bénite	69	\N	\N
-28567	158	\N	Pont-Trambouze	69	\N	\N
-28594	185	\N	Saint-Christophe	69	\N	\N
-28604	195	\N	Saint-Didier-sous-Riverie	69	\N	\N
-28619	210	\N	Saint-Jacques-des-Arrêts	69	\N	\N
-28620	211	\N	Saint-Jean-d'Ardières	69	\N	\N
-28622	213	\N	Saint-Jean-de-Touslas	69	\N	\N
-28630	221	\N	Saint-Laurent-de-Vaux	69	\N	\N
-28631	222	\N	Saint-Laurent-d'Oingt	69	\N	\N
-28632	223	\N	Saint-Loup	69	\N	\N
-28633	224	\N	Saint-Mamert	69	\N	\N
-28644	237	\N	Saint-Sorlin	69	\N	\N
-28654	247	\N	Thel	69	\N	\N
-28658	251	\N	Trades	69	\N	\N
+26281	020	\N	Ance Féas	64	43.145404	-0.691512
+26790	541	\N	Lacq	64	43.4451986	-0.5907354
+26834	027	\N	Loudenvielle	65	42.814483	0.4135220000000001
+26928	122	\N	Beyrède-Jumet-Camous	65	42.945178	0.375899
+26993	188	\N	Gavarnie-Gèdre	65	42.732219	-0.00941
+27114	312	\N	Benqué-Molère	65	43.094949	0.282507
+27280	480	\N	Saligos	65	42.889945	-0.014228
+27521	014	\N	Rountzenheim-Auenheim	67	48.814211	8.007672
+27546	041	\N	Sommerau	67	48.658745	7.343438
+27658	158	\N	Wingersheim les Quatre Bans	67	48.717139	7.588960999999999
+27703	207	\N	Wingersheim les Quatre Bans	67	48.715579	7.615975000000001
+27785	297	\N	Wingersheim les Quatre Bans	67	48.708196	7.630634
+27857	374	\N	Truchtersheim	67	48.659492	7.644959
+27881	402	\N	Ringendorf	67	48.808535	7.556461000000001
+27909	431	\N	Sommerau	67	48.666888	7.370385
+27917	439	\N	Hochfelden	67	48.7324879	7.564706999999999
+27946	469	\N	Sommerau	67	48.669765	7.382181
+27973	496	\N	Val-de-Moder	67	48.84902700000001	7.629575
+27989	512	\N	Bas-Rhin	67	48.6343172	7.525293800000001
+28034	560	\N	Geiswiller-Zœbersdorf	67	48.794037	7.523058000000001
+28064	031	\N	Bernwiller	68	47.691875	7.191008
+28100	070	\N	Brunstatt-Didenheim	68	47.71748400000001	7.302365699999998
+28138	108	\N	Illtal	68	47.564372	7.300445
+28163	133	\N	Illtal	68	47.574197	7.296422000000001
+28194	164	\N	Kaysersberg-Vignoble	68	48.1365798	7.287244599999999
+28236	206	\N	Aspach-Michelbach	68	47.761975	7.117305
+28262	233	\N	Masevaux-Niederbruck	68	47.78395	6.968363999999999
+28300	272	\N	Porte-du-Ried	68	48.127781	7.4457
+28338	310	\N	Kaysersberg-Vignoble	68	48.1345884	7.3000829
+28342	314	\N	Le Haut Soultzbach	68	47.730632	7.057836999999999
+28347	319	\N	Spechbach	68	47.67287899999999	7.229893000000001
+28425	015	\N	Deux-Grosnes	69	46.1946238	4.6056417
+28435	025	\N	Thizy-les-Bourgs	69	46.0321294	4.3114379
+28451	041	\N	Thizy-les-Bourgs	69	46.051629	4.355182999999999
+28458	048	\N	Beauvallon	69	45.606376	4.732366
+28483	073	\N	Vindry-sur-Turdine	69	45.9031049	4.491601999999999
+28510	101	\N	Porte des Pierres Dorées	69	45.964606	4.628117200000001
+28523	114	\N	Porte des Pierres Dorées	69	45.964081	4.66146
+28537	128	\N	Thizy-les-Bourgs	69	46.069762	4.338642
+28538	129	\N	Thizy-les-Bourgs	69	46.03485999999999	4.328993
+28553	144	\N	Saint-Germain-Nuelles	69	45.849761	4.626893
+28555	146	\N	Val d'Oingt	69	45.9200813	4.585757099999999
+28556	147	\N	Vindry-sur-Turdine	69	45.885172	4.521661
+28559	150	\N	Deux-Grosnes	69	46.231418	4.593407
+28561	152	\N	Oullins-Pierre-Bénite	69	45.7030349	4.821038199999999
+28567	158	\N	Cours	69	46.070979	4.313963999999999
+28594	185	\N	Deux-Grosnes	69	46.261988	4.543035
+28604	195	\N	Chabanière	69	45.595894	4.608766999999999
+28619	210	\N	Deux-Grosnes	69	46.256001	4.59741
+28620	211	\N	Belleville-en-Beaujolais	69	46.1245663	4.7381044
+28622	213	\N	Beauvallon	69	45.578164	4.662199999999999
+28630	221	\N	Vaugneray	69	45.71116199999999	4.62772
+28631	222	\N	Val d'Oingt	69	45.9200813	4.585757099999999
+28632	223	\N	Vindry-sur-Turdine	69	45.890992	4.492957
+28633	224	\N	Deux-Grosnes	69	46.250946	4.582597
+28644	237	\N	Chabanière	69	45.620663	4.639571000000001
+28654	247	\N	Cours	69	46.115282	4.376971
+28658	251	\N	Deux-Grosnes	69	46.28019	4.567991
 28759	057	\N	Bay	70	47.2947508591486	5.71493352720463
-28966	281	\N	Greucourt	70	\N	\N
-29028	345	\N	Miellin	70	\N	\N
+28966	281	\N	La Romaine	70	47.533761	5.862761
+29028	345	\N	Servance-Miellin	70	47.80970199999999	6.736916
 28996	312	\N	Luze	70	47.6062856150948	6.71922693054363
-29054	375	\N	Motey-sur-Saône	70	\N	\N
-29146	475	\N	Saint-Valbert	70	\N	\N
-29167	497	\N	Tavey	70	\N	\N
-29219	551	\N	Vezet	70	\N	\N
-29302	055	\N	Brandon	71	\N	\N
-29383	138	\N	Clux	71	\N	\N
-29425	180	\N	Donzy-le-National	71	\N	\N
-29507	265	\N	Loyère	71	\N	\N
-29530	288	\N	Massy	71	\N	\N
-29545	304	\N	Montagny-sur-Grosne	71	\N	\N
-29616	375	\N	Rousset	71	\N	\N
-29728	492	\N	Saint-Ythaire	71	\N	\N
-29818	587	\N	Vitry-lès-Cluny	71	\N	\N
-29853	033	\N	Bernay	72	\N	\N
-29882	063	\N	Chapelle-Gaugain	72	\N	\N
-29888	069	\N	Chassé	72	\N	\N
-29900	081	\N	Cherreau	72	\N	\N
-29901	082	\N	Chevain	72	\N	\N
-29915	097	\N	Coulombiers	72	\N	\N
-29926	108	\N	Cré	72	\N	\N
-29934	116	\N	Dissé-sous-Ballon	72	\N	\N
-29935	117	\N	Dissé-sous-le-Lude	72	\N	\N
-29976	159	\N	Lavenay	72	\N	\N
-29979	162	\N	Lignières-la-Carelle	72	\N	\N
-30020	203	\N	Montabon	72	\N	\N
-30023	207	\N	Montigny	72	\N	\N
-30056	240	\N	Poncé-sur-le-Loir	72	\N	\N
-30073	258	\N	Roullée	72	\N	\N
-30098	284	\N	Saint-Germain-sur-Sarthe	72	\N	\N
-30101	288	\N	Saint-Hilaire-le-Lierru	72	\N	\N
-30114	301	\N	Saint-Mars-sous-Ballon	72	\N	\N
-30117	304	\N	Sainte-Osmane	72	\N	\N
-30131	318	\N	Saint-Rigomer-des-Bois	72	\N	\N
-30195	384	\N	Vouvray-sur-Loir	72	\N	\N
-30199	002	\N	Aiguebelle	73	\N	\N
-30231	038	\N	Bellentre	73	\N	\N
-30237	045	\N	Bois	73	\N	\N
-30238	046	\N	Bonneval	73	\N	\N
-30248	056	\N	Bramans	73	\N	\N
-30253	062	\N	Cessens	73	\N	\N
-30270	080	\N	Châtel	73	\N	\N
-30283	093	\N	Côte-d'Aime	73	\N	\N
-30297	108	\N	Épersy	73	\N	\N
-30300	111	\N	Étable	73	\N	\N
-30301	112	\N	Feissons-sur-Isère	73	\N	\N
-30304	115	\N	Fontaine-le-Puits	73	\N	\N
-30307	118	\N	Francin	73	\N	\N
-30314	126	\N	Granier	73	\N	\N
-30315	127	\N	Gresin	73	\N	\N
-30329	143	\N	Lanslebourg-Mont-Cenis	73	\N	\N
-30330	144	\N	Lanslevillard	73	\N	\N
-30343	158	\N	Mognard	73	\N	\N
-30348	163	\N	Montaimont	73	\N	\N
-30351	167	\N	Montgellafrey	73	\N	\N
-30353	169	\N	Montgirod	73	\N	\N
-30378	198	\N	Perrière	73	\N	\N
-30382	203	\N	Pontamafrey-Montpascal	73	\N	\N
-30416	238	\N	Saint-Germain-la-Chambotte	73	\N	\N
-30417	239	\N	Saint-Girod	73	\N	\N
-30422	244	\N	Saint-Jean-de-Belleville	73	\N	\N
-30437	260	\N	Saint-Maurice-de-Rotherens	73	\N	\N
-30441	264	\N	Saint-Offenge-Dessus	73	\N	\N
-30443	266	\N	Saint-Oyen	73	\N	\N
-30463	287	\N	Sollières-Sardières	73	\N	\N
-30479	305	\N	Valezan	73	\N	\N
-30494	321	\N	Villarlurin	73	\N	\N
-30513	011	\N	Annecy-le-Vieux	74	\N	\N
-30523	022	\N	Aviernoz	74	\N	\N
-30581	084	\N	Cons-Sainte-Colombe	74	\N	\N
-30589	093	\N	Cran-Gevrier	74	\N	\N
-30606	110	\N	Entremont	74	\N	\N
-30614	120	\N	Évires	74	\N	\N
-30672	181	\N	Metz-Tessy	74	\N	\N
-30673	182	\N	Meythet	74	\N	\N
-30678	187	\N	Montmin	74	\N	\N
-30695	204	\N	Ollières	74	\N	\N
-30706	217	\N	Pringy	74	\N	\N
-30732	245	\N	Saint-Martin-Bellevue	74	\N	\N
-30751	268	\N	Seynod	74	\N	\N
-30753	270	\N	Seythenex	74	\N	\N
-30757	274	\N	Val-de-Fier	74	\N	\N
-30823	027	\N	Assigny	76	\N	\N
-30827	031	\N	Auberville-la-Campagne	76	\N	\N
-30833	037	\N	Auquemesnil	76	\N	\N
-30840	044	\N	Auzouville-Auberbosc	76	\N	\N
-30868	073	\N	Belleville-sur-Mer	76	\N	\N
-30873	078	\N	Bennetot	76	\N	\N
-30875	080	\N	Bermonville	76	\N	\N
-30876	081	\N	Berneval-le-Grand	76	\N	\N
-30884	089	\N	Betteville	76	\N	\N
-30893	098	\N	Biville-sur-Mer	76	\N	\N
-30921	127	\N	Bosc-Roger-sur-Buchy	76	\N	\N
-30931	137	\N	Bracquemont	76	\N	\N
-30939	145	\N	Brunville	76	\N	\N
-30984	191	\N	Cressy	76	\N	\N
-31008	215	\N	Derchigny	76	\N	\N
-31040	248	\N	Estouteville-Écalles	76	\N	\N
-31058	267	\N	Folletière	76	\N	\N
-31068	277	\N	Fossé	76	\N	\N
-31092	301	\N	Glicourt	76	\N	\N
-31101	310	\N	Gouchaupre	76	\N	\N
-31117	326	\N	Greny	76	\N	\N
-31128	337	\N	Guilmécourt	76	\N	\N
-31167	376	\N	Intraville	76	\N	\N
-31235	444	\N	Mont-de-l'If	76	\N	\N
-31286	496	\N	Penly	76	\N	\N
-31315	525	\N	Ricarville	76	\N	\N
-31394	607	\N	Sainte-Marguerite-sur-Fauville	76	\N	\N
-31412	625	\N	Saint-Nicolas-de-Bliquetuit	76	\N	\N
-31425	639	\N	Saint-Pierre-Lavis	76	\N	\N
-31429	643	\N	Saint-Quentin-au-Bosc	76	\N	\N
-31445	659	\N	Saint-Wandrille-Rançon	76	\N	\N
-31459	674	\N	Sévis	76	\N	\N
-31480	696	\N	Tocqueville-sur-Eu	76	\N	\N
-31485	701	\N	Touffreville-la-Cable	76	\N	\N
-31488	704	\N	Tourville-la-Chapelle	76	\N	\N
-31497	713	\N	Triquerville	76	\N	\N
-31512	729	\N	Veauville-lès-Baons	76	\N	\N
-31525	742	\N	Villequier	76	\N	\N
-31569	028	\N	Beautheil	77	\N	\N
-31686	149	\N	Cucharmoy	77	\N	\N
-31702	166	\N	Écuelles	77	\N	\N
-31706	170	\N	Épisy	77	\N	\N
-31833	299	\N	Montarlot	77	\N	\N
-31927	399	\N	Saint-Ange-le-Viel	77	\N	\N
-32017	491	\N	Veneux-les-Sablons	77	\N	\N
-32148	251	\N	Fourqueux	78	\N	\N
-32253	503	\N	Port-Villez	78	\N	\N
-32262	524	\N	Rocquencourt	78	\N	\N
-32322	004	\N	Aigonnay	79	\N	\N
-32324	006	\N	Alleuds	79	\N	\N
-32329	011	\N	Ardilleux	79	\N	\N
-32342	027	\N	Bataille	79	\N	\N
-32347	033	\N	Belleville	79	\N	\N
-32349	035	\N	Beugnon	79	\N	\N
-32350	037	\N	Boësse	79	\N	\N
-32352	039	\N	Boisserolles	79	\N	\N
-32355	043	\N	Bouillé-Loretz	79	\N	\N
-32356	044	\N	Bouillé-Saint-Paul	79	\N	\N
-32357	045	\N	Bouin	79	\N	\N
-32363	051	\N	Breuil-Bernard	79	\N	\N
-32364	053	\N	Breuil-sous-Argenton	79	\N	\N
-32365	054	\N	Brie	79	\N	\N
-32377	068	\N	Chantecorps	79	\N	\N
-32381	072	\N	Chapelle-Gaudin	79	\N	\N
-32383	075	\N	Chapelle-Saint-Étienne	79	\N	\N
-32403	098	\N	Couarde	79	\N	\N
-32404	099	\N	Coudre	79	\N	\N
-32412	107	\N	Crézières	79	\N	\N
-32417	113	\N	Étusson	79	\N	\N
-32467	168	\N	Massais	79	\N	\N
-32469	171	\N	Mauzé-Thouarsais	79	\N	\N
-32471	173	\N	Mazières-sur-Béronne	79	\N	\N
-32476	178	\N	Missé	79	\N	\N
-32482	187	\N	Moutiers-sous-Argenton	79	\N	\N
-32483	188	\N	Moutiers-sous-Chantemerle	79	\N	\N
-32491	199	\N	Paizay-le-Tort	79	\N	\N
-32502	211	\N	Pioussay	79	\N	\N
-32505	214	\N	Pouffonds	79	\N	\N
-32510	219	\N	Priaires	79	\N	\N
-32512	222	\N	Pugny	79	\N	\N
-32523	240	\N	Sainte-Blandine	79	\N	\N
-32529	247	\N	Saint-Étienne-la-Cigogne	79	\N	\N
-32541	260	\N	Saint-Jouin-de-Marnes	79	\N	\N
-32542	261	\N	Saint-Jouin-de-Milly	79	\N	\N
-32544	264	\N	Saint-Léger-de-la-Martinière	79	\N	\N
-32556	279	\N	Saint-Martin-lès-Melle	79	\N	\N
-32559	282	\N	Saint-Médard	79	\N	\N
-32566	292	\N	Sainte-Radegonde	79	\N	\N
-32578	305	\N	Sanzay	79	\N	\N
-32587	314	\N	Sompt	79	\N	\N
-32589	318	\N	Soutiers	79	\N	\N
-32592	321	\N	Taizé	79	\N	\N
-32594	325	\N	Tessonnière	79	\N	\N
-32596	327	\N	Thorigné	79	\N	\N
-32597	328	\N	Thorigny-sur-le-Mignon	79	\N	\N
-32599	330	\N	Tillou	79	\N	\N
-32602	333	\N	Ulcot	79	\N	\N
-32621	353	\N	Vitré	79	\N	\N
-32624	356	\N	Voultegon	79	\N	\N
-32794	175	\N	Carnoy	80	\N	\N
-32827	209	\N	Contoire	80	\N	\N
-32979	370	\N	Frohen-le-Petit	80	\N	\N
-32997	389	\N	Grécourt	80	\N	\N
-33025	419	\N	Hargicourt	80	\N	\N
-33052	447	\N	Hyencourt-le-Grand	80	\N	\N
-33129	532	\N	Méricourt-sur-Somme	80	\N	\N
-33146	551	\N	Misery	80	\N	\N
-33186	594	\N	Neuville-lès-Luilly	80	\N	\N
-33200	608	\N	Omiécourt	80	\N	\N
-33339	761	\N	Tilloy-lès-Conty	80	\N	\N
-33498	091	\N	Ferrières	81	\N	\N
-33514	107	\N	Guitalens	81	\N	\N
-33520	113	\N	Labastide-Dénat	81	\N	\N
-33560	153	\N	Margnès	81	\N	\N
-33562	155	\N	Marsal	81	\N	\N
-33632	226	\N	Ronel	81	\N	\N
-33647	241	\N	Saint-Antonin-de-Lacalm	81	\N	\N
-33666	260	\N	Saint-Lieux-Lafenasse	81	\N	\N
-33702	296	\N	Terre-Clapier	81	\N	\N
-33707	301	\N	Travet	81	\N	\N
-34257	027	\N	Boufféré	85	\N	\N
-34260	030	\N	Boulogne	85	\N	\N
-34266	037	\N	Breuil-Barret	85	\N	\N
-34270	041	\N	Cezais	85	\N	\N
-34272	043	\N	Chaillé-sous-les-Ormeaux	85	\N	\N
-34273	044	\N	Chaix	85	\N	\N
-34277	048	\N	Chambretaud	85	\N	\N
-34281	052	\N	Chapelle-Achard	85	\N	\N
-34282	053	\N	Chapelle-aux-Lys	85	\N	\N
-34288	060	\N	Château-d'Olonne	85	\N	\N
-34291	063	\N	Châtelliers-Châteaumur	85	\N	\N
-34296	069	\N	Clouzeaux	85	\N	\N
-34315	091	\N	Fontaines	85	\N	\N
-34331	107	\N	Guyonnière	85	\N	\N
-34372	150	\N	Mormaison	85	\N	\N
-34388	166	\N	Olonne-sur-Mer	85	\N	\N
-34390	168	\N	Oulmes	85	\N	\N
-34400	180	\N	Pommeraie-sur-Sèvre	85	\N	\N
-34434	217	\N	Saint-Georges-de-Montaigu	85	\N	\N
-34436	219	\N	Saint-Germain-l'Aiguiller	85	\N	\N
-34441	224	\N	Saint-Hilaire-de-Loulay	85	\N	\N
-34468	257	\N	Saint-Michel-Mont-Mercure	85	\N	\N
-34479	271	\N	Saint-Sulpice-en-Pareds	85	\N	\N
-34480	272	\N	Saint-Sulpice-le-Verdon	85	\N	\N
-34486	279	\N	Saligny	85	\N	\N
-34505	299	\N	Velluire	85	\N	\N
-34513	307	\N	Faute-sur-Mer	85	\N	\N
-34534	021	\N	Benassay	86	\N	\N
-34543	030	\N	Blaslay	86	\N	\N
-34555	043	\N	Ceaux-en-Couhé	86	\N	\N
-34568	056	\N	Chapelle-Montreuil	86	\N	\N
-34571	060	\N	Charrais	86	\N	\N
-34578	067	\N	Châtillon	86	\N	\N
-34582	071	\N	Cheneché	86	\N	\N
-34656	146	\N	Marigny-Brizay	86	\N	\N
-34675	166	\N	Montreuil-Bonnin	86	\N	\N
-34694	188	\N	Payré	86	\N	\N
-34713	208	\N	Rochereau	86	\N	\N
-34721	219	\N	Saint-Cyr	86	\N	\N
-34733	231	\N	Saint-Macoux	86	\N	\N
-34756	259	\N	Senillé	86	\N	\N
-34773	277	\N	Varennes	86	\N	\N
-34774	278	\N	Vaux	86	\N	\N
-34819	026	\N	Bussière-Boffy	87	\N	\N
-34848	055	\N	Darnac	87	\N	\N
-34927	136	\N	Saint-Barbant	87	\N	\N
-34963	173	\N	Saint-Pardoux	87	\N	\N
-34973	184	\N	Saint-Symphorien-sur-Couze	87	\N	\N
-34985	196	\N	Thiat	87	\N	\N
-35013	018	\N	Aumontzey	88	\N	\N
-35104	112	\N	Colroy-la-Grande	88	\N	\N
-35195	204	\N	Girmont	88	\N	\N
-35222	234	\N	Harsault	88	\N	\N
-35223	235	\N	Hautmougey	88	\N	\N
-35270	282	\N	Magny	88	\N	\N
-35323	337	\N	Oncourt	88	\N	\N
-35376	392	\N	Rocourt	88	\N	\N
-35511	001	\N	Accolay	89	\N	\N
-35577	070	\N	Chambeugle	89	\N	\N
-35585	078	\N	Champvallon	89	\N	\N
-35602	097	\N	Chêne-Arnoult	89	\N	\N
-35608	103	\N	Chevillon	89	\N	\N
-35611	107	\N	Chigy	89	\N	\N
-35613	109	\N	Cisery	89	\N	\N
-35638	138	\N	Dicy	89	\N	\N
-35671	174	\N	Fontenailles	89	\N	\N
-35675	178	\N	Fontenouilles	89	\N	\N
-35688	192	\N	Grandchamp	89	\N	\N
-35708	213	\N	Laduz	89	\N	\N
-35735	241	\N	Malicorne	89	\N	\N
-35737	243	\N	Marchais-Beton	89	\N	\N
-35753	260	\N	Molesmes	89	\N	\N
-35767	275	\N	Neuilly	89	\N	\N
-35785	294	\N	Perreux	89	\N	\N
-35806	317	\N	Prunoy	89	\N	\N
-35817	330	\N	Sacy	89	\N	\N
-35827	340	\N	Sainte-Colombe-sur-Loing	89	\N	\N
-35830	343	\N	Saint-Denis-sur-Ouanne	89	\N	\N
-35843	356	\N	Saint-Martin-sur-Ocre	89	\N	\N
-35844	358	\N	Saint-Martin-sur-Ouanne	89	\N	\N
-35852	366	\N	Saint-Romain-le-Preux	89	\N	\N
-35866	381	\N	Sceaux	89	\N	\N
-35903	421	\N	Trévilly	89	\N	\N
-35911	429	\N	Vareilles	89	\N	\N
-35928	448	\N	Vignes	89	\N	\N
-35934	454	\N	Villefranche	89	\N	\N
-35936	457	\N	Villemer	89	\N	\N
-35952	473	\N	Villiers-sur-Tholon	89	\N	\N
-35962	484	\N	Volgré	89	\N	\N
-36035	073	\N	Moval	90	\N	\N
-36121	182	\N	Courcouronnes	91	\N	\N
-36133	222	\N	Estouches	91	\N	\N
-36460	259	\N	Gadancourt	95	\N	\N
-36466	282	\N	Gouzangrez	95	\N	\N
-36571	01	\N	Abymes	971	\N	\N
-36572	02	\N	Anse-Bertrand	971	\N	\N
-36573	03	\N	Baie-Mahault	971	\N	\N
-36574	04	\N	Baillif	971	\N	\N
-36575	05	\N	Basse-Terre	971	\N	\N
-36576	06	\N	Bouillante	971	\N	\N
-36577	07	\N	Capesterre-Belle-Eau	971	\N	\N
-36578	08	\N	Capesterre-de-Marie-Galante	971	\N	\N
-36579	09	\N	Gourbeyre	971	\N	\N
-36580	10	\N	Désirade	971	\N	\N
-36581	11	\N	Deshaies	971	\N	\N
-36582	12	\N	Grand-Bourg	971	\N	\N
-36583	13	\N	Gosier	971	\N	\N
-36584	14	\N	Goyave	971	\N	\N
-36585	15	\N	Lamentin	971	\N	\N
-36586	16	\N	Morne-à-l'Eau	971	\N	\N
-36587	17	\N	Moule	971	\N	\N
-36588	18	\N	Petit-Bourg	971	\N	\N
-36589	19	\N	Petit-Canal	971	\N	\N
-36590	20	\N	Pointe-à-Pitre	971	\N	\N
-36591	21	\N	Pointe-Noire	971	\N	\N
-36592	22	\N	Port-Louis	971	\N	\N
-36593	23	\N	Saint-Barthélemy	971	\N	\N
-36594	24	\N	Saint-Claude	971	\N	\N
-36595	25	\N	Saint-François	971	\N	\N
-36596	26	\N	Saint-Louis	971	\N	\N
-36597	27	\N	Saint-Martin	971	\N	\N
-36598	28	\N	Sainte-Anne	971	\N	\N
-36599	29	\N	Sainte-Rose	971	\N	\N
-36600	30	\N	Terre-de-Bas	971	\N	\N
-36601	31	\N	Terre-de-Haut	971	\N	\N
-36602	32	\N	Trois-Rivières	971	\N	\N
-36603	33	\N	Vieux-Fort	971	\N	\N
-36604	34	\N	Vieux-Habitants	971	\N	\N
-36605	01	\N	Ajoupa-Bouillon	972	\N	\N
-36606	02	\N	Anses-d'Arlet	972	\N	\N
-36607	03	\N	Basse-Pointe	972	\N	\N
-36608	04	\N	Carbet	972	\N	\N
-36609	05	\N	Case-Pilote	972	\N	\N
-36610	06	\N	Diamant	972	\N	\N
-36611	07	\N	Ducos	972	\N	\N
-36612	08	\N	Fonds-Saint-Denis	972	\N	\N
-36613	09	\N	Fort-de-France	972	\N	\N
-36614	10	\N	François	972	\N	\N
-36615	11	\N	Grand'Rivière	972	\N	\N
-36616	12	\N	Gros-Morne	972	\N	\N
-36617	13	\N	Lamentin	972	\N	\N
-36618	14	\N	Lorrain	972	\N	\N
-36619	15	\N	Macouba	972	\N	\N
-36620	16	\N	Marigot	972	\N	\N
-36621	17	\N	Marin	972	\N	\N
-36622	18	\N	Morne-Rouge	972	\N	\N
-36623	19	\N	Prêcheur	972	\N	\N
-36624	20	\N	Rivière-Pilote	972	\N	\N
-36625	21	\N	Rivière-Salée	972	\N	\N
-36626	22	\N	Robert	972	\N	\N
-36627	23	\N	Saint-Esprit	972	\N	\N
-36628	24	\N	Saint-Joseph	972	\N	\N
-36629	25	\N	Saint-Pierre	972	\N	\N
-36630	26	\N	Sainte-Anne	972	\N	\N
-36631	27	\N	Sainte-Luce	972	\N	\N
-36632	28	\N	Sainte-Marie	972	\N	\N
-36633	29	\N	Schlcher	972	\N	\N
-36634	30	\N	Trinité	972	\N	\N
-36635	31	\N	Trois-Îlets	972	\N	\N
-36636	32	\N	Vauclin	972	\N	\N
-36637	33	\N	Morne-Vert	972	\N	\N
-36638	34	\N	Bellefontaine	972	\N	\N
-36639	01	\N	Régina	973	\N	\N
-36640	02	\N	Cayenne	973	\N	\N
-36641	03	\N	Iracoubo	973	\N	\N
-36642	04	\N	Kourou	973	\N	\N
-36643	05	\N	Macouria	973	\N	\N
-36644	06	\N	Mana	973	\N	\N
-36645	07	\N	Matoury	973	\N	\N
-36646	08	\N	Saint-Georges	973	\N	\N
-36647	09	\N	Remire-Montjoly	973	\N	\N
-36648	10	\N	Roura	973	\N	\N
-36649	11	\N	Saint-Laurent-du-Maroni	973	\N	\N
-36650	12	\N	Sinnamary	973	\N	\N
-36651	13	\N	Montsinéry-Tonnegrande	973	\N	\N
-36652	14	\N	Ouanary	973	\N	\N
-36653	52	\N	Saül	973	\N	\N
-36654	53	\N	Maripasoula	973	\N	\N
-36655	56	\N	Camopi	973	\N	\N
-36656	57	\N	Grand-Santi	973	\N	\N
-36657	58	\N	Saint-Élie	973	\N	\N
-36658	60	\N	Apatou	973	\N	\N
-36659	61	\N	Awala-Yalimapo	973	\N	\N
-36660	62	\N	Papaichton	973	\N	\N
-36661	01	\N	Avirons	974	\N	\N
-36662	02	\N	Bras-Panon	974	\N	\N
-36663	03	\N	Entre-Deux	974	\N	\N
-36664	04	\N	Étang-Salé	974	\N	\N
-36665	05	\N	Petite-Île	974	\N	\N
-36666	06	\N	Plaine-des-Palmistes	974	\N	\N
-36667	07	\N	Port	974	\N	\N
-36668	08	\N	Possession	974	\N	\N
-36669	09	\N	Saint-André	974	\N	\N
-36670	10	\N	Saint-Benoît	974	\N	\N
-36672	12	\N	Saint-Joseph	974	\N	\N
-36673	13	\N	Saint-Leu	974	\N	\N
-36674	14	\N	Saint-Louis	974	\N	\N
-36675	15	\N	Saint-Paul	974	\N	\N
-36676	16	\N	Saint-Pierre	974	\N	\N
-36677	17	\N	Saint-Philippe	974	\N	\N
-36678	18	\N	Sainte-Marie	974	\N	\N
-36679	19	\N	Sainte-Rose	974	\N	\N
-36680	20	\N	Sainte-Suzanne	974	\N	\N
-36681	21	\N	Salazie	974	\N	\N
-36682	22	\N	Tampon	974	\N	\N
-36683	23	\N	Trois-Bassins	974	\N	\N
-36684	24	\N	Cilaos	974	\N	\N
+29054	375	\N	Seveux-Motey	70	47.52555599999999	5.742627
+29146	475	\N	Fougerolles-Saint-Valbert	70	47.85326200000001	6.395551
+29167	497	\N	Héricourt	70	47.56504899999999	6.741191000000001
+29219	551	\N	La Romaine	70	47.5375609	5.883436
+29302	055	\N	Navour-sur-Grosne	71	46.36870829999999	4.567724699999999
+29383	138	\N	Clux-Villeneuve	71	46.958077	5.190525000000001
+29425	180	\N	La Vineuse sur Fregande	71	46.453893	4.564722
+29507	265	\N	Fragnes-la-Loyère	71	46.844047	4.829010999999999
+29530	288	\N	La Vineuse sur Fregande	71	46.4912769	4.609964
+29545	304	\N	Navour-sur-Grosne	71	46.35592399999999	4.5504619
+29616	375	\N	Le Rousset-Marizy	71	46.571257	4.464526999999999
+29728	492	\N	Bonnay-Saint-Ythaire	71	46.56882299999999	4.609666
+29818	587	\N	La Vineuse sur Fregande	71	46.491681	4.582352999999999
+29853	033	\N	Bernay-Neuvy-en-Champagne	72	48.072912	-0.06175000000000001
+29882	063	\N	Loir en Vallée	72	47.798181	0.678885
+29888	069	\N	Villeneuve-en-Perseigne	72	48.445868	0.203359
+29900	081	\N	Cherré-Au	72	48.172939	0.6566649999999999
+29901	082	\N	Saint Paterne - Le Chevain	72	48.432799	0.124626
+29915	097	\N	Fresnay-sur-Sarthe	72	48.300175	0.126948
+29926	108	\N	Bazouges Cré sur Loir	72	47.67589	-0.158022
+29934	116	\N	Marolles-les-Braults	72	48.23705	0.297436
+29935	117	\N	Le Lude	72	47.607946	0.154335
+29976	159	\N	Loir en Vallée	72	47.790897	0.703162
+29979	162	\N	Villeneuve-en-Perseigne	72	48.434523	0.173802
+30020	203	\N	Montval-sur-Loir	72	47.680251	0.38451
+30023	207	\N	Villeneuve-en-Perseigne	72	48.456596	0.182709
+30056	240	\N	Loir en Vallée	72	47.762271	0.6546590000000001
+30073	258	\N	Villeneuve-en-Perseigne	72	48.4643469	0.303547
+30098	284	\N	Fresnay-sur-Sarthe	72	48.287024	0.095834
+30101	288	\N	Tuffé-Val-de-la-Chéronne	72	48.110086	0.5377109999999999
+30114	301	\N	Ballon-Saint-Mars	72	48.172455	0.247859
+30117	304	\N	Val-d'Étangson	72	47.89012899999999	0.609668
+30131	318	\N	Villeneuve-en-Perseigne	72	48.38912699999999	0.171007
+30195	384	\N	Montval-sur-Loir	72	47.696973	0.463254
+30199	002	\N	Aiguebelle	73	45.54192099999999	6.306159
+30231	038	\N	La Plagne-Tarentaise	73	45.569286	6.714564999999999
+30237	045	\N	Grand-Aigueblanche	73	45.490605	6.498597999999999
+30238	046	\N	Bonneval-sur-Arc	73	45.371599	7.046231
+30248	056	\N	Val-Cenis	73	45.223704	6.775719
+30253	062	\N	Entrelacs	73	45.798697	5.881844000000001
+30270	080	\N	Châtel	73	46.2691504	6.8404852
+30283	093	\N	La Plagne-Tarentaise	73	45.567979	6.668573899999999
+30297	108	\N	Entrelacs	73	45.739484	5.959731
+30300	111	\N	Valgelon-La Rochette	73	45.464002	6.142869
+30301	112	\N	La Léchère	73	45.557471	6.470158
+30304	115	\N	Salins-Fontaine	73	45.45761299999999	6.508038
+30307	118	\N	Porte-de-Savoie	73	45.501235	6.0278108
+30314	126	\N	Aime-la-Plagne	73	45.572536	6.65065
+30315	127	\N	Saint-Genix-les-Villages	73	45.609184	5.683066
+30329	143	\N	Val-Cenis	73	45.285561	6.875662999999999
+30330	144	\N	Val-Cenis	73	45.289457	6.909927
+30343	158	\N	Entrelacs	73	45.747295	5.956214
+30348	163	\N	Saint-François-Longchamp	73	45.37155	6.346392
+30351	167	\N	Saint-François-Longchamp	73	45.39175400000001	6.319026999999999
+30353	169	\N	Aime-la-Plagne	73	45.536169	6.579399
+30378	198	\N	Courchevel	73	45.44524	6.592575999999999
+30382	203	\N	La Tour-en-Maurienne	73	45.336405	6.3629915
+30416	238	\N	Entrelacs	73	45.77798	5.891085899999999
+30417	239	\N	Entrelacs	73	45.779618	5.967378999999999
+30422	244	\N	Les Belleville	73	45.427166	6.485277
+30437	260	\N	Saint-Genix-les-Villages	73	45.61552500000001	5.700418
+30441	264	\N	Saint-Offenge	73	45.730282	6.006124
+30443	266	\N	Grand-Aigueblanche	73	45.503245	6.485252
+30463	287	\N	Val-Cenis	73	45.2568202	6.803091999999999
+30479	305	\N	La Plagne-Tarentaise	73	45.574792	6.693781
+30494	321	\N	Les Belleville	73	45.46108599999999	6.528136
+30513	011	\N	Annecy	74	45.9192139	6.141949899999999
+30523	022	\N	Fillière	74	45.97779999999999	6.222673899999999
+30581	084	\N	Val de Chaise	74	45.749165	6.327825
+30589	093	\N	Annecy	74	45.907737	6.106676999999999
+30606	110	\N	Glières-Val-de-Borne	74	45.956641	6.388523999999999
+30614	120	\N	Fillière	74	46.03769	6.224625
+30672	181	\N	Épagny-Metz-Tessy	74	45.93971880000001	6.1066097
+30673	182	\N	Annecy	74	45.915603	6.09208
+30678	187	\N	Talloires	74	45.803349	6.263215
+30695	204	\N	Fillière	74	45.978644	6.182332
+30706	217	\N	Annecy	74	45.946379	6.122061
+30732	245	\N	Fillière	74	45.96201689999999	6.1444369
+30751	268	\N	Annecy	74	45.8890357	6.102035799999999
+30753	270	\N	Faverges	74	45.726238	6.299652999999999
+30757	274	\N	Vallières-sur-Fier	74	45.9381396	5.890538299999999
+30823	027	\N	Petit-Caux	76	49.983455	1.291958
+30827	031	\N	Port-Jérôme-sur-Seine	76	49.53445199999999	0.597059
+30833	037	\N	Petit-Caux	76	49.94429599999999	1.32873
+30840	044	\N	Terres-de-Caux	76	49.6518454	0.5917728999999999
+30868	073	\N	Petit-Caux	76	49.94947	1.16449
+30873	078	\N	Terres-de-Caux	76	49.6518454	0.5917728999999999
+30875	080	\N	Terres-de-Caux	76	49.6518454	0.5917728999999999
+30876	081	\N	Petit-Caux	76	49.958554	1.186937
+30884	089	\N	Saint-Martin-de-l'If	76	49.549037	0.789505
+30893	098	\N	Petit-Caux	76	49.98153	1.252651
+30921	127	\N	Buchy	76	49.58296499999999	1.389148
+30931	137	\N	Petit-Caux	76	49.940181	1.141846
+30939	145	\N	Petit-Caux	76	49.9641779	1.265994
+30984	191	\N	Val-de-Scie	76	49.72405	1.160701
+31008	215	\N	Petit-Caux	76	49.93885299999999	1.210649
+31040	248	\N	Buchy	76	49.591809	1.3168709
+31058	267	\N	Saint-Martin-de-l'If	76	49.571324	0.7944639
+31068	277	\N	Forges-les-Eaux	76	49.609254	1.572777
+31092	301	\N	Petit-Caux	76	49.936445	1.237965
+31101	310	\N	Petit-Caux	76	49.929927	1.301615
+31117	326	\N	Petit-Caux	76	49.946685	1.305183
+31128	337	\N	Petit-Caux	76	49.966116	1.302339
+31167	376	\N	Petit-Caux	76	49.9323	1.278977
+31235	444	\N	Saint-Martin-de-l'If	76	49.585698	0.8183809999999999
+31286	496	\N	Petit-Caux	76	49.980265	1.232629
+31315	525	\N	Terres-de-Caux	76	49.64129399999999	0.607887
+31394	607	\N	Terres-de-Caux	76	49.6518454	0.5917728999999999
+31412	625	\N	Arelaune-en-Seine	76	49.506671	0.724096
+31425	639	\N	Terres-de-Caux	76	49.6518454	0.5917728999999999
+31429	643	\N	Petit-Caux	76	49.93942999999999	1.321219
+31445	659	\N	Rives-en-Seine	76	49.52128	0.777029
+31459	674	\N	Val-de-Scie	76	49.705136	1.1614819
+31480	696	\N	Petit-Caux	76	50.001791	1.282973
+31485	701	\N	Port-Jérôme-sur-Seine	76	49.522544	0.619696
+31488	704	\N	Petit-Caux	76	49.94321799999999	1.261581
+31497	713	\N	Port-Jérôme-sur-Seine	76	49.50226800000001	0.619057
+31512	729	\N	Les Hauts-de-Caux	76	49.653712	0.76435
+31525	742	\N	Rives-en-Seine	76	49.513005	0.672115
+31569	028	\N	Beautheil-Saints	77	48.762974	3.087455
+31686	149	\N	Chenoise-Cucharmoy	77	48.5834102	3.194491
+31702	166	\N	Moret-Loing-et-Orvanne	77	48.3540393	2.8208169
+31706	170	\N	Moret-Loing-et-Orvanne	77	48.3603526	2.8268921
+31833	299	\N	Moret-Loing-et-Orvanne	77	48.3603526	2.8268921
+31927	399	\N	Villemaréchal	77	48.264973	2.9024899
+32017	491	\N	Moret-Loing-et-Orvanne	77	48.377846	2.7951609
+32148	251	\N	Saint-Germain-en-Laye	78	48.886308	2.064573
+32253	503	\N	Notre-Dame-de-la-Mer	78	49.061904	1.5235129
+32262	524	\N	Le Chesnay-Rocquencourt	78	48.8372465	2.1114908
+32322	004	\N	Aigondigné	79	46.329755	-0.258291
+32324	006	\N	Alloinay	79	46.163615	-0.003981999999999999
+32329	011	\N	Valdelaume	79	46.098147	-0.044109
+32342	027	\N	Chef-Boutonne	79	46.087336	-0.106547
+32347	033	\N	Plaine-d'Argenson	79	46.125995	-0.49924
+32349	035	\N	Beugnon-Thireuil	79	46.581597	-0.498222
+32350	037	\N	Argentonnay	79	46.976672	-0.4746119999999999
+32352	039	\N	Plaine-d'Argenson	79	46.112784	-0.473441
+32355	043	\N	Loretz-d'Argenton	79	47.07826	-0.2716779
+32356	044	\N	Val en Vignes	79	47.025366	-0.34231
+32357	045	\N	Valdelaume	79	46.087145	-0.016361
+32363	051	\N	Moncoutant-sur-Sèvre	79	46.720687	-0.554559
+32364	053	\N	Argentonnay	79	46.991769	-0.428948
+32365	054	\N	Plaine-et-Vallées	79	46.9195769	-0.040797
+32377	068	\N	Les Châteliers	79	46.496706	-0.156761
+32381	072	\N	Argentonnay	79	46.931605	-0.3806379
+32383	075	\N	Moncoutant-sur-Sèvre	79	46.6837424	-0.5749103
+32403	098	\N	Prailles-La Couarde	79	46.31821	-0.1570419
+32404	099	\N	Argentonnay	79	46.946492	-0.47155
+32412	107	\N	Chef-Boutonne	79	46.082738	-0.132988
+32417	113	\N	Saint-Maurice-Étusson	79	47.0133746	-0.5152057999999999
+32467	168	\N	Val en Vignes	79	47.006104	-0.342822
+32469	171	\N	Thouars	79	46.977035	-0.278773
+32471	173	\N	Melle	79	46.20073499999999	-0.184253
+32476	178	\N	Thouars	79	46.948593	-0.192809
+32482	187	\N	Argentonnay	79	46.954741	-0.391193
+32483	188	\N	Moncoutant-sur-Sèvre	79	46.6956279	-0.6184141
+32491	199	\N	Melle	79	46.178589	-0.167156
+32502	211	\N	Valdelaume	79	46.078767	0.026889
+32505	214	\N	Marcillé	79	46.20355199999999	-0.115254
+32510	219	\N	Val-du-Mignon	79	46.144635	-0.60546
+32512	222	\N	Moncoutant-sur-Sèvre	79	46.72643799999999	-0.523917
+32523	240	\N	Aigondigné	79	46.24207800000001	-0.273915
+32529	247	\N	Plaine-d'Argenson	79	46.1148957	-0.495109
+32541	260	\N	Plaine-et-Vallées	79	46.882183	-0.053624
+32542	261	\N	Moncoutant-sur-Sèvre	79	46.754617	-0.621491
+32544	264	\N	Melle	79	46.2271156	-0.1266959
+32556	279	\N	Melle	79	46.22069399999999	-0.165277
+32559	282	\N	Celles-sur-Belle	79	46.210732	-0.272025
+32566	292	\N	Thouars	79	46.984616	-0.248469
+32578	305	\N	Argentonnay	79	46.95805	-0.437114
+32587	314	\N	Fontivillié	79	46.15849	-0.101596
+32589	318	\N	Saint-Pardoux-Soutiers	79	46.570012	-0.2808020000000001
+32592	321	\N	Plaine-et-Vallées	79	46.924828	-0.117055
+32594	325	\N	Airvault	79	46.812639	-0.191701
+32596	327	\N	Aigondigné	79	46.291839	-0.246901
+32597	328	\N	Val-du-Mignon	79	46.152763	-0.553497
+32599	330	\N	Chef-Boutonne	79	46.1512203	-0.1208724
+32602	333	\N	Argentonnay	79	47.027228	-0.403813
+32621	353	\N	Beaussais-Vitré	79	46.283289	-0.199405
+32624	356	\N	Voulmentin	79	46.9319879	-0.517879
+32794	175	\N	Carnoy-Mametz	80	49.985019	2.755773
+32827	209	\N	Trois-Rivières	80	49.72248769999999	2.5502214
+32979	370	\N	Frohen-sur-Authie	80	50.195759	2.200587000000001
+32997	389	\N	Hombleux	80	49.725885	2.987063
+33025	419	\N	Trois-Rivières	80	49.7111433	2.5296376
+33052	447	\N	Hypercourt	80	49.821866	2.834054
+33129	532	\N	Étinehem-Méricourt	80	49.9060149	2.674368
+33146	551	\N	Marchélepot-Misery	80	49.848352	2.886829000000001
+33186	594	\N	Ô-de-Selle	80	49.79104299999999	2.184489
+33200	608	\N	Hypercourt	80	49.80945999999999	2.84617
+33339	761	\N	Ô-de-Selle	80	49.754754	2.174522
+33498	091	\N	Fontrieu	81	43.657587	2.44471
+33514	107	\N	Guitalens-L'Albarède	81	43.64433690000001	2.0419619
+33520	113	\N	Puygouzon	81	43.86656199999999	2.190221
+33560	153	\N	Fontrieu	81	43.6558146	2.6090043
+33562	155	\N	Bellegarde-Marsal	81	43.930279	2.2861379
+33632	226	\N	Terre-de-Bancalié	81	43.8124111	2.2187476
+33647	241	\N	Terre-de-Bancalié	81	43.786085	2.307387
+33666	260	\N	Terre-de-Bancalié	81	43.783345	2.2384274
+33702	296	\N	Terre-de-Bancalié	81	43.8586277	2.2975183
+33707	301	\N	Terre-de-Bancalié	81	43.808104	2.330685
+34257	027	\N	Montaigu-Vendée	85	46.960076	-1.341869
+34260	030	\N	Essarts-en-Bocage	85	46.794617	-1.320679
+34266	037	\N	Terval	85	46.654199	-0.6839879999999999
+34270	041	\N	Rives-du-Fougerais	85	46.589562	-0.8194502
+34272	043	\N	Rives de l'Yon	85	46.584019	-1.365329
+34273	044	\N	Auchay-sur-Vendée	85	46.442039	-0.8678328999999999
+34277	048	\N	Chanverrie	85	46.92109900000001	-0.9672189999999999
+34281	052	\N	Les Achards	85	46.588703	-1.648268
+34282	053	\N	Terval	85	46.62902099999999	-0.659229
+34288	060	\N	Les Sables-d'Olonne	85	46.50436	-1.738692
+34291	063	\N	Sèvremont	85	46.8707074	-0.8346849
+34296	069	\N	Aubigny-Les Clouzeaux	85	46.6298629	-1.5086962
+34315	091	\N	Doix lès Fontaines	85	46.423455	-0.821461
+34331	107	\N	Montaigu-Vendée	85	46.9658993	-1.2518835
+34372	150	\N	Montréverd	85	46.90739199999999	-1.450181
+34388	166	\N	Les Sables-d'Olonne	85	46.5363895	-1.772651
+34390	168	\N	Rives-d'Autise	85	46.398936	-0.66242
+34400	180	\N	Sèvremont	85	46.8375971	-0.7765413
+34434	217	\N	Montaigu-Vendée	85	46.947108	-1.294801
+34436	219	\N	Mouilleron-Saint-Germain	85	46.68710300000001	-0.841891
+34441	224	\N	Montaigu-Vendée	85	47.00391	-1.331426
+34468	257	\N	Sèvremont	85	46.830549	-0.883265
+34479	271	\N	Rives-du-Fougerais	85	46.6016463	-0.8362822
+34480	272	\N	Montréverd	85	46.893149	-1.420457
+34486	279	\N	Bellevigny	85	46.80871399999999	-1.4261569
+34505	299	\N	Les Velluire-sur-Vendée	85	46.404686	-0.893601
+34513	307	\N	L'Aiguillon-la-Presqu'ile	85	46.331454	-1.321862
+34534	021	\N	Boivre-la-Vallée	86	46.559123	0.045547
+34543	030	\N	Saint-Martin-la-Pallu	86	46.736469	0.24547
+34555	043	\N	Valence-en-Poitou	86	46.321067	0.231514
+34568	056	\N	Boivre-la-Vallée	86	46.534792	0.114942
+34571	060	\N	Saint-Martin-la-Pallu	86	46.698238	0.200733
+34578	067	\N	Valence-en-Poitou	86	46.3191417	0.1908729
+34582	071	\N	Saint-Martin-la-Pallu	86	46.7366079	0.279447
+34656	146	\N	Jaunay-Marigny	86	46.74520099999999	0.3768619
+34675	166	\N	Boivre-la-Vallée	86	46.550135	0.140327
+34694	188	\N	Valence-en-Poitou	86	46.340364	0.211289
+34713	208	\N	Champigny en Rochereau	86	46.6945922	0.1437184
+34721	219	\N	Beaumont Saint-Cyr	86	46.718685	0.442008
+34733	231	\N	Val-de-Comporté	86	46.11660579999999	0.2311927
+34756	259	\N	Senillé-Saint-Sauveur	86	46.7783019	0.6136349999999999
+34773	277	\N	Saint-Martin-la-Pallu	86	46.759709	0.200332
+34774	278	\N	Valence-en-Poitou	86	46.297334	0.220914
+34819	026	\N	Val d'Issoire	87	46.048756	0.852943
+34848	055	\N	Val-d'Oire-et-Gartempe	87	46.223045	0.95909
+34927	136	\N	Val-d'Oire-et-Gartempe	87	46.171569	0.849231
+34963	173	\N	Saint-Pardoux-le-Lac	87	46.05836	1.28163
+34973	184	\N	Saint-Pardoux-le-Lac	87	46.060306	1.234764
+34985	196	\N	Val-d'Oire-et-Gartempe	87	46.26683999999999	0.9740050000000001
+35013	018	\N	Granges-Aumontzey	88	48.167841	6.775153
+35104	112	\N	Provenchères-et-Colroy	88	48.316617	7.114466999999999
+35195	204	\N	Thaon-les-Vosges	88	48.258075	6.436719999999999
+35222	234	\N	La Vôge-les-Bains	88	48.058026	6.23938
+35223	235	\N	La Vôge-les-Bains	88	48.029446	6.232482999999999
+35270	282	\N	Fontenoy-le-Château	88	47.967095	6.176343
+35323	337	\N	Thaon-les-Vosges	88	48.25098999999999	6.378184
+35376	392	\N	Tollaincourt	88	48.103623	5.738621999999999
+35511	001	\N	Deux Rivières	89	47.66042600000001	3.709341
+35577	070	\N	Charny Orée de Puisaye	89	47.860661	3.041096
+35585	078	\N	Montholon	89	47.935363	3.344555
+35602	097	\N	Charny Orée de Puisaye	89	47.90064599999999	3.070264
+35608	103	\N	Charny Orée de Puisaye	89	47.9203	3.174427
+35611	107	\N	Les Vallées-de-la-Vanne	89	48.2005089	3.476954
+35613	109	\N	Guillon-Terre-Plaine	89	47.51683389999999	4.0719338
+35638	138	\N	Charny Orée de Puisaye	89	47.933576	3.106054
+35671	174	\N	Les Hauts de Forterre	89	47.632056	3.466792
+35675	178	\N	Charny Orée de Puisaye	89	47.888637	3.046163
+35688	192	\N	Charny Orée de Puisaye	89	47.80748699999999	3.154673
+35708	213	\N	Valravillon	89	47.88503	3.414501
+35735	241	\N	Charny Orée de Puisaye	89	47.81998	3.1028509
+35737	243	\N	Charny Orée de Puisaye	89	47.8348579	3.048461
+35753	260	\N	Les Hauts de Forterre	89	47.610601	3.464102
+35767	275	\N	Valravillon	89	47.917423	3.438829
+35785	294	\N	Charny Orée de Puisaye	89	47.859011	3.151005
+35806	317	\N	Charny Orée de Puisaye	89	47.913611	3.131473
+35817	330	\N	Vermenton	89	47.6676	3.819072
+35827	340	\N	Treigny-Perreuse-Sainte-Colombe	89	47.570156	3.235359
+35830	343	\N	Charny Orée de Puisaye	89	47.821683	3.130734
+35843	356	\N	Le Val d'Ocre	89	47.816699	3.340881
+35844	358	\N	Charny Orée de Puisaye	89	47.840424	3.104136
+35852	366	\N	Sépeaux-Saint-Romain	89	47.934272	3.2426339
+35866	381	\N	Guillon-Terre-Plaine	89	47.5213314	4.014012699999999
+35903	421	\N	Guillon-Terre-Plaine	89	47.5299493	4.048693399999999
+35911	429	\N	Les Vallées-de-la-Vanne	89	48.175784	3.470931
+35928	448	\N	Guillon-Terre-Plaine	89	47.5275799	4.1153553
+35934	454	\N	Charny Orée de Puisaye	89	47.939076	3.1282009
+35936	457	\N	Valravillon	89	47.916018	3.472942
+35952	473	\N	Montholon	89	47.888127	3.33725
+35962	484	\N	Montholon	89	47.91848599999999	3.327174
+36035	073	\N	Meroux-Moval	90	47.587687	6.885318
+36121	182	\N	Évry-Courcouronnes	91	48.617871	2.407091
+36133	222	\N	Le Mérévillois	91	48.302104	2.134089
+36460	259	\N	Avernes	95	49.103097	1.863349
+36466	282	\N	Commeny	95	49.11301	1.90851
+36571	01	\N	Les Abymes	971	16.2713538	-61.50491700000001
+36572	02	\N	Anse-Bertrand	971	16.4718892	-61.50860170000001
+36573	03	\N	Baie-Mahault	971	16.2679391	-61.58684599999999
+36574	04	\N	Baillif	971	16.0207306	-61.74687590000001
+36575	05	\N	France	971	46.227638	2.213749
+36576	06	\N	Bouillante	971	16.1319289	-61.7700195
+36577	07	\N	Capesterre-Belle-Eau	971	16.0427562	-61.5649915
+36578	08	\N	Capesterre-de-Marie-Galante	971	15.8906956	-61.22177029999999
+36579	09	\N	Gourbeyre	971	15.9942802	-61.69254119999999
+36580	10	\N	La Désirade	971	16.3190276	-61.0518437
+36581	11	\N	Deshaies	971	16.3067971	-61.7944621
+36582	12	\N	France	971	46.227638	2.213749
+36583	13	\N	Le Gosier	971	16.2182006	-61.4552213
+36584	14	\N	Goyave	971	16.1334935	-61.5750497
+36585	15	\N	Lamentin	971	16.2713406	-61.63341339999999
+36586	16	\N	Morne-à-l'Eau	971	16.3314321	-61.4573001
+36587	17	\N	Le Moule	971	16.3312403	-61.34384829999999
+36588	18	\N	Petit-Bourg	971	16.1917226	-61.5907484
+36589	19	\N	Petit-Canal	971	16.3789263	-61.4908911
+36590	20	\N	France	971	46.227638	2.213749
+36591	21	\N	Pointe-Noire	971	16.2323164	-61.7899746
+36592	22	\N	France	971	46.227638	2.213749
+36593	23	\N	Guadeloupe	971	16.265	-61.55099999999999
+36594	24	\N	France	971	46.227638	2.213749
+36595	25	\N	Saint-François	971	16.2522822	-61.27304880000001
+36596	26	\N	Guadeloupe	971	16.265	-61.55099999999999
+36597	27	\N	Guadeloupe	971	16.265	-61.55099999999999
+36598	28	\N	France	971	46.227638	2.213749
+36599	29	\N	Sainte-Rose	971	16.3335167	-61.6982671
+36600	30	\N	France	971	46.227638	2.213749
+36601	31	\N	France	971	46.227638	2.213749
+36602	32	\N	France	971	46.227638	2.213749
+36603	33	\N	France	971	46.227638	2.213749
+36604	34	\N	Vieux-Habitants	971	16.0601806	-61.76425079999999
+36605	01	\N	L'Ajoupa-Bouillon	972	14.8251234	-61.11425699999999
+36606	02	\N	Les Anses-d'Arlet	972	14.4909814	-61.0804091
+36607	03	\N	Basse-Pointe	972	14.8690335	-61.11514889999999
+36608	04	\N	Le Carbet	972	14.7108415	-61.18311709999999
+36609	05	\N	Case-Pilote	972	14.6436962	-61.1381446
+36610	06	\N	Le Diamant	972	14.4798195	-61.02580760000001
+36611	07	\N	Ducos	972	14.5760411	-60.9761682
+36612	08	\N	Fonds-Saint-Denis	972	14.7381881	-61.13206399999999
+36613	09	\N	Fort-de-France	972	14.6060576	-61.06988399999999
+36614	10	\N	Le François	972	14.6151263	-60.9032551
+36615	11	\N	Grand'Rivière	972	14.8725713	-61.1784048
+36616	12	\N	Gros-Morne	972	14.7105044	-61.0049338
+36617	13	\N	Le Lamentin	972	14.6156116	-61.00446789999999
+36618	14	\N	Le Lorrain	972	14.832504	-61.05496249999999
+36619	15	\N	Macouba	972	14.8760297	-61.1448304
+36620	16	\N	Le Marigot	972	14.8203708	-61.0294274
+36621	17	\N	France	972	46.227638	2.213749
 10943	067	\N	Guerlesquin	29	48.531858196185	-3.58770043046669
 8632	372	\N	Saint-Astier	24	45.1482484162462	0.519988352875156
 2475	043	\N	Balan	08	49.6895149938848	4.96373220447679
@@ -16890,7 +16893,6 @@ COPY public.towns (id, code, article, name, department, latitude, longitude) FRO
 28705	001	\N	Abelcourt	70	47.7930191222797	6.27760751743128
 8791	537	\N	Siorac-de-Ribérac	24	45.1838637428115	0.346451077901623
 34411	192	\N	Rochetrejoux	85	46.7851328492105	-0.997319725400929
-29025	342	\N	Mercey-sur-Saône	70	47.5245722276802	5.72765108364148
 27777	288	\N	Memmelshoffen	67	48.9587717728945	7.87127268537653
 35899	417	\N	Tissey	89	47.8592138660677	3.89961455097359
 27737	245	\N	Knrsheim	67	48.6794871089575	7.4579967323069
@@ -16959,6 +16961,7 @@ COPY public.towns (id, code, article, name, department, latitude, longitude) FRO
 22672	697	\N	Vasperviller	57	48.6346970902538	7.0722304903614
 4610	097	\N	Bretteville-le-Rabet	14	49.029923927709	-0.258059591190429
 28212	182	\N	Leymen	68	47.5001565206639	7.48458860695699
+29025	342	\N	Mercey-sur-Saône	70	47.536999	5.729718999999999
 27872	391	\N	Reinhardsmunster	67	48.6827749064938	7.29940535687237
 20565	187	\N	Ravigny	53	48.4429178424213	-0.0682734678398596
 27504	230	\N	Vinça	66	42.6436198171059	2.52309233443535
@@ -37213,7 +37216,7 @@ SELECT pg_catalog.setval('public.departments_id_seq', 100, true);
 -- Name: descriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: travel_admin
 --
 
-SELECT pg_catalog.setval('public.descriptions_id_seq', 1, false);
+SELECT pg_catalog.setval('public.descriptions_id_seq', 3, true);
 
 
 --
