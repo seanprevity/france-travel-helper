@@ -17,8 +17,8 @@ HISTORY:
 [2-3 sentences briefly outlining the town’s background and notable past events that define the town.]
 
 ATTRACTIONS:
-[Choose between 0 and 5 attractions, based on how many truly notable sites the town has. Pick parks, scenic areas, castles, etc. anything that the town offers that is unique or interesting.  
- • Small villages or lesser-known towns: 0-1 key points of interest.  
+[Choose between 1 and 5 attractions, based on how many truly notable sites the town has. Pick parks, scenic areas, castles, etc. anything that the town offers that is unique or interesting.  
+ • Small villages or lesser-known towns: 1 key points of interest.  
  • Mid-sized towns: 2 main attractions.  
  • Major cities or historically rich locales: up to 5.]
 1. [Name] – [Short description of its significance and location]
@@ -36,8 +36,8 @@ HISTORY:
 [Un résumé en 2 à 3 phrases des origines de la ville, de son histoire marquante ou d’événements notables qui la définissent.]
 
 ATTRACTIONS:
-[Indique entre 0 et 5 attractions selon l’importance réelle de la ville. Choisis uniquement les lieux vraiment remarquables : parcs, châteaux, monuments, paysages naturels, etc.
-• Pour les petits villages ou villes peu connues : 0 à 1 point d’intérêt majeur.
+[Indique entre 1 et 5 attractions selon l’importance réelle de la ville. Choisis uniquement les lieux vraiment remarquables : parcs, châteaux, monuments, paysages naturels, etc.
+• Pour les petits villages ou villes peu connues : 1 point d’intérêt majeur.
 • Pour les villes moyennes : 2 attractions principales.
 • Pour les grandes villes ou lieux à forte valeur historique : jusqu’à 5 attractions possibles.]
 1. [Nom] – [Brève description de son intérêt et de sa localisation]
