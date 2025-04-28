@@ -72,3 +72,20 @@ def add_rating():
         return jsonify({'error': str(e)}), 400
     finally:
         Session.remove()
+
+@ratings_bp.route('/heatmap', methods=["GET"])
+def get_heatmap_data():
+    session = Session()
+    try:
+        result = session.execute(text("""
+            SELECT latitude, longitude, AVG(rating) as avg_rating
+            FROM ratings
+            JOIN towns ON ratings.town_code = towns.town_code
+            GROUP BY latitude, longitude
+        """)).fetchall()
+
+        points = [{"lat": r.latitude, "lng": r.longitude, "weight": r.avg_rating or 1} for r in result]
+
+        return jsonify(points)
+    finally:
+        Session.remove()

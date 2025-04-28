@@ -4,7 +4,7 @@ from extensions import Session
 from sqlalchemy import text
 import os
 from dotenv import load_dotenv
-from .location import get_department_by_code
+from .location import get_town_full_info
 import unicodedata
 
 load_dotenv()
@@ -20,17 +20,14 @@ def nearest_town():
         return jsonify({"error": "Missing or invalid lat/lng"}), 400
 
     town = find_nearest_town(lat, lng)
-    if not town:
-        return jsonify({"error": "No town found"}), 404
+    if not town: return jsonify({"error": "No town found"}), 404
     
-    dept = get_department_by_code(town["department"])
+    dept = get_town_full_info(town["name"], town["department"])
     # Update coordinates of town to match geocoded coordinates 
     official_name, lat, lng = geocode_town(town["name"], dept["department_name"], town["department"])
     town["latitude"] = lat
     town["longitude"] = lng
-    # update to google name and coords
-    if official_name:
-        town["name"] = official_name
+    if official_name: town["name"] = official_name
     return jsonify(town)
 
 def find_nearest_town(lat, lng, max_dist=0.5):
@@ -119,7 +116,6 @@ def geocode_town(town_name, department_name, dept_code):
         session.commit()
         current_app.logger.info(f"Towns table updated for {town_name} → {official_name} @ ({lat},{lng})")
     except Exception as e:
-        current_app.logger.error(f"Error updating DB for {town_name}: {e}")
         session.rollback()
     finally:
         Session.remove()
@@ -138,4 +134,20 @@ def geocode_searched_town():
         return jsonify({"error": "Geocoding failed"}), 500
     
     return jsonify({ "name": official, "latitude":  lat, "longitude": lng }), 200
-    
+
+@towns_bp.route("/random", methods=["GET"])
+def get_random_town():
+    session = Session()
+    try:
+        result = session.execute(text("""
+            SELECT name, department
+            FROM towns
+            ORDER BY RANDOM()
+            LIMIT 1
+        """)).fetchone()
+        return jsonify({
+            "name": result.name,
+            "department": result.department
+        })
+    finally:
+        Session.remove()

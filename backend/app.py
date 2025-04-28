@@ -10,6 +10,7 @@ from routes.bookmarks import bookmarks_bp
 from routes.ratings import ratings_bp
 from dotenv import load_dotenv
 from datetime import timedelta
+from routes.weather import weather_bp
 
 load_dotenv()
 
@@ -31,6 +32,7 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(search_bp)
 app.register_blueprint(bookmarks_bp)
 app.register_blueprint(ratings_bp)
+app.register_blueprint(weather_bp)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

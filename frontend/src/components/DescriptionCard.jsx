@@ -3,9 +3,10 @@ import { useLanguage } from "../context/LanguageContext"
 import { X, Star } from "lucide-react"
 import "../styles/DescriptionCard.css"
 import ImageModal from "./ImageModal"
+import Weather from "./Weather"
 import { useNavigate } from "react-router-dom"
 
-export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [], }) {
+export default function DescriptionCard({ town, townCode, department, departmentName, regionName, description, loading, images = [], latitude, longitude }) {
   const { t } = useLanguage()
   const [isSaved, setIsSaved] = useState(false)
   const [ratingData, setRatingData] = useState({ average: 0, count: 0 })
@@ -141,8 +142,6 @@ export default function DescriptionCard({ town, townCode, department, department
   const openImageModal = (index) => {
     setCurrentImageIndex(index)
     setShowImageModal(true)
-    setEscKeyPressed(false)
-    setArrowKeyPressed(null)
   }
 
   const closeImageModal = () => {
@@ -238,6 +237,9 @@ export default function DescriptionCard({ town, townCode, department, department
           })}
         </p>
       </div>
+
+      {/* Weather */}
+      <Weather lat={latitude} lon={longitude} />
 
       {/* Images Thumbnail Gallery */}
       {images.length > 0 && (

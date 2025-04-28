@@ -89,5 +89,9 @@
    "close": "Close",
    "imageUnavailable": "Image unavailable",
    "noInfoMessage": "Not much information is known about {{town}}, it may just be a peaceful hidden gem. Try reloading the town.",
-   "history": "History"
+   "history": "History",
+   "randomCity": "Random City",
+   "showForecast": "Show Forecast",
+   "hideForecast": "Hide Forecast",
+   "weatherError": "Error fetching weather data"
 }

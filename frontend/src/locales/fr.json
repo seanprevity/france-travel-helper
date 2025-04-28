@@ -89,7 +89,10 @@
    "next": "Suivant",
    "close": "Fermer",
    "imageUnavailable": "Image indisponible",
-   "noInfoMessage": "On ne sait pas grand-chose sur {{town}}, c’est peut-être un joyau caché paisible. Essayez de recharger la ville.",
-   "history": "Histoire"
-    
+   "noInfoMessage": "On ne sait pas grand-chose sur {{town}}, c'est peut-être un joyau caché paisible. Essayez de recharger la ville.",
+   "history": "Histoire",
+   "randomCity": "Ville aléatoire",
+   "showForecast": "Afficher les prévisions",
+   "hideForecast": "Masquer les prévisions",
+   "weatherError": "Erreur lors de la récupération des données météorologiques"
 }

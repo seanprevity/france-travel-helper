@@ -8,8 +8,7 @@ import unicodedata
 location_bp = Blueprint("location", __name__, url_prefix="/api")
 
 def normalize_string(s):
-    if not s:
-        return s
+    if not s: return s
     return unicodedata.normalize('NFKC', s)
 
 @location_bp.route("/location")
@@ -17,85 +16,56 @@ def location_info():
     name = request.args.get("name")
     lang = request.args.get("lang", "en")
     dept_code = request.args.get("code")
-
     if not name: return jsonify({"error": "Missing 'name' parameter"}), 400
-    name = normalize_string(name)
-    town = get_town_by_name(name, dept_code)
-    if not town: return jsonify({"error": f"No town named '{name}' found"}), 404
 
-    town_code = town["code"]
-    dept_code = town["department"]
-    dept = get_department_by_code(dept_code)
-    region_code = dept["region_code"]
-    region = get_region_by_code(region_code) if dept else {"name": None}
-    
+    name = normalize_string(name)
+    town = get_town_full_info(name, dept_code)
+    if not town: return jsonify({"error": "Town not found"}), 404
+
     metadata = {
         **town,
-        "department_name":  dept["department_name"],
-        "department_code":  dept_code,
-        "region_code":      dept["region_code"],
-        "region_name":      region["region_name"],
+        "department_name": town["department_name"],
+        "department_code": dept_code,
+        "region_code": town["region_code"],
+        "region_name": town["region_name"],
     }
-    
+
     # fetch images 
-    images_response = fetch_wiki_images(town_name=town["name"], department_name=dept["department_name"])
+    images_response = fetch_wiki_images(town_name=town["name"], department_name=town["department_name"])
     images_list = images_response.get("images", [])
 
     # Try cache first
-    cached = get_cached_description(town_code, dept_code, lang)
+    cached = get_cached_description(town["code"], dept_code, lang)
     if cached:
-        return jsonify({ "description": cached, "metadata": metadata, "images": images_list })
+        return jsonify({"description": cached, "metadata": metadata, "images": images_list})
 
     # Generate & Cache description
-    description = get_description(name, dept["department_name"], region["region_name"], lang)
-    cache_description(town_code, dept_code, lang, description)
-    return jsonify({ "description": description, "metadata": metadata, "images": images_list})
-    
-def get_town_by_name(town_name, dept_code):
+    description = get_description(name, town["department_name"], town["region_name"], lang)
+    cache_description(town["code"], dept_code, lang, description)
+
+    return jsonify({"description": description, "metadata": metadata, "images": images_list})
+
+def get_town_full_info(town_name, dept_code):
     query = text("""
-        SELECT * FROM towns
-        WHERE LOWER(name) = LOWER(:name)
-        AND department = :code
+        SELECT 
+            t.*, 
+            d.name AS department_name, 
+            r.code AS region_code, 
+            r.name AS region_name
+        FROM towns t
+        JOIN departments d ON t.department = d.code
+        JOIN regions r ON d.region = r.code
+        WHERE LOWER(t.name) = LOWER(:name)
+          AND t.department = :code
         LIMIT 1
     """)
-    
+
     session = Session()
     try:
         row = session.execute(query, {"name": town_name, "code": dept_code}).fetchone()
-        return dict(row._mapping) if row else None
-    finally:
-        Session.remove()
-        
-def get_department_by_code(dept_code):
-    query = text("""
-                 SELECT code AS department_code, name AS department_name, region AS region_code
-                 FROM departments
-                 WHERE code = :code
-                 LIMIT 1
-                 """)
-    session = Session()
-    try:
-        row = session.execute(query, {"code": dept_code}).fetchone()
         if not row:
-            return {"department_code": dept_code, "department_name": None, "region_code": None}
-        m = row._mapping
-        return {"department_code": m["department_code"], "department_name": m["department_name"], "region_code": m["region_code"]}
-    finally:
-        Session.remove()
-
-def get_region_by_code(region_code):
-    query = text("""
-                 SELECT code AS region_code, name AS region_name
-                 FROM regions
-                 WHERE code = :code
-                 LIMIT 1
-                 """)
-    session = Session()
-    try:
-        row = session.execute(query, {"code": region_code}).fetchone()
-        if not row:
-            return {"region_code": region_code, "region_name": None}
-        return {"region_code": row._mapping["region_code"], "region_name": row._mapping["region_name"]}
+            return None
+        return dict(row._mapping)
     finally:
         Session.remove()
 
