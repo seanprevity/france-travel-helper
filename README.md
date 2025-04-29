@@ -76,6 +76,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 DATABASE_URL=postgresql://travel_admin:Password@localhost:5432/french_travel_db
 JWT_SECRET_KEY=your_jwt_secret_key_here
 GEOCODING_API_KEY=your_google_geocoding_api_key_here
+WEATHER_API_KEY=your_weatherapi_api_key_here
 ```
 
 
@@ -123,6 +124,7 @@ psql french_travel_db < french_travel_dump.sql
 - **OpenAI API** for generating town descriptions
 - **Google Geocoding API** for lat/lon corrections
 - **Wikipedia API** for fetching relevant town images
+- **Weather API** for pulling weather data on a town
 - **JWT Auth** using secure cookies (12-hour inactivity expiration)
 
 
@@ -132,6 +134,7 @@ psql french_travel_db < french_travel_dump.sql
 
 - 🔎 Search towns with autocomplete
 - 🗺 Interactive Google Map navigation
+- ☀️ Up-to-date weather statistics
 - 📝 AI-generated town descriptions, histories, attractions
 - 📌 Save bookmarks to your profile
 - ⭐ Rate towns
