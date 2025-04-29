@@ -80,7 +80,7 @@ def get_heatmap_data():
         result = session.execute(text("""
             SELECT latitude, longitude, AVG(rating) as avg_rating
             FROM ratings
-            JOIN towns ON ratings.town_code = towns.town_code
+            JOIN towns ON ratings.town_code = towns.code AND ratings.department = towns.department
             GROUP BY latitude, longitude
         """)).fetchall()
 

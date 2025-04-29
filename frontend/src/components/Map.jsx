@@ -3,7 +3,7 @@ import { useLoadScript } from '@react-google-maps/api'
 import { useLanguage } from '../context/LanguageContext';
 import "../styles/Map.css";
 
-const libraries = [];
+const libraries = ["visualization"];
 const center = { lat: 46.603354, lng: 1.888334 };
 const MAP_ID = "7cfa05313dafca53";
 
@@ -21,6 +21,7 @@ export default function Map({ onTownClick, selectedTown }) {
   const mapInstanceRef = useRef(null);
   const markerRef = useRef(null);
   const { lang, t } = useLanguage();
+  const heatmapRef = useRef(null)
 
   // Keep refs in sync with latest lang and callback
   const langRef = useRef(lang);
@@ -48,6 +49,36 @@ export default function Map({ onTownClick, selectedTown }) {
         mapId: MAP_ID,
       });
       mapInstanceRef.current = map;
+
+      const controlDiv = document.createElement("div")
+      controlDiv.style.margin = "8px"
+      const btn = document.createElement("button")
+      btn.textContent = "Show HeatMap"
+      btn.className = "heatmap-toggle-button"
+      controlDiv.appendChild(btn)
+      map.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(controlDiv)
+
+      btn.addEventListener("click", async() => {
+        if (!heatmapRef.current) {
+          const res = await fetch("/api/ratings/heatmap")
+          if (!res.ok) return;
+          const points = await res.json()
+          const heatData = points.map(p => ({
+            location: new window.google.maps.LatLng(p.lat, p.lng),
+            weight: p.weight,
+          }));
+          heatmapRef.current = new window.google.maps.visualization.HeatmapLayer({
+            data: heatData,
+            map,
+          });
+          btn.textContent = "Hide Heatmap";
+        }
+        else {
+          heatmapRef.current.setMap(null)
+          heatmapRef.current = null
+          btn.textContent = "Show Heatmap"
+        }
+      })
 
       const rawClickHandler = async (e) => {
         const lat = e.latLng.lat(), lng = e.latLng.lng();
@@ -78,6 +109,7 @@ export default function Map({ onTownClick, selectedTown }) {
     return () => {
       if (clickListener) clickListener.remove();
       markerRef.current?.setMap(null);
+      heatmapRef.current?.setMap(null);
     };
   }, [isLoaded]);
 

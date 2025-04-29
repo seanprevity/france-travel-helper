@@ -30,6 +30,21 @@
    animation: loading-dots 1.5s infinite;
 }
 
+.heatmap-toggle-button {
+   background: white;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   padding: 6px 10px;
+   font-size: 0.9rem;
+   cursor: pointer;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+   transition: background 0.2s;
+}
+
+.heatmap-toggle-button:hover {
+   background: #ededed;
+}
+
 @keyframes loading-dots {
 
    0%,
