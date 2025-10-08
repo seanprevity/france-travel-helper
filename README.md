@@ -31,7 +31,7 @@ npm install
 2. Create `.env` file inside frontend:
 
 ```plaintext
-NEXT_PUBLIC_BASE_API_URL=http://localhost:3001
+NEXT_PUBLIC_BASE_API_URL=http://localhost:3000
 NEXT_PUBLIC_AWS_COGNITO_USER_POOL_ID=your_aws_user_pool_id_here
 NEXT_PUBLIC_AWS_COGNITO_USER_CLIENT_ID=your_aws_client_id_here
 NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_access_token_here
