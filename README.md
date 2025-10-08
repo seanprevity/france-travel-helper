@@ -1,25 +1,29 @@
 ### 🇫🇷 France Travel Explorer
 
-A full-stack France Travel Guide website built with:
+A **full-stack France Travel** Guide built to explore and learn about towns across France — featuring interactive maps, AI-generated descriptions, local weather, and personalized bookmarks.
 
-- **Frontend**: React + Vite
-- **Backend**: Flask + PostgreSQL
-- **Authentication**: JWT Cookies
-- **APIs Integrated**: Google Maps, OpenAI, Geocoding APIs, Wikipedia Images
+### 🧭 Overview
 
-
-Explore towns across France with descriptions, attractions, map navigation, and personal bookmarks!
+France Travel Explorer lets you explore and filter through thousands of French cities with detailed descriptions, attractions, maps, and user bookmarks — all in an elegant bilingual interface.
 
 ---
 
+### ⚙️ Stack
+
+- **Frontend**: Next.js
+- **Backend**: Node.js + Express
+- **Database**: PostgreSQL (hosted on Supabase/locally)
+- **Authentication**: AWS Cognito via Amplify Auth
+- **APIs Integrated**: Mapbox, OpenAI, Geocoding APIs, Wikipedia Images, WeatherAPI
+
 ## 🚀 Project Setup
 
-### Frontend (React + Vite)
+### Frontend (Next.js)
 
 1. Navigate to frontend folder:
 
 ```shellscript
-cd frontend
+cd client
 npm install
 ```
 
@@ -27,63 +31,46 @@ npm install
 2. Create `.env` file inside frontend:
 
 ```plaintext
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+NEXT_PUBLIC_BASE_API_URL=http://localhost:3001
+NEXT_PUBLIC_AWS_COGNITO_USER_POOL_ID=your_aws_user_pool_id_here
+NEXT_PUBLIC_AWS_COGNITO_USER_CLIENT_ID=your_aws_client_id_here
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_access_token_here
 ```
 
 
-3. To start the frontend server:
+3. To start the frontend dev server:
 
 ```shellscript
 npm run dev
 ```
 
+The frontend will run at http://localhost:3000  
 
 
-
-### Backend (Flask + PostgreSQL)
+### Backend (Node.js + Express + PostgreSQL)
 
 1. Navigate to backend folder:
 
 ```shellscript
-cd backend
+cd server
+npm install
 ```
 
 
-2. Create and activate a Python virtual environment:
-
-```shellscript
-python3 -m venv venv
-
-# On Mac/Linux
-source venv/bin/activate
-
-# On Windows
-venv\Scripts\activate
-```
-
-
-3. Install Python dependencies inside of the virtual machine:
-
-```shellscript
-pip install -r requirements.txt
-```
-
-
-4. Create a `.env` file inside backend with these variables:
+2. Create a `.env` file inside backend with these variables:
 
 ```plaintext
+PORT=3001
+DATABASE_URL=your_postgres_url_here
 OPENAI_API_KEY=your_openai_api_key_here
-DATABASE_URL=postgresql://travel_admin:Password@localhost:5432/french_travel_db
-JWT_SECRET_KEY=your_jwt_secret_key_here
-GEOCODING_API_KEY=your_google_geocoding_api_key_here
 WEATHER_API_KEY=your_weatherapi_api_key_here
 ```
 
 
-5. Start the backend server inside of venv:
+3. Start the backend server:
 
 ```shellscript
-python3 app.py
+npx ts-node ./src/index.ts
 ```
 
 
@@ -93,7 +80,7 @@ python3 app.py
 
 ## 🛠 Database Setup
 
-You need a local PostgreSQL database called `french_travel_db`.
+You'll need a local PostgreSQL database called `french_travel_db`.
 
 ### SQL Dump
 
@@ -110,6 +97,8 @@ createdb french_travel_db
 psql french_travel_db < french_travel_dump.sql
 ```
 
+If you’re using Supabase, simply import the same SQL dump file through the Supabase dashboard.
+
 
 
 
@@ -117,36 +106,37 @@ psql french_travel_db < french_travel_dump.sql
 
 ## 🌐 Tech Stack
 
-- **React + Vite** for the frontend
-- **Flask with Flask-JWT-Extended** for backend + auth
-- **PostgreSQL** for structured town/department/region data
-- **Google Maps API** for map features
-- **OpenAI API** for generating town descriptions
-- **Google Geocoding API** for lat/lon corrections
-- **Wikipedia API** for fetching relevant town images
-- **Weather API** for pulling weather data on a town
-- **JWT Auth** using secure cookies (12-hour inactivity expiration)
+- **NextJS** for the frontend
+- **Node/Express + AWS Cognito/Amplify Auth** for backend + login/authentication
+- **PostgreSQL** for structured city/department/region data
+- **MapBox API** for map features
+- **OpenAI API** for generating city descriptions
+- **Google Geocoding API** for precise latitude and longitude coordinates
+- **Wikipedia API** for fetching relevant city images
+- **Weather API** for local weather forecasts
 
 
 ---
 
 ## ✨ Features
 
-- 🔎 Search towns with autocomplete
-- 🗺 Interactive Google Map navigation
-- ☀️ Up-to-date weather statistics
-- 📝 AI-generated town descriptions, histories, attractions
+- 🔎 Search cities with autocomplete
+- 🗺 Interactive MapBox Map navigation
+- 🎯 Filters to find cities based on region, population, etc.
+- 📝 AI-generated city descriptions, histories, attractions
+- 🌤 Weather forecasts for any city
+- 🖼 High quality images fetched through wikipedia
+- 🎲 Random city feature to choose from over 30,000 cities
 - 📌 Save bookmarks to your profile
-- ⭐ Rate towns
-- 🛡 Secure login and JWT-based session management
+- 🛡 Secure AWS Auth login and  session management
 - 🌎 Bilingual ready (English/French toggleable)
 
 
 ---
 
-## Final Notes
+## 🧾 Final Notes
 
-- Make sure PostgreSQL is running locally.
-- The backend Flask app will serve at [http://localhost:5000](http://localhost:5000).
-- The frontend Vite app will serve at [http://localhost:5173](http://localhost:5173).
-- Make sure your APIs (Google, OpenAI) are active.
+- Make sure PostgreSQL is running via supabase or locally before starting the backend.
+- Make sure your APIs (MapBox, OpenAI, Weather) are active.
+- The backend Node.js + Express app will serve at [http://localhost:3001](http://localhost:3001).
+- The frontend Next app will serve at [http://localhost:3000](http://localhost:3000).
