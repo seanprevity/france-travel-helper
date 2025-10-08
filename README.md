@@ -94,10 +94,10 @@ createdb french_travel_db
 2. Import the SQL schema and data from the .sql dump:
 
 ```shellscript
-psql french_travel_db < french_travel_dump.sql
+psql french_travel_db < new_french_dump_2.sql
 ```
 
-If you’re using Supabase, simply import the same SQL dump file through the Supabase dashboard.
+If you’re using Supabase, simply import the same SQL dump file through the Supabase dashboard. Make sure to link the database through the ipv4 compatible session pooler link.
 
 
 
