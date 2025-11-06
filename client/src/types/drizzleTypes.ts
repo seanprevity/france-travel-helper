@@ -95,7 +95,7 @@ export interface WeatherDay {
   temp_min: number;
 }
 
-export interface Image {
+export interface ImageType {
   url?: string;
   description?: string;
 }

@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Playfair_Display, Lato } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,10 +32,12 @@ const CallToAction = () => {
       {/* Content */}
       <div className="relative z-20 max-w-3xl mx-auto">
         <div className="flex flex-col items-center mb-4">
-          <img
+          <Image
             src="/fr-flag.svg"
             alt="French flag"
-            className="w-10 h-auto mb-3 drop-shadow"
+            width={40}
+            height={24}
+            className="mb-3 drop-shadow"
           />
           <h2
             className={`${playfair.className} text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]`}

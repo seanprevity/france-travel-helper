@@ -6,6 +6,10 @@ import { eq, and } from "drizzle-orm";
 const api_key = process.env.WEATHER_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+const WIKI_HEADERS = {
+  "User-Agent": "FranceTravelHelper/1.0 (seanprevity@gmail.com)",
+  Accept: "application/json",
+};
 
 const BLOCKLIST = [
   "armoiries",
@@ -199,6 +203,7 @@ const fetchWikiImages = async (
   try {
     // 1) Thumbnail from infobox
     const thumbRes = await axios.get(API, {
+      headers: WIKI_HEADERS,
       params: {
         action: "query",
         format: "json",
@@ -225,6 +230,7 @@ const fetchWikiImages = async (
   let titles: string[] = [];
   try {
     const titleRes = await axios.get(API, {
+      headers: WIKI_HEADERS,
       params: {
         action: "query",
         format: "json",
@@ -248,6 +254,7 @@ const fetchWikiImages = async (
     const chunk = titles.slice(i, i + 50);
     try {
       const infoRes = await axios.get(API, {
+        headers: WIKI_HEADERS,
         params: {
           action: "query",
           format: "json",

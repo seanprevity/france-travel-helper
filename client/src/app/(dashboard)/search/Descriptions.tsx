@@ -15,6 +15,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import Weather from "./Weather";
 import ImageModal from "./ImageModal";
 import { Playfair_Display, Lato } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -117,17 +118,24 @@ const Descriptions = () => {
     setIsSaved(!isSaved);
   };
 
-  if (!city) return <div className="flex flex-col h-full overflow-y-auto p-6 bg-gray-100 rounded-xl">{t("selectCityDescription")}</div>;
+  if (!city)
+    return (
+      <div className="flex flex-col h-full overflow-y-auto p-6 bg-gray-100 rounded-xl">
+        {t("selectCityDescription")}
+      </div>
+    );
   if (isLoading) return <div>{t("loading")}</div>;
 
   return (
     <div className="flex flex-col h-full overflow-y-auto p-6 bg-gray-100 rounded-xl">
       {/* City */}
-      <div className="mb-6">
-        <h4 className={` text-sm uppercase text-gray-500 mb-2 tracking-wide`}>
+      <div className="mb-2">
+        <h4 className={` text-sm uppercase text-gray-500 mb-1 tracking-wide`}>
           {t("city")}
         </h4>
-        <h3 className={`${playfair.className} text-2xl font-semibold text-gray-800 mb-2`}>
+        <h3
+          className={`${playfair.className} text-2xl font-semibold text-gray-800 mb-2`}
+        >
           {city?.nomStandard}
         </h3>
         <p className={`${lato.className} text-sm text-gray-500 mb-2`}>
@@ -152,13 +160,15 @@ const Descriptions = () => {
             {images?.map((image, index) => (
               <div
                 key={index}
-                className="h-20 rounded overflow-hidden border border-gray-200 cursor-pointer transition-transform duration-200 hover:scale-105 shadow-sm"
+                className="h-20 rounded overflow-hidden border border-gray-200 cursor-pointer transition-transform duration-200 hover:scale-105 shadow-sm relative"
                 onClick={() => openImageModal(index)}
               >
-                <img
+                <Image
                   src={image.url || "/placeholder.svg"}
                   alt={image.description || city?.nomStandard}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
                   onError={(e) => (e.currentTarget.style.display = "none")}
                 />
               </div>
@@ -168,11 +178,13 @@ const Descriptions = () => {
       )}
 
       {/* Description */}
-      <div className="mb-6">
+      <div className="mb-2">
         <h4 className={` text-sm uppercase text-gray-500 mb-2 tracking-wide`}>
           {t("description")}
         </h4>
-        <p className={`${lato.className} text-base leading-relaxed text-gray-600 mb-4`}>
+        <p
+          className={`${lato.className} text-base leading-relaxed text-gray-600 mb-4`}
+        >
           {mainDescription
             ? mainDescription
             : interpolate(t("noInfoMessage"), { town: city?.nomStandard })}
@@ -185,18 +197,25 @@ const Descriptions = () => {
           <h4 className={` text-sm uppercase text-gray-500 mb-2 tracking-wide`}>
             {t("history")}
           </h4>
-          <p className={`${lato.className} text-base leading-relaxed text-gray-600`}>{history}</p>
+          <p
+            className={`${lato.className} text-base leading-relaxed text-gray-600`}
+          >
+            {history}
+          </p>
         </div>
       )}
 
       {/* Attractions */}
-      <div className="mb-6">
+      <div className="mb-2">
         <h4 className={` text-sm uppercase text-gray-500 mb-2 tracking-wide`}>
           {t("topAttractions")}
         </h4>
         <ul className="list-none p-0 m-0">
           {attractions.map((item: string, i: number) => (
-            <li key={i} className={`${lato.className} flex mb-3 text-gray-600 leading-snug`}>
+            <li
+              key={i}
+              className={`${lato.className} flex mb-3 text-gray-600 leading-snug`}
+            >
               <span className="font-semibold text-blue-500 mr-2 min-w-[1.5rem]">
                 {i + 1}.
               </span>{" "}
@@ -215,7 +234,9 @@ const Descriptions = () => {
         {user && (
           <button
             onClick={toggleBookmark}
-            className={`${lato.className} flex items-center px-4 py-2 rounded font-medium transition border-none hover:cursor-pointer ${
+            className={`${
+              lato.className
+            } flex items-center px-4 py-2 rounded font-medium transition border-none hover:cursor-pointer ${
               isSaved
                 ? "bg-blue-500 text-white hover:bg-blue-600"
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"
@@ -233,7 +254,7 @@ const Descriptions = () => {
           initialIndex={currentImageIndex}
           onClose={closeImageModal}
         />
-      )} 
+      )}
     </div>
   );
 };

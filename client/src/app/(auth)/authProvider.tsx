@@ -8,6 +8,7 @@ import {
 import "@aws-amplify/ui-react/styles.css";
 import { usePathname, useRouter } from "next/navigation";
 import { Amplify } from "aws-amplify";
+import Image from "next/image";
 
 // https://docs.amplify.aws/gen1/javascript/tools/libraries/configure-categories/
 Amplify.configure({
@@ -23,12 +24,18 @@ const components = {
   Header() {
     return (
       <View className="mt-4 mb-7 flex flex-col items-center text-center">
-        <img src="/fr-flag.svg" alt="French flag" className="w-6 h-auto rounded-sm" />
+        <Image
+          src="/fr-flag.svg"
+          alt="French flag"
+          width={24}
+          height={24}
+          className="rounded-sm"
+        />
         <Heading level={3} className="!text-2xl !font-bold">
           France Travel Helper
         </Heading>
         <p className="text-muted-foreground mt-2">
-          <span className="font-bold">Welcome!{" "}</span>
+          <span className="font-bold">Welcome! </span>
           Please sign in to continue
         </p>
       </View>
@@ -40,8 +47,11 @@ const components = {
       return (
         <View className="text-center mt-4">
           <p className="text-muted-foreground">
-            Don't have an account?{" "}
-            <button onClick={toSignUp} className="text-primary hover:underline bg-transparent border-none p-0 cursor-pointer">
+            Don&apos;t have an account?{" "}
+            <button
+              onClick={toSignUp}
+              className="text-primary hover:underline bg-transparent border-none p-0 cursor-pointer"
+            >
               Sign up here
             </button>
           </p>
@@ -64,12 +74,15 @@ const components = {
         <View className="text-center mt-4">
           <p className="text-muted-foreground">
             Already have an account?{" "}
-            <button onClick={toSignIn} className="text-primary hover:underline bg-transparent border-none p-0 cursor-pointer">
+            <button
+              onClick={toSignIn}
+              className="text-primary hover:underline bg-transparent border-none p-0 cursor-pointer"
+            >
               Sign in
             </button>
           </p>
         </View>
-      );  
+      );
     },
   },
 };
@@ -133,7 +146,10 @@ const Auth = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center" style={{ backgroundImage: "url('/sunset-dark-orange-blur35.jpg')" }}>
+    <div
+      className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
+      style={{ backgroundImage: "url('/sunset-dark-orange-blur35.jpg')" }}
+    >
       <Authenticator
         initialState={pathname.includes("signup") ? "signUp" : "signIn"}
         components={components}

@@ -2,42 +2,39 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { Image } from "@/types/drizzleTypes";
+import type { ImageType } from "@/types/drizzleTypes";
+import Image from "next/image";
 
 export default function ImageModal({
   images,
   initialIndex,
   onClose,
 }: {
-  images: Image[];
+  images: ImageType[];
   initialIndex: number;
   onClose: () => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(initialIndex);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight")
+        setCurrentImageIndex((prev) =>
+          prev === images.length - 1 ? 0 : prev + 1
+        );
+      if (e.key === "ArrowLeft")
+        setCurrentImageIndex((prev) =>
+          prev === 0 ? images.length - 1 : prev - 1
+        );
     };
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  }, [onClose, images.length]);
 
   if (!images || images.length === 0) return null;
-
-  const currentImage = images[currentImageIndex];
 
   return (
     <div
@@ -49,7 +46,9 @@ export default function ImageModal({
         className="fixed left-8 top-1/2 z-[1001] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white transition hover:bg-black/60 hover:scale-110 md:left-4 md:h-10 md:w-10 sm:left-2 sm:h-9 sm:w-9 hover:cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
-          prevImage();
+          setCurrentImageIndex((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+          );
         }}
         aria-label="Previous image"
       >
@@ -74,10 +73,11 @@ export default function ImageModal({
         {/* Image Container */}
         <div className="flex items-center justify-center relative">
           <div className="flex h-[70vh] w-[80vw] max-w-[1200px] items-center justify-center md:h-[50vh] sm:h-[40vh] sm:w-[90vw]">
-            <img
+            <Image
               src={images[currentImageIndex].url || "/placeholder.svg"}
               alt={images[currentImageIndex].description || "Image"}
-              className="max-h-full max-w-full rounded shadow-xl object-contain"
+              fill
+              className="rounded shadow-xl object-contain"
             />
           </div>
         </div>
@@ -100,7 +100,9 @@ export default function ImageModal({
         className="fixed right-8 top-1/2 z-[1001] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white transition hover:bg-black/60 hover:scale-110 md:right-4 md:h-10 md:w-10 sm:right-2 sm:h-9 sm:w-9 hover:cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
-          nextImage();
+          setCurrentImageIndex((prev) =>
+            prev === images.length - 1 ? 0 : prev + 1
+          );
         }}
         aria-label="Next image"
       >

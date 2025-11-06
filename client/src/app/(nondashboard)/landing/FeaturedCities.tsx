@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Playfair_Display, Lato } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -75,11 +76,12 @@ const FeaturedCities = () => {
               variants={cardVariants}
               className="overflow-hidden transition-transform duration-300 ease-in-out bg-white rounded-lg shadow-md hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="w-full h-52 overflow-hidden">
-                <img
+              <div className="w-full h-52 relative overflow-hidden">
+                <Image
                   src={city.img}
                   alt={city.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 ease-in-out hover:scale-105"
                 />
               </div>
               <div className="p-6 text-gray-900">

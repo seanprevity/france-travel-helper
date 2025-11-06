@@ -7,7 +7,7 @@ import {
   Rating,
   Description,
   Weather,
-  Image,
+  ImageType,
 } from "@/types/drizzleTypes";
 import { cleanParams, createNewUserInDatabase, withToast } from "@/lib/utils";
 import { FiltersState } from ".";
@@ -25,14 +25,7 @@ export const api = createApi({
     },
   }),
   reducerPath: "api",
-  tagTypes: [
-    "User",
-    "City",
-    "Region",
-    "Bookmark",
-    "Rating",
-    "Description",
-  ],
+  tagTypes: ["User", "City", "Region", "Bookmark", "Rating", "Description"],
   endpoints: (build) => ({
     getAuthUser: build.query<User, void>({
       queryFn: async (_, _queryApi, _extraOptions, fetchWithBQ) => {
@@ -131,9 +124,12 @@ export const api = createApi({
         body: { inseeCode },
       }),
       invalidatesTags: ["Bookmark"],
-      async onQueryStarted( { state }, { queryFulfilled }) {
+      async onQueryStarted({ state }, { queryFulfilled }) {
         await withToast(queryFulfilled, {
-          success: state === true ? "Bookmark added successfully." : "Bookmark removed successfully.",
+          success:
+            state === true
+              ? "Bookmark added successfully."
+              : "Bookmark removed successfully.",
           error: "Failed to set bookmark.",
         });
       },
@@ -239,7 +235,7 @@ export const api = createApi({
       },
     }),
     // Image call
-    getImages: build.query<Image[], { insee: string }>({
+    getImages: build.query<ImageType[], { insee: string }>({
       query: ({ insee }) => ({
         url: `/descriptions/images?insee=${insee}`,
         method: "GET",

@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Playfair_Display, Lato } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -67,13 +68,14 @@ const About = () => {
             </motion.p>
           </div>
           <motion.div 
-            className="flex-1 flex justify-center"
+            className="flex-1 flex justify-center relative h-64 md:h-80 lg:h-96"
             variants={fadeInVariants}  
           >
-            <img
+            <Image
               src="/france-countryside.jpg"
               alt={t("aboutImageAlt")}
-              className="rounded-lg shadow-lg max-w-full h-auto"
+              fill
+              className="rounded-lg shadow-lg"
             />
           </motion.div>
         </motion.div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useGetWeatherQuery } from "@/state/api";
 import type { WeatherDay } from "@/types/drizzleTypes";
+import Image from "next/image";
 
 export default function Weather({ lat, lon }: { lat: number; lon: number }) {
   const { t } = useLanguage();
@@ -30,16 +31,20 @@ export default function Weather({ lat, lon }: { lat: number; lon: number }) {
 
   return (
     <div className="mb-6">
-      <h4 className="text-sm uppercase text-gray-500 mb-2 tracking-wide">{t("weather")}</h4>
+      <h4 className="text-sm uppercase text-gray-500 mb-2 tracking-wide">
+        {t("weather")}
+      </h4>
 
       <div
         onClick={() => setShowFull((s) => !s)}
         className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm transition cursor-pointer"
       >
-        <img
-          src={today.icon}
+        <Image
+          src={today.icon.startsWith("//") ? `https:${today.icon}` : today.icon}
           alt={today.description}
-          className="w-12 h-12 rounded-full bg-white/70 p-1"
+          width={48}
+          height={48}
+          className="rounded-full bg-white/70 p-1"
         />
         <div className="flex-1">
           <div className="font-semibold text-gray-800 text-base">
@@ -69,10 +74,12 @@ export default function Weather({ lat, lon }: { lat: number; lon: number }) {
               <div className="text-xs font-medium text-gray-600 mb-1">
                 {day.date}
               </div>
-              <img
-                src={day.icon}
+              <Image
+                src={day.icon.startsWith("//") ? `https:${day.icon}` : day.icon}
                 alt={day.description}
-                className="w-9 h-9 my-2"
+                width={36}
+                height={36}
+                className="my-2"
               />
               <div className="text-sm font-semibold text-gray-800">
                 {Math.round(day.temp_max)}° / {Math.round(day.temp_min)}°

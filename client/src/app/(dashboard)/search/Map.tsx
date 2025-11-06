@@ -135,14 +135,15 @@ const Map = () => {
         const coordinates = (feature.geometry as GeoJSON.Point).coordinates;
 
         // assert known properties
-        const { name, region, department, inseeCode, latitude, longitude } = feature.properties as {
-          name: string;
-          region: string;
-          department: string;
-          inseeCode: string;
-          latitude: number;
-          longitude: number;
-        };
+        const { name, region, department, inseeCode, latitude, longitude } =
+          feature.properties as {
+            name: string;
+            region: string;
+            department: string;
+            inseeCode: string;
+            latitude: number;
+            longitude: number;
+          };
 
         new mapboxgl.Popup()
           .setLngLat(coordinates as [number, number])
@@ -365,6 +366,7 @@ const Map = () => {
     filters.region,
     filters.department,
     filters.academie,
+    dispatch,
   ]);
 
   useEffect(() => {

@@ -33,32 +33,22 @@ const LanguageProvider: React.FC<LanguageProviderProps> = ({
   const [language, setLanguage] = useState<string>(initialLanguage);
   const [isLanguageReady, setIsLanguageReady] = useState(false);
 
-  // Load language from localStorage if available
+  // Initialize language on mount
   useEffect(() => {
     const storedLanguage = localStorage.getItem("language");
-    if (storedLanguage && storedLanguage !== language) {
-      setLanguage(storedLanguage);
-    } else {
-      i18n.changeLanguage(language).then(() => {
-        setIsLanguageReady(true);
-      });
-    }
-  }, []);
+    const langToUse = storedLanguage || initialLanguage;
 
-  // Change i18n language when language state updates
-  useEffect(() => {
-    if (i18n.language !== language) {
-      i18n.changeLanguage(language).then(() => {
-        setIsLanguageReady(true);
-        localStorage.setItem("language", language);
-      });
-    }
-  }, [language, i18n]);
+    i18n.changeLanguage(langToUse).then(() => {
+      setLanguage(langToUse);
+      setIsLanguageReady(true);
+    });
+  }, [i18n, initialLanguage]);
 
   const switchLanguage = () => {
     const newLanguage = language === "en" ? "fr" : "en";
     setLanguage(newLanguage);
-    // localStorage is updated in the effect
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
   };
 
   if (!isLanguageReady) return null;
