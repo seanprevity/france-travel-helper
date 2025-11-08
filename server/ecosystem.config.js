@@ -1,7 +1,7 @@
-module.export = {
+module.exports = {
   apps: [
     {
-      name: "project-management",
+      name: "france-explorer",
       script: "npm",
       args: "run dev",
       env: {
