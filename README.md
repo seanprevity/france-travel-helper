@@ -2,13 +2,13 @@
 
 A **full-stack France Travel** Guide built to explore and learn about towns across France — featuring interactive maps, AI-generated descriptions, local weather, and personalized bookmarks.
 
-### 🧭 Overview
+### Overview
 
 France Travel Explorer lets you explore and filter through thousands of French cities with detailed descriptions, attractions, maps, and user bookmarks — all in an elegant bilingual interface.
 
 ---
 
-### ⚙️ Stack
+### Stack
 
 - **Frontend**: Next.js
 - **Backend**: Node.js + Express
@@ -16,7 +16,7 @@ France Travel Explorer lets you explore and filter through thousands of French c
 - **Authentication**: AWS Cognito via Amplify Auth
 - **APIs Integrated**: Mapbox, OpenAI, Geocoding APIs, Wikipedia Images, WeatherAPI
 
-## 🚀 Project Setup
+## Setup
 
 ### Frontend (Next.js)
 
@@ -97,14 +97,14 @@ createdb french_travel_db
 psql french_travel_db < new_french_dump_2.sql
 ```
 
-If you’re using Supabase, simply import the same SQL dump file through the Supabase dashboard. Make sure to link the database through the ipv4 compatible session pooler link.
+If you’re using Supabase, import the same SQL dump file through the Supabase dashboard. Make sure to connect to the database through the ipv4 compatible session pooler link.
 
 
 
 
 ---
 
-## 🌐 Tech Stack
+## Tech Stack
 
 - **NextJS** for the frontend
 - **Node/Express + AWS Cognito/Amplify Auth** for backend + login/authentication
@@ -118,23 +118,7 @@ If you’re using Supabase, simply import the same SQL dump file through the Sup
 
 ---
 
-## ✨ Features
-
-- 🔎 Search cities with autocomplete
-- 🗺 Interactive MapBox Map navigation
-- 🎯 Filters to find cities based on region, population, etc.
-- 📝 AI-generated city descriptions, histories, attractions
-- 🌤 Weather forecasts for any city
-- 🖼 High quality images fetched through wikipedia
-- 🎲 Random city feature to choose from over 30,000 cities
-- 📌 Save bookmarks to your profile
-- 🛡 Secure AWS Auth login and  session management
-- 🌎 Bilingual ready (English/French toggleable)
-
-
----
-
-## 🧾 Final Notes
+## Notes
 
 - Make sure PostgreSQL is running via supabase or locally before starting the backend.
 - Make sure your APIs (MapBox, OpenAI, Weather) are active.
